@@ -43,9 +43,9 @@ export default function Hero() {
                 lineHeight: 0.94,
               }}
           >
-            <AuroraText>Arrêtez de chercher.</AuroraText>
+          Arrêtez de chercher.
             <br />
-            Commencez à trouver.
+            <AuroraText>Commencez à trouver.</AuroraText>
           </motion.h1>
 
           <motion.p
