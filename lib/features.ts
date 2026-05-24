@@ -13,27 +13,27 @@ export interface Feature {
 export const FEATURES_DATA: Feature[] = [
   {
     id: "matching",
-    title: "Des offres qui vous correspondent vraiment",
+    title: "Un matching intelligent",
     description:
-      "Karria analyse votre profil, vos compétences, vos préférences et vos objectifs pour vous recommander les offres les plus pertinentes. Moins de recherches inutiles, plus d'opportunités qui ont du sens.",
+        "Karria compare votre profil avec des offres venant de plusieurs plateformes pour trouver celles qui vous correspondent vraiment.",
     iconName: "Brain",
     tag: "Matching IA",
     tagColor: "blue",
   },
   {
     id: "cv-generator",
-    title: "Un CV professionnel en quelques clics",
+    title: "Création de CV simplifiée",
     description:
-      "Créez rapidement un CV moderne, clair et prêt à envoyer. Karria vous aide à transformer votre parcours en un document professionnel, structuré et adapté aux attentes des recruteurs.",
+        "Créez facilement un CV moderne, clair et professionnel grâce à des modèles simples à utiliser.",
     iconName: "FileText",
     tag: "CV",
     tagColor: "sky",
   },
   {
     id: "targeted-cv",
-    title: "Un CV adapté à chaque offre",
+    title: "CV adaptés à chaque offre",
     description:
-      "Ne candidatez plus avec le même CV partout. Karria analyse l'offre visée et adapte votre CV pour mettre en avant les compétences, expériences et mots-clés les plus importants.",
+        "Karria adapte automatiquement votre CV selon l’offre choisie pour mettre en avant les éléments les plus importants.",
     iconName: "Sparkles",
     tag: "IA",
     tagColor: "blue",
@@ -41,45 +41,36 @@ export const FEATURES_DATA: Feature[] = [
   },
   {
     id: "cover-letter",
-    title: "Des lettres de motivation prêtes à envoyer",
+    title: "Lettres de motivation générées par IA",
     description:
-      "Générez des lettres de motivation personnalisées selon votre profil et l'offre ciblée. Un ton professionnel, un contenu pertinent et une candidature complète en quelques secondes.",
+        "Générez des lettres personnalisées et prêtes à envoyer en quelques secondes selon le poste visé.",
     iconName: "PenLine",
     tag: "Lettre",
     tagColor: "ice",
   },
   {
     id: "ats",
-    title: "Des candidatures optimisées pour les ATS",
+    title: "Optimisation pour les recruteurs",
     description:
-      "Les CV et lettres générés par Karria sont conçus pour être lisibles par les logiciels de recrutement. Une structure claire, des mots-clés pertinents et une meilleure chance d'arriver jusqu'au recruteur.",
+        "Vos candidatures sont structurées pour être plus lisibles par les logiciels de recrutement et les recruteurs.",
     iconName: "ShieldCheck",
     tag: "ATS",
     tagColor: "sky",
   },
   {
     id: "templates",
-    title: "Des templates gratuits et premium",
+    title: "Des modèles modernes et professionnels",
     description:
-      "Choisissez parmi des dizaines de modèles de CV et de lettres de motivation. Des designs modernes, professionnels et adaptés à votre personnalité pour créer une candidature qui vous ressemble.",
+        "Choisissez parmi plusieurs templates de CV et de lettres adaptés à différents profils et styles.",
     iconName: "Palette",
     tag: "Templates",
     tagColor: "blue",
   },
   {
-    id: "dashboard",
-    title: "Tout votre parcours de candidature au même endroit",
-    description:
-      "Suivez vos candidatures, retrouvez vos documents, gérez vos offres favorites et avancez avec plus de clarté. Karria vous aide à rester concentré sur l'essentiel : décrocher des entretiens.",
-    iconName: "LayoutDashboard",
-    tag: "Suivi",
-    tagColor: "ice",
-  },
-  {
     id: "alerts",
-    title: "Ne ratez plus les bonnes opportunités",
+    title: "Des alertes intelligentes",
     description:
-      "Recevez des alertes ciblées lorsqu'une offre correspond réellement à votre profil. Vous gagnez du temps et vous candidatez plus vite sur les opportunités les plus pertinentes.",
+        "Recevez des notifications quand une nouvelle opportunité importante correspond à votre profil.",
     iconName: "Bell",
     tag: "Alertes",
     tagColor: "blue",

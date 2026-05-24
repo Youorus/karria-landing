@@ -1,171 +1,162 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { X, Clock, Bot, Users, TrendingDown } from "lucide-react";
+import { X, Clock, Bot, Users, FileCheck2, ArrowRight } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { Reveal } from "@/components/ui/Reveal";
+import { staggerContainer, fadeUp } from "@/lib/animations";
+import { cn } from "@/lib/utils";
 
 const PAIN_POINTS = [
   {
-    icon: X,
-    stat: "72%",
-    title: "Des CV ignorés",
-    description:
-      "Les logiciels ATS rejettent automatiquement la majorité des candidatures avant qu'un recruteur humain ne les lise.",
-    color: "text-red-400",
-    bg: "bg-red-950/30",
-    border: "border-red-900/40",
-    glow: "rgba(239,68,68,0.08)",
-  },
-  {
     icon: Clock,
-    stat: "3 mois",
-    title: "D'attente en moyenne",
+    stat: "Des heures perdues",
+    title: "Chercher un emploi est devenu épuisant",
     description:
-      "Les candidats passent en moyenne 3 mois à chercher un emploi, perdant des dizaines d'heures chaque semaine.",
-    color: "text-orange-400",
-    bg: "bg-orange-950/30",
-    border: "border-orange-900/40",
-    glow: "rgba(249,115,22,0.08)",
+        "Passer des heures sur des dizaines de sites, lire des offres sans fin et essayer de trouver celles qui correspondent vraiment.",
+    iconBg: "bg-orange-500/10",
+    iconColor: "text-orange-500",
+    statColor: "text-orange-500",
   },
   {
-    icon: Bot,
-    stat: "0",
-    title: "Personnalisation réelle",
+    icon: FileCheck2,
+    stat: "CV après CV",
+    title: "Chaque candidature demande de tout refaire",
     description:
-      "Les plateformes actuelles proposent les mêmes offres à tous. Aucune intelligence, aucune compréhension de votre profil unique.",
-    color: "text-amber-400",
-    bg: "bg-amber-950/30",
-    border: "border-amber-900/40",
-    glow: "rgba(245,158,11,0.08)",
+        "Adapter son CV, modifier ses textes, écrire une nouvelle lettre de motivation… encore et encore.",
+    iconBg: "bg-amber-500/10",
+    iconColor: "text-amber-500",
+    statColor: "text-amber-500",
   },
   {
-    icon: TrendingDown,
-    stat: "1/10",
-    title: "Taux de réponse",
+    icon: X,
+    stat: "Très peu de réponses",
+    title: "La plupart des candidatures restent ignorées",
     description:
-      "En moyenne, seulement 1 candidature sur 10 obtient une réponse. La plupart restent sans suite indéfiniment.",
-    color: "text-rose-400",
-    bg: "bg-rose-950/30",
-    border: "border-rose-900/40",
-    glow: "rgba(244,63,94,0.08)",
+        "Des dizaines de candidatures envoyées sans jamais recevoir de réponse ni obtenir un entretien.",
+    iconBg: "bg-red-500/10",
+    iconColor: "text-red-500",
+    statColor: "text-red-500",
   },
   {
     icon: Users,
-    stat: "×40",
-    title: "Plus de concurrence",
+    stat: "Une forte concurrence",
+    title: "Des centaines de personnes postulent aux mêmes offres",
     description:
-      "La concurrence a explosé. Des centaines de candidats postulent aux mêmes offres, rendant chaque candidature encore plus difficile.",
-    color: "text-pink-400",
-    bg: "bg-pink-950/30",
-    border: "border-pink-900/40",
-    glow: "rgba(236,72,153,0.08)",
+        "Sortir du lot devient presque impossible quand tout le monde postule au même moment.",
+    iconBg: "bg-pink-500/10",
+    iconColor: "text-pink-500",
+    statColor: "text-pink-500",
   },
-];
-
-const EASE = [0.16, 1, 0.3, 1];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.1 },
+  {
+    icon: Bot,
+    stat: "0 aide réelle",
+    title: "Les plateformes actuelles ne vous accompagnent pas",
+    description:
+        "La plupart des sites affichent des offres sans vraiment aider à trouver, préparer et réussir.",
+    iconBg: "bg-violet-500/10",
+    iconColor: "text-violet-500",
+    statColor: "text-violet-500",
   },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
-};
+] as const;
 
 export default function Problem() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
-    <section
-      id="problem"
-      className="relative py-32 md:py-40 overflow-hidden"
-      aria-labelledby="problem-heading"
-      ref={ref}
-    >
-      {/* Noise overlay */}
-      <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 grid-bg opacity-20 dark:opacity-40" />
+      <section
+          id="problem"
+          className="relative py-24 sm:py-32 md:py-40 overflow-hidden"
+          aria-labelledby="problem-heading"
+      >
+        {/* Fond */}
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 grid-bg opacity-20 dark:opacity-40" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
 
-      {/* Top divider */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+        <div className="section-container relative z-10 px-4 sm:px-6">
 
-      <div className="section-container relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.0, ease: EASE }}
-        >
-          <SectionHeader
-            eyebrow="Le problème"
-            title={
-              <>
-                La recherche d&apos;emploi{" "}
-                <span className="text-gradient">est cassée.</span>
-              </>
-            }
-            subtitle="Des millions de candidats investissent des semaines entières dans des candidatures qui ne reçoivent jamais de réponse. Il faut changer ça."
-          />
-        </motion.div>
+          {/* Header */}
+          <Reveal variant="fadeUp">
+            <SectionHeader
+                eyebrow="Le problème"
+                title={
+                  <>
+                    La recherche d&apos;emploi{" "}
+                    <span className="text-red-500">est cassée.</span>
+                  </>
+                }
+                subtitle="Des millions de candidats investissent des semaines entières dans des candidatures qui ne reçoivent jamais de réponse. Il faut changer ça."
+            />
+          </Reveal>
 
-        {/* Pain points grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4"
-        >
-          {PAIN_POINTS.map((point) => (
-            <motion.div
-              key={point.title}
-              variants={cardVariants}
-              className="relative group rounded-2xl p-6 border border-border/50 bg-card/50 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-border"
-              style={{
-                background: `radial-gradient(circle at top left, ${point.glow} 0%, transparent 60%)`,
-              }}
-            >
-              <div
-                className={`w-10 h-10 rounded-xl ${point.bg} border ${point.border} flex items-center justify-center mb-4`}
-              >
-                <point.icon className={`w-5 h-5 ${point.color}`} />
-              </div>
+          {/* Grille unifiée — séparateurs internes via gap=px + bg sur le wrapper */}
+          <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-10%" }}
+              className={cn(
+                  "mt-12 sm:mt-16",
+                  "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5",
+                  // Séparateurs façon "joined grid" : 1px de fond visible entre les cellules
+                  "gap-px bg-border/40",
+                  "rounded-2xl overflow-hidden",
+                  "border border-border/40",
+              )}
+          >
+            {PAIN_POINTS.map((point) => (
+                <motion.div
+                    key={point.title}
+                    variants={fadeUp}
+                    className={cn(
+                        "relative flex flex-col gap-3 p-6",
+                        "bg-card/60 backdrop-blur-sm",
+                        "transition-colors duration-200",
+                        "hover:bg-card",
+                    )}
+                >
+                  {/* Icône */}
+                  <div
+                      className={cn(
+                          "w-9 h-9 rounded-xl flex items-center justify-center",
+                          point.iconBg,
+                      )}
+                  >
+                    <point.icon className={cn("w-4 h-4", point.iconColor)} />
+                  </div>
 
-              <div className={`font-display font-bold text-3xl ${point.color} mb-2 leading-none`}>
+                  {/* Stat */}
+                  <span
+                      className={cn(
+                          "text-[10px] font-bold uppercase tracking-[0.14em]",
+                          point.statColor,
+                      )}
+                  >
                 {point.stat}
-              </div>
+              </span>
 
-              <h3 className="font-display font-semibold text-foreground text-sm mb-2">
-                {point.title}
-              </h3>
+                  {/* Titre */}
+                  <h3 className="text-sm font-semibold text-foreground leading-snug">
+                    {point.title}
+                  </h3>
 
-              <p className="text-muted-foreground text-xs leading-relaxed">{point.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+                  {/* Description */}
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {point.description}
+                  </p>
+                </motion.div>
+            ))}
+          </motion.div>
 
-        {/* Separator statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.0, delay: 0.6, ease: EASE }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-muted/50 backdrop-blur-sm border border-border/50">
-            <span className="text-2xl">✦</span>
-            <p className="text-muted-foreground font-medium">
-              Karria est conçu pour résoudre chacun de ces problèmes.
-            </p>
-            <span className="text-2xl">✦</span>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+          {/* Statement final */}
+          <Reveal variant="fadeUp" delay={0.4}>
+            <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-border/40 pt-8">
+              <p className="text-xl sm:text-2xl font-semibold text-foreground leading-snug max-w-lg">
+                Karria est conçu pour résoudre{" "}
+                <span className="text-red-500">chacun de ces problèmes.</span>
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
   );
 }

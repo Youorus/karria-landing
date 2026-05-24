@@ -2,8 +2,7 @@ import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
 import Solution from "@/components/sections/Solution";
 import Features from "@/components/sections/Features";
-import HowItWorks from "@/components/sections/HowItWorks";
-import MobileApp from "@/components/sections/MobileApp";
+import StorytellingScroll from "@/components/sections/StorytellingScroll";
 import Experience from "@/components/sections/Experience";
 import SocialProof from "@/components/sections/SocialProof";
 import Pricing from "@/components/sections/Pricing";
@@ -31,34 +30,28 @@ export default function HomePage() {
     <>
       <JsonLd />
       <main id="main-content">
-        {/* 1. Hero — first impression, emotional hook */}
+        {/* 1. Hero — cinematic first impression */}
         <Hero />
 
-        {/* 2. Problem — empathy + friction validation */}
+        {/* 2. Storytelling — product narrative & demo */}
+        <StorytellingScroll />
+
+        {/* 3. Problem — empathy + friction validation */}
         <Problem />
 
-        {/* 3. Solution — Karria as the answer */}
+        {/* 4. Solution — Karria as the answer */}
         <Solution />
 
-        {/* 4. Features — detailed bento grid */}
+        {/* 5. Features — detailed bento grid */}
         <Features />
 
-        {/* 5. How it works — clarity & simplicity */}
-        <HowItWorks />
-
-        {/* 6. Mobile App — mobile-first storytelling */}
-        <MobileApp />
-
-        {/* 7. Experience — emotional section */}
-        <Experience />
-
-        {/* 8. Social proof — trust & traction */}
+        {/* 7. Social proof — trust & traction */}
         <SocialProof />
 
-        {/* 9. Pricing — conversion preview */}
-        <Pricing />
+        {/* 8. Pricing — conversion preview */}
+        {/*  <Pricing /> */}
 
-        {/* 10. Final CTA — close with power */}
+        {/* 9. Final CTA — close with power */}
         <FinalCTA />
       </main>
     </>

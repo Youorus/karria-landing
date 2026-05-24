@@ -7,42 +7,53 @@ import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const STATS = [
-  { value: 50000, suffix: "+", label: "Candidats actifs", description: "Professionnels qui font confiance à Karria" },
-  { value: 3, suffix: "×", label: "Plus de réponses", description: "En moyenne, vs les candidatures classiques" },
-  { value: 97, suffix: "%", label: "Satisfaction", description: "Des utilisateurs recommandent Karria" },
-  { value: 10000, suffix: "+", label: "Offres matchées", description: "Chaque mois via notre moteur IA" },
+  {
+    value: 100000,
+    suffix: "+",
+    label: "Offres analysées par jour",
+    description: "Karria agrège et traite des milliers d’offres partout en France.",
+  },
+  {
+    value: 10,
+    suffix: "+",
+    label: "Plateformes connectées",
+    description: "Les opportunités sont récupérées depuis plusieurs sources d’emploi.",
+  },
+  {
+    value: 5,
+    suffix: "×",
+    label: "Recherche plus rapide",
+    description: "Moins de temps perdu à chercher, trier et comparer les offres.",
+  },
+  {
+    value: 98,
+    suffix: "%",
+    label: "Documents optimisés",
+    description: "CV et lettres générés pour être clairs, professionnels et adaptés.",
+  }
 ];
 
 const TESTIMONIALS = [
   {
     name: "Sarah M.",
-    role: "Designer UX • Paris",
-    avatar: "👩‍🎨",
+    role: "Designer UX",
     stars: 5,
     quote:
-      "Karria a complètement changé ma façon de chercher un emploi. En une semaine, j'avais 4 entretiens grâce au matching IA. Les CV adaptés à chaque offre font vraiment la différence.",
-    company: "Maintenant chez Alan",
-    companyColor: "text-emerald-400",
+        "Avant, je passais mes soirées à chercher des offres. Avec Karria, je vois directement celles qui me correspondent vraiment.",
   },
   {
     name: "Thomas R.",
-    role: "Développeur Full-Stack • Lyon",
-    avatar: "👨‍💻",
+    role: "Développeur full-stack",
     stars: 5,
     quote:
-      "J'ai essayé toutes les plateformes classiques. Karria est dans une autre catégorie. Le score de matching est précis, et la génération de lettres de motivation me fait gagner un temps fou.",
-    company: "Maintenant chez Mirakl",
-    companyColor: "text-karria-400",
+        "Ce que j’aime, c’est le gain de temps. Les offres sont mieux ciblées et mes candidatures sont prêtes beaucoup plus vite.",
   },
   {
     name: "Léa K.",
-    role: "Marketing Manager • Bordeaux",
-    avatar: "👩‍💼",
+    role: "Marketing manager",
     stars: 5,
     quote:
-      "En reconversion, j'avais peur de ne pas trouver. Karria a analysé mes compétences transversales et m'a proposé des offres parfaitement adaptées. Incroyable. En 3 semaines, c'était signé.",
-    company: "Maintenant chez Contentsquare",
-    companyColor: "text-sky-400",
+        "Karria m’a aidée à y voir plus clair. Je savais quoi postuler, comment adapter mon CV et quoi faire ensuite.",
   },
 ];
 
@@ -128,43 +139,12 @@ export default function SocialProof() {
                 &ldquo;{t.quote}&rdquo;
               </p>
 
-              {/* Author */}
-              <div className="flex items-center justify-between pt-4 border-t border-border/50">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-muted border border-border flex items-center justify-center text-lg">
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <p className="text-foreground text-sm font-semibold">{t.name}</p>
-                    <p className="text-muted-foreground/80 text-xs">{t.role}</p>
-                  </div>
-                </div>
-                <span className={`text-xs font-semibold ${t.companyColor}`}>
-                  {t.company}
-                </span>
-              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">
+                &ldquo;{t.quote}&rdquo;
+              </p>
             </motion.div>
           ))}
         </div>
-
-        {/* Trusted by logos placeholder */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.0, delay: 0.7, ease: EASE }}
-          className="mt-16 text-center"
-        >
-          <p className="text-xs text-muted-foreground/80 uppercase tracking-widest mb-8">
-            Utilisé par des professionnels chez
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-30">
-            {["Spotify", "Doctolib", "Swile", "Alan", "Contentsquare", "Mirakl", "Mistral"].map((co) => (
-              <span key={co} className="font-display font-bold text-muted-foreground text-lg">
-                {co}
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

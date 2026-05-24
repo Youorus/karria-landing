@@ -41,7 +41,7 @@ function FeaturedCard({ feature }: { feature: Feature }) {
   const Icon = ICON_MAP[feature.iconName] ?? Sparkles;
 
   return (
-    <div className="relative group rounded-3xl overflow-hidden p-8 md:p-10 flex flex-col justify-between min-h-[340px] cursor-default transition-all duration-500 hover:-translate-y-1">
+    <div className="relative group rounded-3xl overflow-hidden p-8 md:p-10 flex flex-col justify-between min-h-[340px] h-full cursor-default transition-all duration-500 hover:-translate-y-1">
       {/* Rich background */}
       <div
         className="absolute inset-0 bg-card"
@@ -79,11 +79,6 @@ function FeaturedCard({ feature }: { feature: Feature }) {
           </p>
         </div>
 
-        {/* CTA link */}
-        <div className="mt-8 flex items-center gap-2 text-karria-400 text-sm font-semibold group/link">
-          <span>En savoir plus</span>
-          <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
-        </div>
       </div>
 
       {/* Bottom glow line */}
@@ -105,7 +100,7 @@ function FeatureCard({
   return (
     <div
       className={cn(
-        "relative group card card-hover flex flex-col cursor-default bg-card/50 backdrop-blur-sm",
+        "relative group card card-hover flex flex-col h-full cursor-default bg-card/50 backdrop-blur-sm",
         size === "sm" ? "p-5" : "p-6"
       )}
     >
@@ -162,15 +157,15 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative py-32 md:py-40 overflow-hidden"
+      className="relative py-24 sm:py-32 md:py-40 overflow-hidden"
       aria-labelledby="features-heading"
       ref={ref}
     >
       <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 grid-bg opacity-20 dark:opacity-40" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+      <div className="absolute inset-0 bg-hero-glow opacity-30 dark:opacity-50 pointer-events-none" />
 
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-10 px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -178,27 +173,26 @@ export default function Features() {
           transition={{ duration: 1.0, ease: EASE }}
         >
           <SectionHeader
-            eyebrow="Fonctionnalités"
-            title={
-              <>
-                Tout ce dont vous avez besoin
-                <br />
-                <span className="text-gradient">pour décrocher l&apos;offre.</span>
-              </>
-            }
-            subtitle="Un écosystème complet pensé pour chaque étape de votre recherche d'emploi."
+              eyebrow="Fonctionnalités"
+              title={
+                <>
+                  Une seule app pour{" "}
+                  <span className="text-gradient-blue">candidater mieux.</span>
+                </>
+              }
+              subtitle="Matching, CV, lettres, alertes et suivi : Karria réunit l’essentiel pour avancer plus vite."
           />
         </motion.div>
 
         {/* Bento grid */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-auto">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:auto-rows-[minmax(220px,1fr)]">
           {/* Featured card - spans 2 cols */}
           {featuredFeature && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
-              className="lg:col-span-2"
+              className="md:col-span-2 lg:col-span-2 lg:row-span-2 h-full"
             >
               <FeaturedCard feature={featuredFeature} />
             </motion.div>
@@ -211,6 +205,7 @@ export default function Features() {
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2, ease: EASE }}
+              className="h-full"
             >
               <FeatureCard feature={feature} />
             </motion.div>
@@ -223,18 +218,24 @@ export default function Features() {
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.25 + i * 0.07, ease: EASE }}
+              className="h-full"
             >
               <FeatureCard feature={feature} />
             </motion.div>
           ))}
 
-          {/* Features 5–7: last row */}
+          {/* Features 5–7: balanced last row */}
           {otherFeatures.slice(4).map((feature, i) => (
             <motion.div
               key={feature.id}
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.45 + i * 0.07, ease: EASE }}
+              className={cn(
+                "h-full",
+                i === 0 && "lg:col-span-2",
+                i > 0 && "lg:col-span-1"
+              )}
             >
               <FeatureCard feature={feature} size="sm" />
             </motion.div>
