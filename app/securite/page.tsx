@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { ShieldCheck, Lock, EyeOff, Server } from "lucide-react";
+import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Sécurité des données",
@@ -75,12 +77,12 @@ export default function SecurityPage() {
                 <p>
                   Si vous pensez avoir découvert une faille de sécurité sur notre plateforme, nous vous encourageons à nous en informer immédiatement. Nous traitons chaque signalement avec la plus haute priorité.
                 </p>
-                <a 
-                  href="mailto:security@karria.app"
+                <Link 
+                  href={`mailto:${CONTACT_EMAILS.security}`}
                   className="inline-block mt-4 text-primary font-medium hover:underline"
                 >
-                  security@karria.app
-                </a>
+                  {CONTACT_EMAILS.security}
+                </Link>
               </section>
             </div>
           </Reveal>

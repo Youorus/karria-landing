@@ -5,6 +5,8 @@ import { useRef, useState } from "react";
 import { Check, ArrowRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import SectionHeader from "@/components/ui/SectionHeader";
+import Link from "next/link";
+import { APP_LINKS } from "@/lib/constants";
 
 const PLANS = [
   {
@@ -204,8 +206,8 @@ export default function Pricing() {
               </ul>
 
               {/* CTA */}
-              <a
-                href="#"
+              <Link
+                href={APP_LINKS.webapp}
                 className={cn(
                   "w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold font-display transition-all duration-300",
                   plan.highlighted
@@ -215,7 +217,7 @@ export default function Pricing() {
               >
                 {plan.cta}
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>

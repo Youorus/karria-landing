@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Conditions Générales d'Utilisation",
@@ -71,12 +73,12 @@ export default function CGUPage() {
                 <p className="text-sm text-muted-foreground mb-6">
                   Si vous avez des questions sur nos conditions, notre équipe juridique est à votre disposition.
                 </p>
-                <a 
-                  href="mailto:legal@karria.app"
+                <Link 
+                  href={`mailto:${CONTACT_EMAILS.legal}`}
                   className="text-primary font-medium hover:underline text-sm"
                 >
-                  legal@karria.app
-                </a>
+                  {CONTACT_EMAILS.legal}
+                </Link>
                 
                 <div className="mt-10 pt-10 border-t border-border/50">
                   <p className="text-[11px] uppercase tracking-wider font-bold text-muted-foreground mb-2">Version actuelle</p>

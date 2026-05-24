@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Politique de Confidentialité",
@@ -69,14 +71,14 @@ export default function PrivacyPage() {
               <div className="sticky top-32 p-8 rounded-3xl bg-secondary/50 border border-border">
                 <h4 className="text-lg font-bold mb-4">Une question ?</h4>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Notre délégué à la protection des données (DPO) est là pour vous répondre.
+                  Karria est là pour vous répondre.
                 </p>
-                <a 
-                  href="mailto:privacy@karria.app"
+                <Link 
+                  href={`mailto:${CONTACT_EMAILS.privacy}`}
                   className="text-primary font-medium hover:underline text-sm"
                 >
-                  privacy@karria.app
-                </a>
+                  {CONTACT_EMAILS.privacy}
+                </Link>
                 
                 <div className="mt-10 pt-10 border-t border-border/50">
                   <p className="text-[11px] uppercase tracking-wider font-bold text-muted-foreground mb-2">Dernière mise à jour</p>

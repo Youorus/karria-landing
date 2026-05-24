@@ -32,7 +32,7 @@ export default function AlternancePage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
               Décrochez votre alternance
               <br />
-              <span className="text-gradient-blue">avec l&apos;aide de l&apos;IA</span>
+              <span className="text-gradient-blue">avec l&apos;aide de Karria</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Karria comprend les spécificités de l&apos;alternance et vous

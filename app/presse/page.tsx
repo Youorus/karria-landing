@@ -1,101 +1,123 @@
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Download, FileText, Image as ImageIcon, Mail } from "lucide-react";
+import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Espace Presse & Media",
-  description: "Accédez au kit média de Karria, nos communiqués de presse et nos ressources visuelles officielles.",
+  description:
+      "Retrouvez prochainement les ressources officielles de Karria pour la presse, les médias et les partenaires.",
   path: "/presse",
 });
 
 const PRESS_ASSETS = [
   {
     icon: ImageIcon,
-    title: "Logos & Branding",
-    description: "Téléchargez nos logos en haute résolution pour le web et l'impression.",
-    link: "#"
+    title: "Logos & identité",
+    description:
+        "Les logos, visuels et éléments de marque officiels seront bientôt disponibles.",
   },
   {
     icon: FileText,
-    title: "Communiqués de Presse",
-    description: "Retrouvez toute l'actualité officielle et nos dernières annonces.",
-    link: "#"
+    title: "Communiqués",
+    description:
+        "Les annonces officielles de Karria seront publiées ici au moment opportun.",
   },
   {
     icon: Download,
-    title: "Kit Média Complet",
-    description: "Une archive complète incluant screenshots, logos et bio du fondateur.",
-    link: "#"
-  }
+    title: "Kit média",
+    description:
+        "Un kit complet avec visuels, captures et informations fondateur sera ajouté prochainement.",
+  },
 ];
 
 export default function PressPage() {
   return (
-    <div className="py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-6">
-        <Reveal>
-          <SectionHeader
-            eyebrow="Media"
-            title="Espace Presse"
-            subtitle="Retrouvez toutes les ressources nécessaires pour parler de Karria."
-            className="mb-20"
-          />
-        </Reveal>
+      <div className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <Reveal>
+            <SectionHeader
+                eyebrow="Media"
+                title="Espace Presse"
+                subtitle="Cette page rassemblera bientôt les ressources officielles pour parler de Karria."
+                className="mb-20"
+            />
+          </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {PRESS_ASSETS.map((asset, index) => (
-            <Reveal key={asset.title} delay={index * 0.1}>
-              <div className="p-8 rounded-3xl bg-secondary/30 border border-border flex flex-col h-full hover:border-primary transition-colors">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
-                  <asset.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold mb-4">{asset.title}</h3>
-                <p className="text-muted-foreground mb-8 flex-grow">
-                  {asset.description}
-                </p>
-                <a 
-                  href={asset.link}
-                  className="inline-flex items-center gap-2 font-bold text-primary"
-                >
-                  Télécharger
-                  <Download className="w-4 h-4" />
-                </a>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+          <div className="mb-24 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {PRESS_ASSETS.map((asset, index) => (
+                <Reveal key={asset.title} delay={index * 0.1}>
+                  <div className="flex h-full flex-col rounded-3xl border border-border bg-secondary/30 p-8 transition-colors hover:border-primary">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <asset.icon className="h-6 w-6" />
+                    </div>
 
-        <Reveal delay={0.4}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center bg-foreground text-background p-10 md:p-16 rounded-[2.5rem]">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Contact Presse</h2>
-              <p className="text-background/70 text-lg mb-8">
-                Vous préparez un article ou un reportage ? Notre équipe presse est à votre disposition pour toute demande d&apos;interview, d&apos;informations complémentaires ou de démo personnalisée.
-              </p>
-              <a 
-                href="mailto:press@karria.app"
-                className="inline-flex items-center gap-3 text-2xl font-bold hover:underline"
-              >
-                <Mail className="w-6 h-6" />
-                press@karria.app
-              </a>
-            </div>
-            <div className="space-y-8">
-              <div className="p-6 rounded-2xl bg-background/10 border border-background/20">
-                <p className="text-[11px] font-bold uppercase tracking-wider mb-2 opacity-50">Dernière News</p>
-                <h4 className="text-xl font-bold mb-2">Karria lève 2M€ pour démocratiser l&apos;IA carrière</h4>
-                <p className="text-sm opacity-70">Mai 2026 • 2 min de lecture</p>
-              </div>
-              <div className="p-6 rounded-2xl bg-background/10 border border-background/20">
-                <p className="text-[11px] font-bold uppercase tracking-wider mb-2 opacity-50">Communiqué</p>
-                <h4 className="text-xl font-bold mb-2">Lancement de l&apos;optimiseur de CV 2.0</h4>
-                <p className="text-sm opacity-70">Avril 2026 • 3 min de lecture</p>
-              </div>
-            </div>
+                    <h3 className="mb-4 text-xl font-bold">{asset.title}</h3>
+
+                    <p className="flex-grow text-muted-foreground">
+                      {asset.description}
+                    </p>
+
+                    <div className="mt-8 inline-flex items-center gap-2 font-bold text-muted-foreground/70">
+                      Disponible bientôt
+                    </div>
+                  </div>
+                </Reveal>
+            ))}
           </div>
-        </Reveal>
+
+          <Reveal delay={0.4}>
+            <div className="grid grid-cols-1 items-center gap-16 rounded-[2.5rem] bg-foreground p-10 text-background md:p-16 lg:grid-cols-2">
+              <div>
+                <h2 className="mb-6 text-3xl font-bold">Contact presse</h2>
+
+                <p className="mb-8 text-lg text-background/70">
+                  Vous souhaitez parler de Karria, préparer un article, proposer
+                  un partenariat média ou demander plus d’informations sur le
+                  projet ? Vous pouvez nous écrire directement.
+                </p>
+
+                <Link
+                    href={`mailto:${CONTACT_EMAILS.press}`}
+                    className="inline-flex items-center gap-3 text-xl font-bold hover:underline sm:text-2xl"
+                >
+                  <Mail className="h-6 w-6" />
+                  {CONTACT_EMAILS.press}
+                </Link>
+              </div>
+
+              <div className="space-y-6">
+                <div className="rounded-2xl border border-background/20 bg-background/10 p-6">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wider opacity-50">
+                    Ressources
+                  </p>
+                  <h4 className="mb-2 text-xl font-bold">
+                    Kit média en préparation
+                  </h4>
+                  <p className="text-sm opacity-70">
+                    Logos, captures, visuels et informations officielles seront
+                    ajoutés ici progressivement.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-background/20 bg-background/10 p-6">
+                  <p className="mb-2 text-[11px] font-bold uppercase tracking-wider opacity-50">
+                    Actualités
+                  </p>
+                  <h4 className="mb-2 text-xl font-bold">
+                    Les annonces officielles arriveront bientôt
+                  </h4>
+                  <p className="text-sm opacity-70">
+                    Cette page sera mise à jour lors des prochaines étapes
+                    importantes de Karria.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
-    </div>
   );
 }

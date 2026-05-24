@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Conditions Générales de Vente",
@@ -34,23 +36,60 @@ export default function CGVPage() {
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">2. Paiement et Sécurité</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-foreground">
+                    2. Paiement et sécurité
+                  </h3>
+
                   <p>
-                    Le paiement s&apos;effectue par carte bancaire via nos prestataires de paiement sécurisés (Stripe). Karria ne stocke aucune information bancaire sur ses propres serveurs.
+                    Les paiements liés à l’application Karria sont effectués directement via
+                    l’App Store d’Apple ou le Google Play Store, selon la plateforme utilisée.
+                    Karria ne collecte ni ne stocke aucune information bancaire sur ses propres
+                    serveurs.
+                  </p>
+
+                  <p className="mt-4">
+                    La gestion des abonnements, achats intégrés, renouvellements, annulations et
+                    remboursements dépend des conditions et procédures propres à Apple ou Google.
                   </p>
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">3. Abonnement et Résiliation</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-foreground">
+                    3. Abonnements et résiliation
+                  </h3>
+
                   <p>
-                    Les abonnements sont renouvelés automatiquement à la fin de chaque période (mensuelle ou annuelle) sauf résiliation par l&apos;utilisateur avant la date d&apos;échéance. La résiliation est possible en un clic depuis votre espace personnel.
+                    Certains services de Karria peuvent être proposés sous forme d’abonnements
+                    mensuels ou annuels via l’App Store d’Apple ou le Google Play Store.
+                  </p>
+
+                  <p className="mt-4">
+                    Les abonnements sont renouvelés automatiquement selon les règles de la
+                    plateforme utilisée, sauf résiliation effectuée par l’utilisateur avant la
+                    prochaine date de renouvellement.
+                  </p>
+
+                  <p className="mt-4">
+                    La gestion des abonnements, modifications, annulations et remboursements
+                    s’effectue directement depuis les paramètres de votre compte Apple ou Google.
                   </p>
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">4. Droit de rétractation</h3>
+                  <h3 className="mb-4 text-2xl font-bold text-foreground">
+                    4. Droit de rétractation
+                  </h3>
+
                   <p>
-                    Conformément à la législation en vigueur pour les services numériques, le droit de rétractation de 14 jours peut s&apos;appliquer sous certaines conditions, sauf si l&apos;exécution du service a commencé avec votre accord.
+                    Les achats et abonnements effectués via l’App Store d’Apple ou le Google
+                    Play Store sont soumis aux règles et politiques de remboursement propres à
+                    chaque plateforme.
+                  </p>
+
+                  <p className="mt-4">
+                    Toute demande de remboursement, d’annulation ou d’exercice du droit de
+                    rétractation doit être effectuée directement auprès d’Apple ou de Google,
+                    conformément à leurs conditions d’utilisation respectives.
                   </p>
                 </section>
 
@@ -58,7 +97,7 @@ export default function CGVPage() {
                   <h3 className="text-2xl font-bold text-foreground mb-4">5. Support et Réclamations</h3>
                   <p>
                     Notre équipe support est à votre disposition pour toute question relative à votre facturation à l&apos;adresse : <br />
-                    <a href="mailto:billing@karria.app" className="text-primary hover:underline">billing@karria.app</a>
+                    <Link href={`mailto:${CONTACT_EMAILS.billing}`} className="text-primary hover:underline">{CONTACT_EMAILS.billing}</Link>
                   </p>
                 </section>
               </div>

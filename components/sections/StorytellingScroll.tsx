@@ -13,7 +13,7 @@ const STORY_STEPS = [
     screen: "/analysis.jpg",
     title: "Karria apprend à vous connaître",
     description:
-        "L’IA analyse votre profil, vos compétences et vos objectifs pour comprendre ce qui vous correspond vraiment.",
+        "L'IA analyse votre profil, vos compétences et vos objectifs pour comprendre ce qui vous correspond vraiment.",
   },
   {
     id: "matching",
@@ -21,12 +21,6 @@ const STORY_STEPS = [
     title: "Recevez des offres faites pour vous",
     description:
         "Karria détecte automatiquement les opportunités les plus adaptées à votre profil et à vos ambitions.",
-    floatingBadge: {
-      side: "right",
-      label: "Match détecté",
-      labelColor: "text-emerald-500",
-      value: "97 % Compatibilité",
-    },
   },
   {
     id: "generation",
@@ -34,19 +28,13 @@ const STORY_STEPS = [
     title: "Vos candidatures sont prêtes plus vite",
     description:
         "CV, lettres et contenus sont optimisés automatiquement pour chaque offre afin de maximiser vos chances.",
-    floatingBadge: {
-      side: "left",
-      label: "IA Optimizer",
-      labelColor: "text-amber-500",
-      value: "CV optimisé",
-    },
   },
   {
     id: "notifications",
     screen: "/notification.jpg",
     title: "Ne manquez plus les bonnes opportunités",
     description:
-        "Recevez des alertes intelligentes dès qu’une offre importante correspond à votre profil.",
+        "Recevez des alertes intelligentes dès qu'une offre importante correspond à votre profil.",
   },
   {
     id: "apply",
@@ -84,7 +72,7 @@ export default function StorytellingScroll() {
           {/* Halo de fond */}
           <div className="absolute inset-0 -z-10">
             <motion.div
-                className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/5 blur-[120px] dark:bg-indigo-500/10 sm:h-[800px] sm:w-[800px]"
+                className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-[120px] dark:bg-blue-500/10 sm:h-[800px] sm:w-[800px]"
                 animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -93,8 +81,8 @@ export default function StorytellingScroll() {
           <div className="mx-auto flex h-full w-full max-w-7xl flex-col px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
 
             {/* ── Texte ── */}
-            <div className="relative z-10 mt-16 flex w-full flex-col items-center text-center sm:mt-24 lg:mt-0 lg:w-1/2 lg:items-start lg:text-left">
-              <div className="relative h-[220px] w-full max-w-2xl sm:h-[280px] lg:h-[400px]">
+            <div className="relative z-10 mt-12 flex w-full flex-col items-center text-center sm:mt-20 lg:mt-0 lg:w-1/2 lg:items-start lg:text-left">
+              <div className="relative h-[200px] w-full max-w-2xl sm:h-[260px] lg:h-[400px]">
                 <AnimatePresence mode="wait">
                   <motion.div
                       key={activeStep.id}
@@ -108,7 +96,7 @@ export default function StorytellingScroll() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-primary sm:mb-4 sm:text-xs"
+                        className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-blue-500 dark:text-blue-400 sm:mb-4 sm:text-xs"
                     >
                       Étape {activeIndex + 1}
                     </motion.span>
@@ -129,7 +117,9 @@ export default function StorytellingScroll() {
                         key={step.id}
                         className={cn(
                             "h-1 rounded-full transition-all duration-500",
-                            i === activeIndex ? "w-8 bg-primary" : "w-2 bg-border",
+                            i === activeIndex
+                                ? "w-8 bg-blue-500 dark:bg-blue-400"
+                                : "w-2 bg-border",
                         )}
                     />
                 ))}
@@ -137,29 +127,42 @@ export default function StorytellingScroll() {
             </div>
 
             {/* ── Phone ── */}
-            <div className="relative flex w-full flex-1 items-center justify-center overflow-hidden pb-16 pt-8 lg:py-0">
-              <div className="relative flex h-[350px] w-full items-center justify-center sm:h-[500px] lg:h-[700px]">
+            {/*
+            Iphone MagicUI : taille contrôlée par le wrapper div.
+            L'aspect ratio est 433/882 ≈ 0.491 — on fixe la largeur
+            et la hauteur s'adapte automatiquement.
 
-                {/* Anneaux décoratifs */}
-                <motion.div
-                    className="absolute -inset-4 -z-10 rounded-full border border-primary/5 sm:-inset-10"
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.div
-                    className="absolute -inset-10 -z-10 rounded-full border border-primary/5 sm:-inset-20"
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                />
+            Largeurs par breakpoint :
+            - mobile  : 160px → hauteur ≈ 326px
+            - sm      : 200px → hauteur ≈ 408px
+            - md      : 240px → hauteur ≈ 490px
+            - lg      : 300px → hauteur ≈ 612px
+          */}
+            <div className="relative flex w-full flex-1 items-center justify-center pb-8 pt-6 lg:py-0">
 
-                <PhoneMockup
-                    src={activeStep.screen}
-                    alt={activeStep.title}
-                    screenKey={activeStep.id}
-                    animate={false}
-                    className="scale-[0.55] origin-center sm:scale-[0.75] md:scale-90 lg:scale-100"
-                />
-              </div>
+              {/* Anneaux décoratifs */}
+              <motion.div
+                  className="pointer-events-none absolute h-[240px] w-[240px] rounded-full border border-blue-500/10 sm:h-[340px] sm:w-[340px] lg:h-[500px] lg:w-[500px]"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+              <motion.div
+                  className="pointer-events-none absolute h-[300px] w-[300px] rounded-full border border-blue-500/5 sm:h-[420px] sm:w-[420px] lg:h-[600px] lg:w-[600px]"
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              />
+
+              {/*
+              Le wrapper fixe la taille — Iphone remplit ce wrapper via aspect-ratio.
+              PhoneMockup reçoit className pour contrôler la taille du wrapper interne.
+            */}
+              <PhoneMockup
+                  src={activeStep.screen}
+                  alt={activeStep.title}
+                  screenKey={activeStep.id}
+                  animate={false}
+                  className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[300px]"
+              />
             </div>
 
           </div>

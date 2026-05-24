@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { KarriaFull } from "@/components/ui/Logo";
@@ -52,13 +53,13 @@ export default function Error({
             </span>
           </ShimmerButton>
           
-          <a 
+          <Link 
             href="/"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-border bg-background hover:bg-secondary transition-all duration-300 font-medium"
           >
             <Home className="w-4 h-4" />
             Retour à l&apos;accueil
-          </a>
+          </Link>
         </div>
       </Reveal>
     </div>

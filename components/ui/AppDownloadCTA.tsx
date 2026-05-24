@@ -1,6 +1,6 @@
 import Link from "next/link";
-
 import { cn } from "@/lib/utils";
+import { APP_LINKS } from "@/lib/constants";
 
 type AppDownloadCTAProps = {
     className?: string;
@@ -31,9 +31,9 @@ function GooglePlayIcon({ className }: { className?: string }) {
 
 export function AppDownloadCTA({
                                    className,
-                                   appStoreHref = "#",
-                                   googlePlayHref = "#",
-                                   webHref = "#",
+                                   appStoreHref = APP_LINKS.appStore,
+                                   googlePlayHref = APP_LINKS.googlePlay,
+                                   webHref = APP_LINKS.webapp,
                                    showWebCTA = true,
                                }: AppDownloadCTAProps) {
     return (

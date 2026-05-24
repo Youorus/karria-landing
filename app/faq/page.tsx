@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Questions Fréquentes (FAQ)",
@@ -91,12 +93,12 @@ export default function FAQPage() {
             <p className="text-muted-foreground mb-8">
               Notre équipe est disponible 7j/7 pour vous aider.
             </p>
-            <a 
-              href="/contact"
+            <Link 
+              href={NAV_ROUTES.contact}
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all"
             >
               Contactez le support
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

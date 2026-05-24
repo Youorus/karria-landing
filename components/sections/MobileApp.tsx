@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Smartphone, Bell, Zap, MapPin } from "lucide-react";
 import PhoneMockup from "@/components/ui/PhoneMockup";
+import Link from "next/link";
+import { APP_LINKS } from "@/lib/constants";
 
 const MOBILE_FEATURES = [
   {
@@ -111,8 +113,8 @@ export default function MobileApp() {
 
             {/* App Store buttons */}
             <div className="flex flex-wrap gap-3">
-              <a
-                href="#"
+              <Link
+                href={APP_LINKS.appStore}
                 className="group flex items-center gap-3 px-5 py-3 rounded-xl bg-muted/50 border border-border hover:bg-muted hover:border-foreground/20 transition-all duration-300"
                 aria-label="Télécharger sur l'App Store"
               >
@@ -123,10 +125,10 @@ export default function MobileApp() {
                   <p className="text-[10px] text-muted-foreground leading-none">Disponible sur</p>
                   <p className="font-semibold text-foreground text-sm leading-tight">App Store</p>
                 </div>
-              </a>
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href={APP_LINKS.googlePlay}
                 className="group flex items-center gap-3 px-5 py-3 rounded-xl bg-muted/50 border border-border hover:bg-muted hover:border-foreground/20 transition-all duration-300"
                 aria-label="Télécharger sur Google Play"
               >
@@ -137,7 +139,7 @@ export default function MobileApp() {
                   <p className="text-[10px] text-muted-foreground leading-none">Disponible sur</p>
                   <p className="font-semibold text-foreground text-sm leading-tight">Google Play</p>
                 </div>
-              </a>
+              </Link>
             </div>
 
             <p className="text-xs text-muted-foreground/80 mt-4">

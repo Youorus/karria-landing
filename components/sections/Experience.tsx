@@ -3,6 +3,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -113,13 +115,13 @@ export default function Experience() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.7, ease: EASE }}
         >
-          <a
-            href="#"
+          <Link
+            href={NAV_ROUTES.pricing}
             className="btn-primary px-8 py-4 text-base gap-2.5 shadow-glow-lg"
           >
             Rejoindre Karria gratuitement
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

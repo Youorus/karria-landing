@@ -32,7 +32,7 @@ export default function ReconversionPage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
               Votre reconversion,
               <br />
-              <span className="text-gradient-blue">accompagnée par l&apos;IA</span>
+              <span className="text-gradient-blue">accompagnée par Karria</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Changer de voie est une décision courageuse. Karria vous aide à

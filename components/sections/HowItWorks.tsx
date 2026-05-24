@@ -4,6 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { UserCircle, BrainCircuit, Target, Rocket } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 const STEPS = [
   {
@@ -126,12 +128,12 @@ export default function HowItWorks() {
           transition={{ duration: 0.8, delay: 0.7, ease: EASE }}
           className="mt-16 flex justify-center"
         >
-          <a
-            href="#"
+          <Link
+            href={NAV_ROUTES.pricing}
             className="btn-primary px-8 py-4 text-base gap-2.5 shadow-glow"
           >
             Commencer maintenant — c&apos;est gratuit
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

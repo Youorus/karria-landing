@@ -24,12 +24,12 @@ export const CONTACT_EMAILS = {
 };
 
 export const SOCIAL_LINKS = {
-  twitter: "https://twitter.com/karriaapp",
+  x: "https://x.com/karriaapp",
   linkedin: "https://linkedin.com/company/karria",
   instagram: "https://instagram.com/karria.app",
+  tiktok: "https://tiktok.com/@karria.app",
   github: "https://github.com/karria-app",
-  founderTwitter: "https://twitter.com/marctakoumba",
-  founderLinkedin: "https://linkedin.com/in/marctakoumba",
+  founderInstagram: "https://instagram.com/marctakoumba",
 };
 
 export const APP_LINKS = {
