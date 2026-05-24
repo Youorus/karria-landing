@@ -34,11 +34,13 @@ export default function NotFound() {
       
       <Reveal delay={0.4}>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <RainbowButton href="/">
-            <span className="flex items-center gap-2">
-              <Home className="w-4 h-4" />
-              Retour à l&apos;accueil
-            </span>
+          <RainbowButton asChild>
+            <Link href="/">
+              <span className="flex items-center gap-2">
+                <Home className="w-4 h-4" />
+                Retour à l&apos;accueil
+              </span>
+            </Link>
           </RainbowButton>
           
           <Link 

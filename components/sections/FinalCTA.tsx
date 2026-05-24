@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Lock, ShieldCheck, Sparkles, Star, UserCheck } from "lucide-react";
+import { Lock, ShieldCheck, Star, UserCheck } from "lucide-react";
 import {AppDownloadCTA} from "@/components/ui/AppDownloadCTA";
 
 

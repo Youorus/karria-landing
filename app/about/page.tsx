@@ -5,6 +5,7 @@ import { AuroraText } from "@/components/ui/aurora-text";
 import { Heart, Zap, Target, Users, Quote } from "lucide-react";
 import { AppDownloadCTA } from "@/components/ui/AppDownloadCTA";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const metadata = buildMetadata({
   title: "À propos de Karria",
@@ -130,9 +131,10 @@ export default function AboutPage() {
             <Reveal>
               <aside className="relative mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:self-start">
                 <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-full shadow-2xl shadow-primary/10">
-                  <img
+                  <Image
                     src={FOUNDER.image}
                     alt={`${FOUNDER.name}, ${FOUNDER.role}`}
+                    fill
                     className="h-full w-full object-cover"
                   />
                 </div>

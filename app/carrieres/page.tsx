@@ -2,7 +2,6 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { RainbowButton } from "@/components/ui/rainbow-button";
 import { ArrowRight, Heart, Sparkles, Target, Users } from "lucide-react";
 import { CONTACT_EMAILS } from "@/lib/constants";
 

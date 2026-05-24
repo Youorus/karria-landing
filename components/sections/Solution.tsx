@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {Brain, FileText, PenLine, BarChart3, Bell, Shield, Target, Sparkles, Search} from "lucide-react";
+import {Brain, Bell, Sparkles, Search} from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { staggerContainer, fadeUp } from "@/lib/animations";

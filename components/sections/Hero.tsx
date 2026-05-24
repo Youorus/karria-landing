@@ -1,12 +1,9 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Apple, Briefcase, Play, Star, Zap } from "lucide-react";
-import PhoneMockup from "@/components/ui/PhoneMockup";
 import { PlatformLogoMarquee } from "@/components/sections/PlatformLogoMarquee";
 import {AuroraText} from "@/components/ui/aurora-text";
 import {AppDownloadCTA} from "@/components/ui/AppDownloadCTA";
-import { HeroLogoStage } from "@/components/sections/HeroPhoneStage";
 
 
 const EASE = [0.16, 1, 0.3, 1] as const;

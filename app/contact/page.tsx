@@ -2,7 +2,8 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { Mail, MessageSquare, Linkedin, Instagram, ArrowRight, SVGProps } from "lucide-react";
+import { Mail, MessageSquare, Linkedin, Instagram, ArrowRight } from "lucide-react";
+import { SVGProps } from "react";
 import { CONTACT_EMAILS, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata = buildMetadata({

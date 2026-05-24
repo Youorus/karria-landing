@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X, Clock, Bot, Users, FileCheck2, ArrowRight } from "lucide-react";
+import { X, Clock, Bot, Users, FileCheck2 } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { staggerContainer, fadeUp } from "@/lib/animations";

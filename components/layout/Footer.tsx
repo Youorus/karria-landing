@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { KarriaFull } from "@/components/ui/Logo";
-import { Linkedin, Instagram, Github, SVGProps } from "lucide-react";
+import { Linkedin, Instagram, Github } from "lucide-react";
+import { SVGProps } from "react";
 import { FOOTER_SECTIONS, SOCIAL_LINKS, APP_LINKS, NAV_ROUTES } from "@/lib/constants";
 
 // Custom X (formerly Twitter) Icon
