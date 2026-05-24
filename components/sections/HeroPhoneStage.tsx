@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
     BellRing,
@@ -12,10 +11,9 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import PhoneMockup from "@/components/ui/PhoneMockup";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
-
-const ORBIT_DURATION = 40;
 
 const FLOATING_BADGES = [
     {
@@ -23,8 +21,7 @@ const FLOATING_BADGES = [
         label: "Match IA",
         value: "Nouveau match 97%",
         tone: "blue",
-        // desktop positions (orbit ring)
-        position: "top-6 left-1/2 -translate-x-1/2",
+        position: "top-[5%] left-[-15%]",
         delay: 0.1,
     },
     {
@@ -32,7 +29,7 @@ const FLOATING_BADGES = [
         label: "IA active",
         value: "Profil analysé",
         tone: "violet",
-        position: "right-0 top-1/2 -translate-y-1/2",
+        position: "right-[-25%] top-[15%]",
         delay: 0.25,
     },
     {
@@ -40,7 +37,7 @@ const FLOATING_BADGES = [
         label: "Alerte",
         value: "Opportunité détectée",
         tone: "amber",
-        position: "bottom-6 left-1/2 -translate-x-1/2",
+        position: "bottom-[20%] right-[-20%]",
         delay: 0.4,
     },
     {
@@ -48,60 +45,31 @@ const FLOATING_BADGES = [
         label: "CV",
         value: "Score ATS 94/100",
         tone: "emerald",
-        position: "left-0 top-1/2 -translate-y-1/2",
+        position: "left-[-20%] bottom-[15%]",
         delay: 0.55,
     },
 ] as const;
 
-// Mobile orbit: rayon réduit, badges positionnés aux 4 points cardinaux
-// On utilise des positions absolues centrées via translate, comme sur desktop
-// mais dans un conteneur plus petit
-const MOBILE_BADGE_POSITIONS = [
-    "top-0 left-1/2 -translate-x-1/2",
-    "right-0 top-1/2 -translate-y-1/2",
-    "bottom-0 left-1/2 -translate-x-1/2",
-    "left-0 top-1/2 -translate-y-1/2",
-] as const;
-
 type Tone = "blue" | "emerald" | "violet" | "amber";
-
-type HeroLogoStageProps = {
-    className?: string;
-    logoClassName?: string;
-    showFloatingBadges?: boolean;
-};
 
 function getTone(tone: Tone) {
     const tones = {
-        blue: {
-            wrapper: "bg-blue-500/10 border-blue-500/20",
-            icon: "text-blue-500",
-        },
-        emerald: {
-            wrapper: "bg-emerald-500/10 border-emerald-500/20",
-            icon: "text-emerald-500",
-        },
-        violet: {
-            wrapper: "bg-violet-500/10 border-violet-500/20",
-            icon: "text-violet-500",
-        },
-        amber: {
-            wrapper: "bg-amber-500/10 border-amber-500/20",
-            icon: "text-amber-500",
-        },
+        blue: { wrapper: "bg-blue-500/10 border-blue-500/20", icon: "text-blue-500" },
+        emerald: { wrapper: "bg-emerald-500/10 border-emerald-500/20", icon: "text-emerald-500" },
+        violet: { wrapper: "bg-violet-500/10 border-violet-500/20", icon: "text-violet-500" },
+        amber: { wrapper: "bg-amber-500/10 border-amber-500/20", icon: "text-amber-500" },
     };
-
     return tones[tone];
 }
 
 function ProofBadge({
-                        icon: Icon,
-                        label,
-                        value,
-                        tone,
-                        className,
-                        compact = false,
-                    }: {
+    icon: Icon,
+    label,
+    value,
+    tone,
+    className,
+    compact = false,
+}: {
     icon: React.ElementType;
     label: string;
     value: string;
@@ -110,231 +78,110 @@ function ProofBadge({
     compact?: boolean;
 }) {
     const colors = getTone(tone);
-
     return (
-        <div
-            className={cn(
-                "flex items-center gap-2.5 rounded-2xl border border-border/60",
-                "bg-background/85 text-left backdrop-blur-2xl",
-                "shadow-[0_4px_24px_rgba(0,0,0,0.08),0_1px_4px_rgba(0,0,0,0.04)]",
-                "dark:bg-background/70 dark:shadow-primary/5",
-                compact ? "px-3 py-2.5" : "px-4 py-3",
-                className,
-            )}
-        >
-            <div
-                className={cn(
-                    "flex shrink-0 items-center justify-center rounded-xl border",
-                    colors.wrapper,
-                    compact ? "h-8 w-8" : "h-10 w-10",
-                )}
-            >
+        <div className={cn(
+            "flex items-center gap-3 rounded-2xl border border-border/60 bg-background/85 p-3 text-left backdrop-blur-2xl shadow-xl",
+            compact ? "px-3 py-2" : "px-4 py-3",
+            className
+        )}>
+            <div className={cn("flex shrink-0 items-center justify-center rounded-xl border", colors.wrapper, compact ? "h-8 w-8" : "h-10 w-10")}>
                 <Icon className={cn(colors.icon, compact ? "h-4 w-4" : "h-5 w-5")} />
             </div>
-
             <div>
-                <p
-                    className={cn(
-                        "font-bold uppercase text-muted-foreground",
-                        compact ? "text-[8px] tracking-[0.12em]" : "text-[10px] tracking-[0.16em]",
-                    )}
-                >
-                    {label}
-                </p>
-                <p
-                    className={cn(
-                        "mt-0.5 font-bold leading-tight text-foreground",
-                        compact ? "text-xs" : "text-sm",
-                    )}
-                >
-                    {value}
-                </p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">{label}</p>
+                <p className="font-bold leading-tight text-foreground text-sm">{value}</p>
             </div>
         </div>
     );
 }
 
-export function HeroLogoStage({
-                                  className,
-                                  logoClassName,
-                                  showFloatingBadges = true,
-                              }: HeroLogoStageProps) {
+export function HeroLogoStage({ className }: { className?: string }) {
     return (
-        <div
-            className={cn(
-                "relative flex w-full flex-col items-center justify-center overflow-hidden py-8 sm:overflow-visible sm:py-12",
-                className,
-            )}
-        >
-            {/* Halo radial — couche externe */}
-            <motion.div
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-3xl dark:bg-primary/10 sm:h-[560px] sm:w-[560px]"
-                animate={{ scale: [1, 1.10, 1], opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-            />
-            {/* Halo radial — couche interne */}
-            <motion.div
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[180px] w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-3xl dark:bg-primary/25 sm:h-[380px] sm:w-[380px]"
-                animate={{ scale: [1, 1.06, 1], opacity: [0.6, 1, 0.6] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            />
-
-            {/* ── DESKTOP ── */}
-            <div className="relative hidden h-[520px] w-full max-w-[720px] items-center justify-center sm:flex">
-                {/* Anneaux décoratifs */}
-                <div className="pointer-events-none absolute">
-                    <div
-                        className="absolute left-1/2 top-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-                        style={{ border: "1px dashed rgba(99,102,241,0.08)" }}
-                    />
-                    <div
-                        className="absolute left-1/2 top-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-                        style={{ border: "0.5px solid rgba(99,102,241,0.14)" }}
-                    />
-                </div>
-
-                {/* Badges orbitaux */}
-                {showFloatingBadges && (
-                    <motion.div
-                        className="absolute inset-0"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: ORBIT_DURATION, repeat: Infinity, ease: "linear" }}
-                    >
-                        {FLOATING_BADGES.map((badge) => (
-                            <motion.div
-                                key={badge.label}
-                                initial={{ opacity: 0, scale: 0.88, filter: "blur(8px)" }}
-                                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                                transition={{ delay: badge.delay, duration: 0.8, ease: EASE }}
-                                className={cn("absolute", badge.position)}
-                            >
-                                <motion.div
-                                    animate={{ rotate: -360 }}
-                                    transition={{ duration: ORBIT_DURATION, repeat: Infinity, ease: "linear" }}
-                                >
-                                    <ProofBadge
-                                        icon={badge.icon}
-                                        label={badge.label}
-                                        value={badge.value}
-                                        tone={badge.tone}
-                                        className="min-w-[220px]"
-                                    />
-                                </motion.div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
-                )}
-
-                {/* Logo */}
+        <div className={cn("relative flex w-full flex-col items-center justify-center py-12 sm:py-24", className)}>
+            
+            {/* --- Scène de Lumière (Background) --- */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                {/* Halo Principal */}
                 <motion.div
-                    animate={{ y: [0, -12, 0], scale: [1, 1.028, 1] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                    className={cn(
-                        "relative z-20 flex h-[300px] w-[300px] items-center justify-center",
-                        logoClassName,
-                    )}
-                >
-                    <Image
-                        src="/karria_light_icon.png"
-                        alt="Logo Karria"
-                        width={1024}
-                        height={1024}
-                        priority
-                        className="h-full w-full object-contain drop-shadow-[0_8px_32px_rgba(99,102,241,0.30)]"
-                    />
-                </motion.div>
-
-                {/* Pill */}
-                <motion.div
-                    initial={{ opacity: 0, y: 16, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ delay: 0.8, duration: 0.8, ease: EASE }}
-                    className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-border bg-background/85 px-4 py-2 shadow-xl backdrop-blur-2xl"
-                >
-                    <Sparkles className="h-4 w-4 text-primary" />
-                    <span className="text-xs font-bold text-foreground">Assistant carrière IA</span>
-                    <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                </motion.div>
+                    className="h-[400px] w-[300px] sm:h-[700px] sm:w-[500px] rounded-full bg-primary/10 blur-[120px]"
+                    animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.1, 1] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                />
             </div>
 
-            {/* ── MOBILE ── */}
-            <div className="relative flex h-[420px] w-full items-center justify-center sm:hidden">
-                {/* Anneaux décoratifs mobile */}
-                <div className="pointer-events-none absolute">
-                    <div
-                        className="absolute left-1/2 top-1/2 h-[310px] w-[310px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-                        style={{ border: "1px dashed rgba(99,102,241,0.08)" }}
+            {/* --- Conteneur Principal (iPhone + Badges) --- */}
+            <div className="relative z-20 flex items-center justify-center w-full max-w-[280px] sm:max-w-[340px]">
+                
+                {/* iPhone Mockup avec Image Intégrée */}
+                <div className="relative group">
+                    <PhoneMockup 
+                        src="/hero.jpg" 
+                        className="w-full drop-shadow-[0_32px_64px_rgba(0,0,0,0.2)]"
                     />
-                    <div
-                        className="absolute left-1/2 top-1/2 h-[268px] w-[268px] -translate-x-1/2 -translate-y-1/2 rounded-full"
-                        style={{ border: "0.5px solid rgba(99,102,241,0.14)" }}
-                    />
+                    
+                    {/* Pill Flottante devant l'iPhone */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 1, duration: 0.8 }}
+                        className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 rounded-full border border-border bg-background/90 px-5 py-2.5 shadow-2xl backdrop-blur-xl min-w-[220px] justify-center"
+                    >
+                        <Sparkles className="h-4 w-4 text-primary animate-pulse" />
+                        <span className="text-xs font-bold whitespace-nowrap">Assistant carrière IA</span>
+                        <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                    </motion.div>
                 </div>
 
-                {/* Badges orbitaux mobile — rayon plus serré, badges compacts */}
-                {showFloatingBadges && (
-                    <motion.div
-                        className="absolute inset-0"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: ORBIT_DURATION, repeat: Infinity, ease: "linear" }}
-                    >
-                        {FLOATING_BADGES.map((badge, i) => (
+                {/* --- Badges Flottants (Uniquement sur Desktop/Large Tablet) --- */}
+                <div className="absolute inset-0 pointer-events-none">
+                    {FLOATING_BADGES.map((badge, i) => (
+                        <motion.div
+                            key={badge.label}
+                            initial={{ opacity: 0, scale: 0.5, x: i % 2 === 0 ? -40 : 40 }}
+                            animate={{ opacity: 1, scale: 1, x: 0 }}
+                            transition={{ 
+                                delay: 0.5 + badge.delay, 
+                                duration: 1, 
+                                ease: EASE 
+                            }}
+                            className={cn("absolute hidden md:block", badge.position)}
+                        >
                             <motion.div
-                                key={badge.label}
-                                initial={{ opacity: 0, scale: 0.88, filter: "blur(6px)" }}
-                                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                                transition={{ delay: badge.delay, duration: 0.8, ease: EASE }}
-                                className={cn("absolute", MOBILE_BADGE_POSITIONS[i])}
+                                animate={{ y: [0, -12, 0] }}
+                                transition={{ 
+                                    duration: 5 + i, 
+                                    repeat: Infinity, 
+                                    ease: "easeInOut",
+                                    delay: i * 0.2
+                                }}
                             >
-                                <motion.div
-                                    animate={{ rotate: -360 }}
-                                    transition={{ duration: ORBIT_DURATION, repeat: Infinity, ease: "linear" }}
-                                >
-                                    <ProofBadge
-                                        icon={badge.icon}
-                                        label={badge.label}
-                                        value={badge.value}
-                                        tone={badge.tone}
-                                        compact
-                                        className="min-w-[130px] max-w-[148px]"
-                                    />
-                                </motion.div>
+                                <ProofBadge
+                                    icon={badge.icon}
+                                    label={badge.label}
+                                    value={badge.value}
+                                    tone={badge.tone}
+                                    className="min-w-[190px] border-primary/10 shadow-primary/5"
+                                />
                             </motion.div>
-                        ))}
-                    </motion.div>
-                )}
-
-                {/* Logo mobile */}
-                <motion.div
-                    animate={{ y: [0, -10, 0], scale: [1, 1.025, 1] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                    className={cn(
-                        "relative z-20 flex h-[160px] w-[160px] items-center justify-center",
-                        logoClassName,
-                    )}
-                >
-                    <Image
-                        src="/karria_light_icon.png"
-                        alt="Logo Karria"
-                        width={1024}
-                        height={1024}
-                        priority
-                        className="h-full w-full object-contain drop-shadow-[0_8px_32px_rgba(99,102,241,0.30)]"
-                    />
-                </motion.div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
 
-            {/* Pill mobile — sous la scène orbitale */}
-            <motion.div
-                initial={{ opacity: 0, y: 12, scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 0.7, duration: 0.7, ease: EASE }}
-                className="mt-2 flex items-center gap-2 rounded-full border border-border bg-background/85 px-4 py-2 shadow-lg backdrop-blur-2xl sm:hidden"
-            >
-                <Sparkles className="h-4 w-4 text-primary" />
-                <span className="text-xs font-bold text-foreground">Assistant carrière IA</span>
-                <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-            </motion.div>
+            {/* --- Version Mobile des Badges (sous l'iPhone) --- */}
+            <div className="flex flex-wrap justify-center gap-3 mt-16 md:hidden px-6">
+                {FLOATING_BADGES.slice(0, 2).map((badge) => (
+                    <ProofBadge
+                        key={badge.label}
+                        icon={badge.icon}
+                        label={badge.label}
+                        value={badge.value}
+                        tone={badge.tone}
+                        compact
+                        className="shadow-sm"
+                    />
+                ))}
+            </div>
         </div>
     );
 }

@@ -69,15 +69,6 @@ export default function Hero() {
                 googlePlayHref="#"
             />
           </motion.div>
-
-          <motion.div
-              initial={{ opacity: 0, y: 50, filter: "blur(12px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              transition={{ duration: 1.5, delay: 0.5, ease: EASE }}
-              className="relative mt-2 flex w-full justify-center"
-          >
-            <HeroLogoStage />
-          </motion.div>
         </motion.div>
 
         <motion.div
