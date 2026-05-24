@@ -19,9 +19,17 @@ const NAV_LINKS = [
       { label: "Recherche Emploi", href: "/recherche-emploi-ia", desc: "Trouvez votre prochain rôle" },
     ],
   },
-  { label: "Comment ça marche", href: "#how-it-works" },
-  { label: "Tarifs", href: "#pricing" },
-  { label: "Blog", href: "/blog" },
+  {
+    label: "Ressources",
+    href: "/ressources",
+    children: [
+      { label: "Blog", href: "/blog", desc: "Conseils et actualités" },
+      { label: "FAQ", href: "/faq", desc: "Questions fréquentes" },
+      { label: "À propos", href: "/about", desc: "Notre vision & Marc Takoumba" },
+      { label: "Carrières", href: "/carrieres", desc: "Rejoignez l'aventure" },
+    ],
+  },
+  { label: "Tarifs", href: "/#pricing" },
 ];
 
 export default function Header() {

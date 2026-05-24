@@ -86,6 +86,72 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as ChangeFrequency,
       priority: 0.7,
     },
+    {
+      url: `${SITE_URL}/about`,
+      lastModified: now,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: now,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/faq`,
+      lastModified: now,
+      changeFrequency: "weekly" as ChangeFrequency,
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/carrieres`,
+      lastModified: now,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/presse`,
+      lastModified: now,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/confidentialite`,
+      lastModified: now,
+      changeFrequency: "yearly" as ChangeFrequency,
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/cgu`,
+      lastModified: now,
+      changeFrequency: "yearly" as ChangeFrequency,
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/cgv`,
+      lastModified: now,
+      changeFrequency: "yearly" as ChangeFrequency,
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/mentions-legales`,
+      lastModified: now,
+      changeFrequency: "yearly" as ChangeFrequency,
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/cookies`,
+      lastModified: now,
+      changeFrequency: "yearly" as ChangeFrequency,
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/securite`,
+      lastModified: now,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.7,
+    },
   ];
 
   return staticPages;
