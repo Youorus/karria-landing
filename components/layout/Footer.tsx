@@ -1,44 +1,13 @@
 import Link from "next/link";
 import { KarriaFull } from "@/components/ui/Logo";
 import { Twitter, Linkedin, Instagram, Github } from "lucide-react";
+import { FOOTER_SECTIONS, SOCIAL_LINKS, APP_LINKS, NAV_ROUTES } from "@/lib/constants";
 
-const FOOTER_LINKS = {
-  Produit: [
-    { label: "Matching IA", href: "/matching-emploi-ia" },
-    { label: "CV IA", href: "/cv-ia" },
-    { label: "Lettres IA", href: "/lettre-motivation-ia" },
-    { label: "Recherche Emploi", href: "/recherche-emploi-ia" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Tarifs", href: "/#pricing" },
-  ],
-  Ressources: [
-    { label: "Blog", href: "/blog" },
-    { label: "Alternance", href: "/alternance" },
-    { label: "Reconversion", href: "/reconversion" },
-    { label: "Jeune diplômé", href: "/jeune-diplome" },
-    { label: "Sécurité", href: "/securite" },
-  ],
-  Entreprise: [
-    { label: "À propos", href: "/about" },
-    { label: "Carrières", href: "/carrieres" },
-    { label: "Presse", href: "/presse" },
-    { label: "Partenaires", href: "/partenaires" },
-    { label: "Contact", href: "/contact" },
-  ],
-  Légal: [
-    { label: "Confidentialité", href: "/confidentialite" },
-    { label: "CGU", href: "/cgu" },
-    { label: "CGV", href: "/cgv" },
-    { label: "Cookies", href: "/cookies" },
-    { label: "Mentions légales", href: "/mentions-legales" },
-  ],
-};
-
-const SOCIAL_LINKS = [
-  { label: "Twitter / X", href: "https://twitter.com/karriaapp", icon: Twitter },
-  { label: "LinkedIn", href: "https://linkedin.com/company/karria", icon: Linkedin },
-  { label: "Instagram", href: "https://instagram.com/karria.app", icon: Instagram },
-  { label: "GitHub", href: "https://github.com/karria-app", icon: Github },
+const SOCIAL_ICONS = [
+  { label: "Twitter / X", href: SOCIAL_LINKS.twitter, icon: Twitter },
+  { label: "LinkedIn", href: SOCIAL_LINKS.linkedin, icon: Linkedin },
+  { label: "Instagram", href: SOCIAL_LINKS.instagram, icon: Instagram },
+  { label: "GitHub", href: SOCIAL_LINKS.github, icon: Github },
 ];
 
 export default function Footer() {
@@ -60,7 +29,7 @@ export default function Footer() {
             {/* App badges */}
             <div className="flex flex-wrap gap-3">
               <a
-                href="#"
+                href={APP_LINKS.appStore}
                 className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-secondary hover:bg-accent border border-border transition-all duration-300 text-sm font-medium text-foreground w-fit"
                 aria-label="Télécharger sur l'App Store"
               >
@@ -70,7 +39,7 @@ export default function Footer() {
                 App Store
               </a>
               <a
-                href="#"
+                href={APP_LINKS.googlePlay}
                 className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-secondary hover:bg-accent border border-border transition-all duration-300 text-sm font-medium text-foreground w-fit"
                 aria-label="Télécharger sur Google Play"
               >
@@ -83,17 +52,17 @@ export default function Footer() {
           </div>
 
           {/* Links */}
-          {Object.entries(FOOTER_LINKS).map(([category, links]) => (
-            <div key={category}>
+          {Object.entries(FOOTER_SECTIONS).map(([key, links]) => (
+            <div key={key}>
               <h3 className="text-[11px] font-bold text-foreground uppercase tracking-[0.1em] mb-6">
-                {category}
+                {key === 'product' ? 'Produit' : key === 'resources' ? 'Ressources' : key === 'company' ? 'Entreprise' : 'Légal'}
               </h3>
               <ul className="space-y-4" role="list">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[14px] text-muted-foreground hover:text-primary transition-colors duration-300"
+                      className="text-[14px] text-muted-foreground hover:text-foreground transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -111,7 +80,7 @@ export default function Footer() {
               © 2026 Karria. Fait avec passion en France.
             </p>
             <div className="flex items-center gap-6">
-              {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+              {SOCIAL_ICONS.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
                   href={href}
@@ -133,8 +102,8 @@ export default function Footer() {
             </span>
             <div className="h-4 w-px bg-border hidden sm:block" />
             <div className="flex items-center gap-5 text-[13px] font-medium text-muted-foreground">
-              <Link href="/confidentialite" className="hover:text-foreground transition-colors">Confidentialité</Link>
-              <Link href="/cgu" className="hover:text-foreground transition-colors">CGU</Link>
+              <Link href={NAV_ROUTES.privacy} className="hover:text-foreground transition-colors">Confidentialité</Link>
+              <Link href={NAV_ROUTES.cgu} className="hover:text-foreground transition-colors">CGU</Link>
             </div>
           </div>
         </div>

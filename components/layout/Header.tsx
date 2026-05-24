@@ -8,28 +8,40 @@ import { cn } from "@/lib/utils";
 import Logo from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
+import { NAV_ROUTES } from "@/lib/constants";
+
 const NAV_LINKS = [
   {
     label: "Produit",
     href: "#features",
     children: [
-      { label: "Matching IA", href: "/matching-emploi-ia", desc: "Offres personnalisées" },
-      { label: "CV IA", href: "/cv-ia", desc: "CV optimisés automatiquement" },
-      { label: "Lettres IA", href: "/lettre-motivation-ia", desc: "Candidatures ciblées" },
-      { label: "Recherche Emploi", href: "/recherche-emploi-ia", desc: "Trouvez votre prochain rôle" },
+      { label: "Matching IA", href: NAV_ROUTES.matching, desc: "Offres personnalisées" },
+      { label: "CV IA", href: NAV_ROUTES.cv, desc: "CV optimisés automatiquement" },
+      { label: "Lettres IA", href: NAV_ROUTES.letters, desc: "Candidatures ciblées" },
+      { label: "Recherche Emploi", href: NAV_ROUTES.search, desc: "Trouvez votre prochain rôle" },
     ],
   },
   {
     label: "Ressources",
-    href: "/ressources",
+    href: NAV_ROUTES.ressources,
     children: [
-      { label: "Blog", href: "/blog", desc: "Conseils et actualités" },
-      { label: "FAQ", href: "/faq", desc: "Questions fréquentes" },
-      { label: "À propos", href: "/about", desc: "Notre vision & Marc Takoumba" },
-      { label: "Carrières", href: "/carrieres", desc: "Rejoignez l'aventure" },
+      { label: "Blog", href: NAV_ROUTES.blog, desc: "Conseils et actualités" },
+      { label: "FAQ", href: NAV_ROUTES.faq, desc: "Questions fréquentes" },
+      { label: "Alternance", href: NAV_ROUTES.alternance, desc: "Guides & opportunités" },
+      { label: "Jeune diplômé", href: NAV_ROUTES.jeuneDiplome, desc: "Lancez votre carrière" },
     ],
   },
-  { label: "Tarifs", href: "/#pricing" },
+  {
+    label: "Entreprise",
+    href: NAV_ROUTES.about,
+    children: [
+      { label: "À propos", href: NAV_ROUTES.about, desc: "Notre vision & Marc Takoumba" },
+      { label: "Carrières", href: NAV_ROUTES.careers, desc: "Rejoignez l'aventure" },
+      { label: "Presse", href: NAV_ROUTES.press, desc: "Espace media & kits" },
+      { label: "Partenaires", href: NAV_ROUTES.partners, desc: "Collaborons ensemble" },
+    ],
+  },
+  { label: "Tarifs", href: NAV_ROUTES.pricing },
 ];
 
 export default function Header() {
