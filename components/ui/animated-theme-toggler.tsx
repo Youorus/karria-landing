@@ -21,7 +21,6 @@ export function AnimatedThemeToggler({ className }: AnimatedThemeTogglerProps) {
     const isDark = resolvedTheme === "dark";
 
     // Support for View Transitions API
-    // @ts-ignore - document.startViewTransition is not in the default types
     if (
       !document.startViewTransition ||
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -37,7 +36,7 @@ export function AnimatedThemeToggler({ className }: AnimatedThemeTogglerProps) {
       Math.max(y, window.innerHeight - y)
     );
 
-    // @ts-ignore - document.startViewTransition is not in the default types
+
     const transition = document.startViewTransition(async () => {
       setTheme(isDark ? "light" : "dark");
     });

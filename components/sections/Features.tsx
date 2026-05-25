@@ -11,7 +11,6 @@ import {
   Palette,
   LayoutDashboard,
   Bell,
-  ArrowRight,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type Feature, FEATURES_DATA } from "@/lib/features";
