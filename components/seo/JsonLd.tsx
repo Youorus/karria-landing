@@ -24,9 +24,87 @@ export function JsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      availableLanguage: ["French"],
+      telephone: "+33-0-00-00-00-00", // Placeholder or real if available
+      availableLanguage: ["French", "English"],
       email: "hello@karria.app",
     },
+    brand: {
+      "@type": "Brand",
+      name: SITE_NAME,
+      logo: `${SITE_URL}/logo.svg`,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Paris",
+      addressCountry: "FR",
+    },
+    founder: {
+      "@type": "Person",
+      name: "Marc Takoumba",
+      url: "https://instagram.com/marctakoumba",
+    },
+  };
+
+  const sitenavigationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: [
+      {
+        "@type": "SiteNavigationElement",
+        position: 1,
+        name: "Matching Emploi IA",
+        description: "Trouvez les meilleures offres d'emploi grâce à notre algorithme de matching intelligent.",
+        url: `${SITE_URL}/matching-emploi-ia`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 2,
+        name: "CV IA",
+        description: "Générez un CV optimisé pour les ATS en quelques secondes avec l'IA.",
+        url: `${SITE_URL}/cv-ia`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 3,
+        name: "Lettre de Motivation IA",
+        description: "Créez des lettres de motivation personnalisées et percutantes pour chaque offre.",
+        url: `${SITE_URL}/lettre-motivation-ia`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 4,
+        name: "Blog Carrière",
+        description: "Conseils, guides et actualités sur le recrutement et l'IA.",
+        url: `${SITE_URL}/blog`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 5,
+        name: "À Propos",
+        description: "Découvrez la vision de Karria et l'équipe derrière la plateforme.",
+        url: `${SITE_URL}/about`,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        position: 6,
+        name: "Tarifs",
+        description: "Découvrez nos plans et commencez à propulser votre carrière gratuitement.",
+        url: `${SITE_URL}/#pricing`,
+      },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Accueil",
+        item: SITE_URL,
+      },
+    ],
   };
 
   const websiteSchema = {
@@ -152,6 +230,14 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sitenavigationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"

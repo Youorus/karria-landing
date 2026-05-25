@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "Karria — La plateforme IA qui réinvente votre carrière",
+  title: "Karria - La plateforme IA qui réinvente et propulse votre carrière",
   description:
     "Karria est la plateforme d'intelligence artificielle qui transforme votre recherche d'emploi : matching IA, génération de CV, lettres de motivation personnalisées et accompagnement carrière intelligent.",
   path: "/",

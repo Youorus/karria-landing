@@ -38,7 +38,7 @@ export default function Footer() {
               <KarriaFull size="sm" className="text-foreground" />
             </div>
             <p className="text-muted-foreground text-[15px] leading-relaxed max-w-sm mb-10">
-              La plateforme d&apos;intelligence artificielle qui réinvente votre carrière. 
+              La plateforme d&apos;intelligence artificielle qui réinvente votre carrière en France. 
               Du matching intelligent à l&apos;optimisation de CV, décrochez le job que vous méritez.
             </p>
 
@@ -93,7 +93,7 @@ export default function Footer() {
         <div className="pt-10 border-t border-border flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <p className="text-[13px] text-muted-foreground">
-              © 2026 Karria. Fait avec passion en France.
+              © 2026 Karria. Disponible exclusivement en France pour le moment.
             </p>
             <div className="flex items-center gap-6">
               {SOCIAL_ICONS.map(({ label, href, icon: Icon }) => (

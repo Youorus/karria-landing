@@ -6,7 +6,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/ui/Logo";
-import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 import { NAV_ROUTES } from "@/lib/constants";
 
@@ -89,17 +89,18 @@ export default function Header() {
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="relative flex h-16 items-center justify-between md:h-20">
             {/* Logo */}
-            <div className="flex items-center gap-8">
+            <div className="relative z-10 flex h-full items-center justify-start">
               <Logo variant="full" size="sm" />
+            </div>
 
-              {/* Desktop Nav */}
-              <nav
-                ref={dropdownRef}
-                className="hidden lg:flex items-center gap-1"
-                aria-label="Navigation principale"
-              >
+            {/* Desktop Nav */}
+            <nav
+              ref={dropdownRef}
+              className="absolute left-1/2 hidden -translate-x-1/2 items-center justify-center gap-1 lg:flex"
+              aria-label="Navigation principale"
+            >
                 {NAV_LINKS.map((link) => (
                   <div key={link.label} className="relative">
                     {link.children ? (
@@ -167,31 +168,16 @@ export default function Header() {
                     </AnimatePresence>
                   </div>
                 ))}
-              </nav>
-            </div>
+            </nav>
 
             {/* Desktop CTAs */}
-            <div className="hidden md:flex items-center gap-4">
-              <ThemeToggle />
-              <Link
-                href="#"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                Se connecter
-              </Link>
-              <Link
-                href="#"
-                className="btn-primary text-sm px-6 py-2.5 shadow-xl shadow-primary/20"
-                aria-label="Commencer gratuitement avec Karria"
-              >
-                Commencer
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="relative z-10 hidden h-full items-center justify-end gap-4 md:flex">
+              <AnimatedThemeToggler />
             </div>
 
             {/* Mobile menu toggle */}
-            <div className="flex items-center gap-3 md:hidden">
-              <ThemeToggle />
+            <div className="relative z-10 flex h-full items-center justify-end gap-3 md:hidden">
+              <AnimatedThemeToggler />
               <button
                 className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
                 onClick={() => setMobileOpen(!mobileOpen)}
