@@ -5,29 +5,29 @@
 
 export const SITE_CONFIG = {
   name: "Karria",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://karria.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://karria.fr",
   foundingDate: "2024",
   founder: "Marc Takoumba",
   location: "Paris, France",
 };
 
 export const CONTACT_EMAILS = {
-  general: "hello@karria.app",
-  support: "hello@karria.app",
-  press: "press@karria.app",
-  partners: "partners@karria.app",
-  jobs: "jobs@karria.app",
-  privacy: "privacy@karria.app",
-  legal: "legal@karria.app",
-  billing: "billing@karria.app",
-  security: "security@karria.app",
+  general: "hello@karria.fr",
+  support: "hello@karria.fr",
+  press: "press@karria.fr",
+  partners: "partners@karria.fr",
+  jobs: "jobs@karria.fr",
+  privacy: "privacy@karria.fr",
+  legal: "legal@karria.fr",
+  billing: "billing@karria.fr",
+  security: "security@karria.fr",
 };
 
 export const SOCIAL_LINKS = {
   x: "https://x.com/karriaapp",
   linkedin: "https://linkedin.com/company/karria",
   instagram: "https://instagram.com/karria.app",
-  tiktok: "https://tiktok.com/@karria.app",
+  tiktok: "https://tiktok.com/@karria.fr",
   github: "https://github.com/karria-app",
   founderInstagram: "https://instagram.com/marctakoumba",
 };
@@ -35,7 +35,7 @@ export const SOCIAL_LINKS = {
 export const APP_LINKS = {
   appStore: "#",
   googlePlay: "#",
-  webapp: "https://app.karria.app",
+  webapp: "https://app.karria.fr",
 };
 
 export const NAV_ROUTES = {

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { APP_LINKS } from "@/lib/constants";
+import { trackDownloadClick, trackCTAClick } from "@/lib/analytics-events";
 
 type AppDownloadCTAProps = {
     className?: string;
@@ -42,6 +45,7 @@ export function AppDownloadCTA({
                 <Link
                     href={appStoreHref}
                     aria-label="Télécharger Karria sur l'App Store"
+                    onClick={() => trackDownloadClick("app_store")}
                     className={cn(
                         "group inline-flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-4 sm:w-auto",
                         "bg-zinc-950 text-white shadow-2xl shadow-zinc-950/10",
@@ -65,6 +69,7 @@ export function AppDownloadCTA({
                 <Link
                     href={googlePlayHref}
                     aria-label="Télécharger Karria sur Google Play"
+                    onClick={() => trackDownloadClick("google_play")}
                     className={cn(
                         "group inline-flex w-full items-center justify-center gap-3 rounded-2xl border px-7 py-4 sm:w-auto",
                         "border-black/10 bg-white/80 text-zinc-950 shadow-xl shadow-black/5 backdrop-blur-xl",
@@ -90,6 +95,7 @@ export function AppDownloadCTA({
             {showWebCTA && (
                 <Link
                     href={webHref}
+                    onClick={() => trackCTAClick("Essayer gratuitement")}
                     className={cn(
                         "group inline-flex items-center gap-2 text-sm font-semibold",
                         "text-muted-foreground transition-colors hover:text-primary",

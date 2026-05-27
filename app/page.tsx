@@ -8,9 +8,9 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "Plateforme IA pour réinventer et propulser votre carrière",
+  title: "Plateforme IA pour votre carrière",
   description:
-    "Karria est la plateforme d'intelligence artificielle qui transforme votre recherche d'emploi : matching IA, génération de CV, lettres de motivation personnalisées et accompagnement carrière intelligent.",
+    "Karria transforme votre recherche d'emploi grâce à l'IA : matching personnalisé, CV optimisé, lettres ciblées. Lancez-vous gratuitement.",
   path: "/",
   keywords: [
     "plateforme carrière IA",

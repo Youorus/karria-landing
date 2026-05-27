@@ -10,6 +10,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { CookieBanner } from "@/components/analytics/CookieBanner";
+import { PageTracker } from "@/components/analytics/PageTracker";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
         alt: `${SITE_NAME} — Matching IA, CV, Lettres de motivation`,
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} — La plateforme IA qui réinvente votre carrière`,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/og-image.png`],
+    images: [`${SITE_URL}/opengraph-image`],
     creator: "@karriaapp",
     site: "@karriaapp",
   },
@@ -115,6 +116,7 @@ export default function RootLayout({
           </SmoothScrollProvider>
         </ThemeProvider>
         <GoogleAnalytics />
+        <PageTracker />
         <CookieBanner />
       </body>
     </html>

@@ -1,6 +1,6 @@
 # Rapport d'Audit SEO — Karria
 **Date :** 27 mai 2026  
-**URL cible :** https://karria.app  
+**URL cible :** https://karria.fr  
 **Technologie :** Next.js 14+ (App Router)
 
 ---
@@ -144,13 +144,13 @@
 
 #### Google Search Console
 1. Aller sur [search.google.com/search-console](https://search.google.com/search-console)
-2. Ajouter la propriété `karria.app`
+2. Ajouter la propriété `karria.fr`
 3. Vérifier via DNS (recommandé) ou via balise meta
 4. Remplacer le commentaire dans `app/layout.tsx` :
    ```typescript
    verification: { google: "VOTRE_VRAI_TOKEN" },
    ```
-5. Soumettre le sitemap : `https://karria.app/sitemap.xml`
+5. Soumettre le sitemap : `https://karria.fr/sitemap.xml`
 6. Activer les rapports Core Web Vitals et Rich Results
 
 #### OG Image manquante — **CRITIQUE pour partage social**
@@ -198,7 +198,7 @@ Si Karria a un numéro professionnel, le réintégrer dans `components/seo/JsonL
 - Soumettre l'app sur Product Hunt
 - Lister Karria sur Alternativeto.net, G2, Capterra
 - Articles invités sur des blogs carrière français (Cadremploi, HelloWork, L'Etudiant)
-- Profil LinkedIn Company vérifié avec lien vers karria.app
+- Profil LinkedIn Company vérifié avec lien vers karria.fr
 
 #### Contenu Blog (SEO de contenu)
 Les pages de blog sont vides. Publier 2-3 articles/mois sur :

@@ -9,6 +9,7 @@ import Logo from "@/components/ui/Logo";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 import { NAV_ROUTES } from "@/lib/constants";
+import { trackLoginClick, trackSignupClick } from "@/lib/analytics-events";
 
 const NAV_LINKS = [
   {
@@ -240,14 +241,14 @@ export default function Header() {
               <div className="mt-auto space-y-4 pb-8">
                 <Link
                   href="#"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => { setMobileOpen(false); trackLoginClick(); }}
                   className="btn-secondary w-full justify-center h-14"
                 >
                   Se connecter
                 </Link>
                 <Link
                   href="#"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={() => { setMobileOpen(false); trackSignupClick("header_mobile"); }}
                   className="btn-primary w-full justify-center h-14 text-lg shadow-xl shadow-primary/20"
                 >
                   Commencer gratuitement

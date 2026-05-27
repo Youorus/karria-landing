@@ -47,7 +47,7 @@ export function buildMetadata({
       type: "website",
       images: [
         {
-          url: `${SITE_URL}/og-image.png`,
+          url: `${SITE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} — La plateforme IA qui réinvente votre carrière`,
@@ -58,7 +58,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [`${SITE_URL}/og-image.png`],
+      images: [`${SITE_URL}/opengraph-image`],
       creator: "@karriaapp",
     },
     robots: noIndex

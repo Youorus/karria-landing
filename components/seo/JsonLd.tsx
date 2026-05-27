@@ -25,7 +25,7 @@ export function JsonLd() {
       "@type": "ContactPoint",
       contactType: "customer service",
       availableLanguage: ["French", "English"],
-      email: "hello@karria.app",
+      email: "hello@karria.fr",
     },
     brand: {
       "@type": "Brand",

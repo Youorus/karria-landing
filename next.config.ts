@@ -14,8 +14,8 @@ const nextConfig: NextConfig = {
       // Force non-www → www (or inverse — adjust to your DNS setup)
       {
         source: "/(.*)",
-        has: [{ type: "host", value: "www.karria.app" }],
-        destination: "https://karria.app/:path*",
+        has: [{ type: "host", value: "www.karria.fr" }],
+        destination: "https://karria.fr/:path*",
         permanent: true,
       },
     ];
