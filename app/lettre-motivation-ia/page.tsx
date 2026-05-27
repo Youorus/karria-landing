@@ -4,7 +4,7 @@ import { ArrowRight, PenLine, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Lettre de motivation IA — Générée et personnalisée en secondes | Karria",
+  title: "Lettre de motivation IA personnalisée en quelques secondes",
   description:
     "Générez une lettre de motivation personnalisée et convaincante grâce à l'IA. Karria adapte chaque lettre à l'offre et à votre profil pour maximiser vos chances de décrocher un entretien.",
   path: "/lettre-motivation-ia",

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export const metadata = buildMetadata({
-  title: "À propos de Karria",
+  title: "Notre mission — L'IA au service de votre carrière",
   description:
       "Découvrez l'histoire de Karria, l'application IA pensée pour simplifier la recherche d'emploi et accompagner chaque parcours professionnel.",
   path: "/about",
@@ -113,6 +113,7 @@ export default function AboutPage() {
             <Reveal>
               <SectionHeader
                   eyebrow={ABOUT_HERO.eyebrow}
+                  headingLevel={1}
                   title={
                     <>
                       Réinventer la recherche d&apos;emploi avec{" "}

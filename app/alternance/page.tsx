@@ -4,7 +4,7 @@ import { ArrowRight, GraduationCap, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Trouver une Alternance — Matching IA pour les contrats en alternance | Karria",
+  title: "Trouver une alternance grâce à l'IA",
   description:
     "Karria vous aide à trouver votre alternance idéale grâce à l'intelligence artificielle. CV optimisé, lettre de motivation personnalisée et matching précis pour décrocher votre contrat.",
   path: "/alternance",

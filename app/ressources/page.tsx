@@ -3,7 +3,7 @@ import { ArrowRight, Library } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Ressources Carrière — Guides, modèles et outils gratuits | Karria",
+  title: "Ressources carrière — Guides et outils gratuits",
   description:
     "Accédez aux meilleures ressources pour booster votre carrière : guides de recherche d'emploi, modèles de CV, conseils d'entretien et outils IA gratuits.",
   path: "/ressources",

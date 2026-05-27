@@ -17,6 +17,7 @@ export default function CGUPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Légal"
+            headingLevel={1}
             title="Conditions Générales d'Utilisation"
             subtitle="Les règles du jeu pour une collaboration saine et transparente entre Karria et vous."
             align="left"

@@ -4,7 +4,7 @@ import { ArrowRight, Brain, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Matching Emploi IA — Trouvez les offres qui vous correspondent vraiment | Karria",
+  title: "Matching emploi IA — Offres sur-mesure pour votre profil",
   description:
     "Karria analyse votre profil en profondeur et vous recommande les offres d'emploi les plus pertinentes grâce à l'intelligence artificielle. Moins de bruit, plus d'opportunités réelles.",
   path: "/matching-emploi-ia",

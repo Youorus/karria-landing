@@ -46,6 +46,7 @@ export default function CareersPage() {
           <Reveal>
             <SectionHeader
                 eyebrow="Carrières"
+                headingLevel={1}
                 title="Construire Karria, c’est aider des millions de parcours."
                 subtitle="Nous ne recrutons pas encore officiellement, mais l’aventure se prépare. Cette page accueillera bientôt les futures opportunités pour rejoindre Karria."
                 className="mb-20"

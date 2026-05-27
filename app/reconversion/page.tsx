@@ -4,7 +4,7 @@ import { ArrowRight, RefreshCw, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Reconversion Professionnelle — L'IA pour changer de carrière | Karria",
+  title: "Reconversion professionnelle avec l'IA",
   description:
     "Vous envisagez une reconversion professionnelle ? Karria vous accompagne avec l'IA pour identifier les opportunités qui correspondent à vos nouvelles ambitions et transférer vos compétences.",
   path: "/reconversion",

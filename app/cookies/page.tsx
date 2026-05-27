@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { CookiePreferencesButton } from "@/components/analytics/CookiePreferencesButton";
 
 export const metadata = buildMetadata({
   title: "Gestion des Cookies",
@@ -15,6 +16,7 @@ export default function CookiesPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Préférences"
+            headingLevel={1}
             title="Politique des Cookies"
             subtitle="Nous utilisons des cookies pour améliorer votre expérience et personnaliser nos services."
             align="left"
@@ -61,6 +63,8 @@ export default function CookiesPage() {
                   </p>
                 </section>
               </div>
+
+              <CookiePreferencesButton />
             </Reveal>
           </div>
         </div>

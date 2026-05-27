@@ -18,6 +18,7 @@ export default function LegalPage() {
           <Reveal>
             <SectionHeader
                 eyebrow="Transparence"
+                headingLevel={1}
                 title="Mentions légales"
                 subtitle="Cette page sera complétée avec les informations officielles de Karria avant le lancement complet du service."
                 align="left"

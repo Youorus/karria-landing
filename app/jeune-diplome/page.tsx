@@ -4,7 +4,7 @@ import { ArrowRight, Star, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Emploi Jeune Diplômé — Lancez votre carrière avec l'IA | Karria",
+  title: "Premier emploi pour jeune diplômé avec l'IA",
   description:
     "Jeune diplômé à la recherche de votre premier emploi ? Karria vous accompagne avec l'IA pour construire un profil attractif, postuler aux bonnes offres et décrocher vos premiers entretiens.",
   path: "/jeune-diplome",

@@ -4,7 +4,7 @@ import { ArrowRight, Users, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Recrutement IA — La révolution du recrutement intelligent | Karria",
+  title: "Recrutement IA — Matching candidats intelligent",
   description:
     "Karria redéfinit la relation entre candidats et recruteurs grâce à l'intelligence artificielle. Des profils qualifiés, des CV optimisés et un matching précis pour tous.",
   path: "/recrutement-ia",

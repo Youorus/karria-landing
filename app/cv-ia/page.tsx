@@ -4,7 +4,7 @@ import { ArrowRight, FileText, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "CV IA — Créez votre CV professionnel en quelques secondes | Karria",
+  title: "CV IA professionnel et optimisé en quelques secondes",
   description:
     "Générez un CV professionnel et optimisé grâce à l'intelligence artificielle. Karria adapte votre CV à chaque offre d'emploi pour maximiser vos chances d'être sélectionné.",
   path: "/cv-ia",

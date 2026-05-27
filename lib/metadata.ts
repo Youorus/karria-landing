@@ -17,10 +17,16 @@ export function buildMetadata({
   noIndex = false,
 }: PageMetaOptions): Metadata {
   const url = `${SITE_URL}${path}`;
-  const fullTitle = path === "" ? `${title} — ${SITE_NAME}` : `${title} | ${SITE_NAME}`;
+  // Strip any existing "| Karria" or "— Karria" suffix and "Karria — " prefix before formatting
+  const cleanTitle = title
+    .replace(/\s*[|—]\s*Karria\s*$/i, "")
+    .replace(/^Karria\s*[—\-]\s*/i, "")
+    .trim();
+  const fullTitle = `${SITE_NAME} — ${cleanTitle}`;
 
   return {
-    title: fullTitle,
+    // { absolute } bypasses the layout template to avoid "Karria | Karria" duplication
+    title: { absolute: fullTitle },
     description,
     keywords: [
       "karria",

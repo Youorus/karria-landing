@@ -4,7 +4,7 @@ import { ArrowRight, BookOpen, FileText, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Blog Karria — Conseils carrière, IA et emploi",
+  title: "Blog — Conseils carrière, IA et emploi",
   description:
       "Retrouvez bientôt les guides Karria sur la recherche d’emploi, les CV, les lettres de motivation et l’IA appliquée à la carrière.",
   path: "/blog",

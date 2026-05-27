@@ -40,6 +40,7 @@ export default function PressPage() {
           <Reveal>
             <SectionHeader
                 eyebrow="Media"
+                headingLevel={1}
                 title="Espace Presse"
                 subtitle="Cette page rassemblera bientôt les ressources officielles pour parler de Karria."
                 className="mb-20"

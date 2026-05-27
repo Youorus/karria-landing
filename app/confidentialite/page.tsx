@@ -17,6 +17,7 @@ export default function PrivacyPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Confidentialité"
+            headingLevel={1}
             title="Votre vie privée est notre priorité"
             subtitle="Chez Karria, nous croyons que la confiance est le socle de toute carrière réussie. Voici comment nous protégeons vos données."
             align="left"

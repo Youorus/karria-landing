@@ -3,9 +3,10 @@ import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { NAV_ROUTES } from "@/lib/constants";
+import { SITE_URL } from "@/lib/utils";
 
 export const metadata = buildMetadata({
-  title: "Questions Fréquentes (FAQ)",
+  title: "Questions fréquentes sur Karria et l'IA carrière",
   description: "Toutes les réponses à vos questions sur Karria : matching IA, génération de CV, abonnement Premium et sécurité des données.",
   path: "/faq",
 });
@@ -48,13 +49,66 @@ const FAQS = [
   }
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/faq#faqpage`,
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Qu'est-ce que Karria ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Karria est une application mobile d'intelligence artificielle qui vous aide à trouver les meilleures offres d'emploi, à optimiser votre CV et vos lettres de motivation, et à piloter votre carrière de manière intelligente.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Est-ce que Karria est gratuit ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui, Karria propose un plan gratuit avec accès aux fonctionnalités de base. Pour les utilisateurs souhaitant une assistance IA illimitée et des fonctionnalités avancées, nous proposons un abonnement Premium.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Comment fonctionne le matching IA de Karria ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Notre IA analyse en profondeur votre profil et compare vos compétences avec des milliers d'offres en temps réel. Elle ne se contente pas de mots-clés, elle comprend le sens de vos expériences pour vous proposer des postes où vous avez de réelles chances de réussir.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Les CV générés sont-ils compatibles ATS ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Absolument. Tous nos templates de CV sont conçus pour être parfaitement lus par les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Mes données sont-elles en sécurité avec Karria ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "La sécurité est notre priorité absolue. Vos données sont chiffrées et nous respectons scrupuleusement le RGPD. Vous restez maître de vos informations à tout moment.",
+      },
+    },
+  ],
+};
+
 export default function FAQPage() {
   return (
     <div className="py-24 sm:py-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="max-w-4xl mx-auto px-6">
         <Reveal>
           <SectionHeader
             eyebrow="Aide"
+            headingLevel={1}
             title="Questions Fréquentes"
             subtitle="Tout ce que vous devez savoir pour tirer le meilleur parti de Karria."
             className="mb-20"

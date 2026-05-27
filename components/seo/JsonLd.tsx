@@ -24,7 +24,6 @@ export function JsonLd() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      telephone: "+33-0-00-00-00-00", // Placeholder or real if available
       availableLanguage: ["French", "English"],
       email: "hello@karria.app",
     },
@@ -162,63 +161,9 @@ export function JsonLd() {
       "Dashboard candidatures",
       "Alertes emploi personnalisées",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "1247",
-      bestRating: "5",
-      worstRating: "1",
-    },
     publisher: {
       "@id": `${SITE_URL}/#organization`,
     },
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Qu'est-ce que Karria ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Karria est une plateforme d'intelligence artificielle qui réinvente la recherche d'emploi. Elle propose un matching intelligent entre profils et offres, la génération automatique de CV optimisés, des lettres de motivation ciblées et un accompagnement carrière personnalisé.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Comment fonctionne le matching IA de Karria ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Karria analyse votre profil complet (compétences, expériences, préférences, objectifs) et le compare en temps réel avec des milliers d'offres d'emploi pour vous proposer uniquement les opportunités les plus pertinentes.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Karria génère-t-il des CV optimisés pour les ATS ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Oui. Tous les CV générés par Karria sont optimisés pour les logiciels ATS (Applicant Tracking System) utilisés par les recruteurs, avec une structure claire et les mots-clés pertinents pour maximiser vos chances.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Karria est-il disponible sur mobile ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Oui, Karria est disponible sur iOS et Android. L'application mobile offre une expérience complète : matching en temps réel, génération de documents, suivi des candidatures et notifications intelligentes.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Karria est-il gratuit ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Karria propose un plan gratuit avec accès aux fonctionnalités essentielles. Des plans Premium et Pro sont disponibles pour accéder à toutes les fonctionnalités IA avancées.",
-        },
-      },
-    ],
   };
 
   return (
@@ -244,10 +189,6 @@ export function JsonLd() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(softwareApplicationSchema),
         }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   );

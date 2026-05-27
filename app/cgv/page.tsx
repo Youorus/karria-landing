@@ -17,6 +17,7 @@ export default function CGVPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Commercial"
+            headingLevel={1}
             title="Conditions Générales de Vente"
             subtitle="Transparence totale sur nos offres, nos abonnements et vos droits en tant que client."
             align="left"

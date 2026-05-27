@@ -3,7 +3,7 @@ import { ArrowRight, BarChart2 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = buildMetadata({
-  title: "Comparatifs — Karria vs les autres plateformes d'emploi | Karria",
+  title: "Comparatif des plateformes d'emploi et de CV IA",
   description:
     "Comparez Karria avec les autres outils de recherche d'emploi et générateurs de CV. Découvrez pourquoi Karria est la solution IA la plus complète pour votre carrière.",
   path: "/comparatifs",

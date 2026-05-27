@@ -7,7 +7,7 @@ import { SVGProps } from "react";
 import { CONTACT_EMAILS, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Contactez Karria",
+  title: "Contactez l'équipe Karria",
   description: "Une question ? Un partenariat ? Ou juste envie de dire bonjour ? Contactez l'équipe Karria et notre fondateur Marc Takoumba.",
   path: "/contact",
 });
@@ -57,6 +57,7 @@ export default function ContactPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Contact"
+            headingLevel={1}
             title="Parlons de votre avenir"
             subtitle="Une question sur Karria ? Notre équipe est à votre écoute pour vous accompagner dans votre réussite."
             className="mb-20"

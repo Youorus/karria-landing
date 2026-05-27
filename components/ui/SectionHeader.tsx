@@ -9,6 +9,7 @@ interface SectionHeaderProps {
   className?: string;
   titleClassName?: string;
   subtitleClassName?: string;
+  headingLevel?: 1 | 2;
 }
 
 export default function SectionHeader({
@@ -19,7 +20,10 @@ export default function SectionHeader({
   className,
   titleClassName,
   subtitleClassName,
+  headingLevel = 2,
 }: SectionHeaderProps) {
+  const HeadingTag = `h${headingLevel}` as "h1" | "h2";
+
   return (
     <div
       className={cn(
@@ -41,7 +45,7 @@ export default function SectionHeader({
           </span>
         </div>
       )}
-      <h2
+      <HeadingTag
         className={cn(
           "text-4xl sm:text-5xl md:text-6xl font-bold text-foreground",
           "tracking-tight leading-[1.1]",
@@ -50,7 +54,7 @@ export default function SectionHeader({
         )}
       >
         {title}
-      </h2>
+      </HeadingTag>
       {subtitle && (
         <p
           className={cn(

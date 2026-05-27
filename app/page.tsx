@@ -5,11 +5,10 @@ import Features from "@/components/sections/Features";
 import StorytellingScroll from "@/components/sections/StorytellingScroll";
 import SocialProof from "@/components/sections/SocialProof";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "Karria - La plateforme IA qui réinvente et propulse votre carrière",
+  title: "Plateforme IA pour réinventer et propulser votre carrière",
   description:
     "Karria est la plateforme d'intelligence artificielle qui transforme votre recherche d'emploi : matching IA, génération de CV, lettres de motivation personnalisées et accompagnement carrière intelligent.",
   path: "/",
@@ -26,32 +25,13 @@ export const metadata = buildMetadata({
 export default function HomePage() {
   return (
     <>
-      <JsonLd />
-      <main id="main-content">
-        {/* 1. Hero — cinematic first impression */}
-        <Hero />
-
-        {/* 2. Storytelling — product narrative & demo */}
-        <StorytellingScroll />
-
-        {/* 3. Problem — empathy + friction validation */}
-        <Problem />
-
-        {/* 4. Solution — Karria as the answer */}
-        <Solution />
-
-        {/* 5. Features — detailed bento grid */}
-        <Features />
-
-        {/* 7. Social proof — trust & traction */}
-        <SocialProof />
-
-        {/* 8. Pricing — conversion preview */}
-        {/*  <Pricing /> */}
-
-        {/* 9. Final CTA — close with power */}
-        <FinalCTA />
-      </main>
+      <Hero />
+      <StorytellingScroll />
+      <Problem />
+      <Solution />
+      <Features />
+      <SocialProof />
+      <FinalCTA />
     </>
   );
 }

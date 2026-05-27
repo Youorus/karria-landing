@@ -41,6 +41,7 @@ export default function SecurityPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Confiance"
+            headingLevel={1}
             title="Sécurité & Intégrité"
             subtitle="La protection de vos données n'est pas une option, c'est le cœur de notre architecture."
             align="left"

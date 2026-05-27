@@ -8,6 +8,8 @@ import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/layout/SmoothScrollProvider";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { CookieBanner } from "@/components/analytics/CookieBanner";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
       { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/logo.svg", type: "image/svg+xml" },
     ],
     apple: [{ url: "/karria_light_icon.png", sizes: "180x180", type: "image/png" }],
   },
@@ -83,9 +85,7 @@ export const metadata: Metadata = {
       "fr-FR": SITE_URL,
     },
   },
-  verification: {
-    google: "your-google-verification-token",
-  },
+  // verification: { google: "REMPLACER_PAR_VOTRE_TOKEN_GOOGLE_SEARCH_CONSOLE" },
 };
 
 // ─── Root Layout ───────────────────────────────────────────────────────────
@@ -114,6 +114,8 @@ export default function RootLayout({
             <Footer />
           </SmoothScrollProvider>
         </ThemeProvider>
+        <GoogleAnalytics />
+        <CookieBanner />
       </body>
     </html>
   );
