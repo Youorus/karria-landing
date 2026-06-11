@@ -72,6 +72,7 @@ export const NAV_ROUTES = {
   legalNotice: "/mentions-legales",
   cookies: "/cookies",
   security: "/securite",
+  accountDeletion: "/suppression-compte",
 };
 
 // Grouped links for Navigation components
@@ -104,5 +105,6 @@ export const FOOTER_SECTIONS = {
     { label: "CGV", href: NAV_ROUTES.cgv },
     { label: "Cookies", href: NAV_ROUTES.cookies },
     { label: "Mentions légales", href: NAV_ROUTES.legalNotice },
+    { label: "Suppression de compte", href: NAV_ROUTES.accountDeletion },
   ],
 };

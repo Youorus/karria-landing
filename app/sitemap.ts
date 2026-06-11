@@ -152,6 +152,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as ChangeFrequency,
       priority: 0.7,
     },
+    {
+      url: `${SITE_URL}/suppression-compte`,
+      lastModified: now,
+      changeFrequency: "yearly" as ChangeFrequency,
+      priority: 0.4,
+    },
   ];
 
   return staticPages;
