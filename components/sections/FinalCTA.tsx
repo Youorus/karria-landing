@@ -122,11 +122,7 @@ export function FinalCTA() {
               transition={{ duration: 1, delay: 0.3, ease: EASE }}
               className="mb-16"
           >
-            <AppDownloadCTA
-                appStoreHref="#"
-                googlePlayHref="#"
-                showWebCTA={false}
-            />
+            <AppDownloadCTA showWebCTA={false} />
           </motion.div>
 
           <motion.div

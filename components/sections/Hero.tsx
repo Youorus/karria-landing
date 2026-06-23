@@ -91,10 +91,7 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.4, ease: EASE }}
               className="mb-12 flex w-full flex-col items-center gap-6"
           >
-            <AppDownloadCTA
-                appStoreHref="#"
-                googlePlayHref="#"
-            />
+            <AppDownloadCTA />
             <p className="text-[13px] font-medium text-muted-foreground/60">
               * Actuellement optimisé pour le marché de l&apos;emploi en France.
             </p>

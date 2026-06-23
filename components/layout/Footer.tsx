@@ -46,6 +46,8 @@ export default function Footer() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href={APP_LINKS.appStore}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-secondary hover:bg-accent border border-border transition-all duration-300 text-sm font-medium text-foreground w-fit"
                 aria-label="Télécharger sur l'App Store"
               >
@@ -54,16 +56,16 @@ export default function Footer() {
                 </svg>
                 App Store
               </Link>
-              <Link
-                href={APP_LINKS.googlePlay}
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-secondary hover:bg-accent border border-border transition-all duration-300 text-sm font-medium text-foreground w-fit"
-                aria-label="Télécharger sur Google Play"
+              <span
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-2xl bg-secondary/50 border border-dashed border-border text-sm font-medium text-muted-foreground w-fit cursor-not-allowed"
+                aria-label="Karria bientôt disponible sur Google Play"
+                title="Bientôt disponible sur Google Play"
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-5 h-5 opacity-50" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M3.18 23.76c.31.17.66.22 1.01.14l12.68-7.31-2.83-2.83-10.86 10zM.5 1.93C.19 2.33 0 2.89 0 3.61v16.78c0 .72.19 1.28.51 1.68l.09.09 9.39-9.39v-.22L.59 3.16.5 1.93zM20.49 10.37l-2.7-1.56-3.17 3.17 3.17 3.17 2.72-1.57c.78-.45.78-1.76-.02-2.21zM4.19.1L16.87 7.4l-2.83 2.83L3.18.23C3.5.14 3.87.17 4.19.3V.1z"/>
                 </svg>
-                Google Play
-              </Link>
+                Google Play · Bientôt
+              </span>
             </div>
           </div>
 

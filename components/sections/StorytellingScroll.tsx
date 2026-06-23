@@ -10,14 +10,14 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const STORY_STEPS = [
   {
     id: "analysis",
-    screen: "/analysis.jpg",
+    screen: "/app-screen-onboarding.png",
     title: "Karria apprend à vous connaître",
     description:
         "L’IA analyse votre profil, vos compétences et vos objectifs pour comprendre ce qui vous correspond vraiment.",
   },
   {
     id: "matching",
-    screen: "/matching.jpg",
+    screen: "/app-screen-matching.png",
     title: "Recevez des offres faites pour vous",
     description:
         "Karria détecte automatiquement les opportunités les plus adaptées à votre profil et à vos ambitions.",
@@ -30,7 +30,7 @@ const STORY_STEPS = [
   },
   {
     id: "generation",
-    screen: "/generation.jpg",
+    screen: "/app-screen-cv.png",
     title: "Vos candidatures sont prêtes plus vite",
     description:
         "CV, lettres et contenus sont optimisés automatiquement pour chaque offre afin de maximiser vos chances.",
@@ -42,18 +42,11 @@ const STORY_STEPS = [
     },
   },
   {
-    id: "notifications",
-    screen: "/notification.jpg",
-    title: "Ne manquez plus les bonnes opportunités",
+    id: "profile",
+    screen: "/app-screen-profile.png",
+    title: "Pilotez toute votre carrière au même endroit",
     description:
-        "Recevez des alertes intelligentes dès qu’une offre importante correspond à votre profil.",
-  },
-  {
-    id: "apply",
-    screen: "/apply.jpg",
-    title: "Postulez simplement et efficacement",
-    description:
-        "Envoyez des candidatures personnalisées, prêtes pour les recruteurs et les systèmes ATS en quelques secondes.",
+        "Suivez vos candidatures, vos quotas et vos avantages depuis un espace personnel pensé pour avancer plus vite.",
   },
 ] as const;
 
@@ -78,7 +71,7 @@ export default function StorytellingScroll() {
   }, [scrollYProgress]);
 
   return (
-      <section ref={containerRef} className="relative h-[600vh] bg-background">
+      <section ref={containerRef} className="relative h-[480vh] bg-background">
         <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden">
 
           {/* Halo de fond */}

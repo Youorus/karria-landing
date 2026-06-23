@@ -33,9 +33,11 @@ export const SOCIAL_LINKS = {
 };
 
 export const APP_LINKS = {
-  appStore: "#",
+  appStore: "https://apps.apple.com/app/karria/id6776608930",
   googlePlay: "#",
   webapp: "https://app.karria.fr",
+  // Google Play n'est pas encore disponible — bascule à true au lancement
+  googlePlayAvailable: false,
 };
 
 export const NAV_ROUTES = {

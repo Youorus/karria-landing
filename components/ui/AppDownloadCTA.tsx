@@ -11,7 +11,21 @@ type AppDownloadCTAProps = {
     googlePlayHref?: string;
     webHref?: string;
     showWebCTA?: boolean;
+    /** Affiche Google Play comme bouton actif. Par défaut "Bientôt disponible". */
+    googlePlayAvailable?: boolean;
 };
+
+function StarRating({ className }: { className?: string }) {
+    return (
+        <span className={cn("flex items-center gap-0.5", className)} aria-hidden>
+            {Array.from({ length: 5 }).map((_, i) => (
+                <svg key={i} viewBox="0 0 24 24" fill="currentColor" className="h-3 w-3">
+                    <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+            ))}
+        </span>
+    );
+}
 
 function AppleIcon({ className }: { className?: string }) {
     return (
@@ -38,58 +52,96 @@ export function AppDownloadCTA({
                                    googlePlayHref = APP_LINKS.googlePlay,
                                    webHref = APP_LINKS.webapp,
                                    showWebCTA = true,
+                                   googlePlayAvailable = APP_LINKS.googlePlayAvailable,
                                }: AppDownloadCTAProps) {
     return (
         <div className={cn("flex w-full flex-col items-center gap-6", className)}>
-            <div className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row">
+            <div className="flex w-full flex-col justify-center gap-3.5 sm:w-auto sm:flex-row">
+                {/* App Store — bouton principal */}
                 <Link
                     href={appStoreHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Télécharger Karria sur l'App Store"
                     onClick={() => trackDownloadClick("app_store")}
                     className={cn(
-                        "group inline-flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-4 sm:w-auto",
-                        "bg-zinc-950 text-white shadow-2xl shadow-zinc-950/10",
-                        "dark:bg-white dark:text-zinc-950 dark:shadow-white/10",
-                        "transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98]",
+                        "group relative inline-flex w-full items-center justify-center gap-3.5 overflow-hidden rounded-2xl px-7 py-4 sm:w-auto",
+                        "bg-gradient-to-b from-zinc-800 to-zinc-950 text-white ring-1 ring-white/10",
+                        "shadow-[0_10px_30px_-8px_rgba(0,0,0,0.45)]",
+                        "dark:from-white dark:to-zinc-200 dark:text-zinc-950 dark:ring-black/5 dark:shadow-[0_10px_30px_-8px_rgba(255,255,255,0.25)]",
+                        "transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-10px_rgba(0,0,0,0.55)] active:scale-[0.98]",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                     )}
                 >
+                    {/* reflet animé au survol */}
+                    <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 group-hover:translate-x-full dark:via-black/10" />
+
                     <AppleIcon className="h-7 w-7 shrink-0" />
 
-                    <span className="flex flex-col items-start leading-none">
-            <span className="text-[10px] font-semibold uppercase tracking-wide opacity-70">
-              Télécharger sur
-            </span>
-            <span className="mt-1 text-lg font-bold tracking-tight">
-              App Store
-            </span>
-          </span>
+                    <span className="relative flex flex-col items-start leading-none">
+                        <span className="text-[10px] font-medium uppercase tracking-[0.12em] opacity-60">
+                          Télécharger sur l’
+                        </span>
+                        <span className="mt-1 text-lg font-bold tracking-tight">
+                          App Store
+                        </span>
+                    </span>
                 </Link>
 
-                <Link
-                    href={googlePlayHref}
-                    aria-label="Télécharger Karria sur Google Play"
-                    onClick={() => trackDownloadClick("google_play")}
-                    className={cn(
-                        "group inline-flex w-full items-center justify-center gap-3 rounded-2xl border px-7 py-4 sm:w-auto",
-                        "border-black/10 bg-white/80 text-zinc-950 shadow-xl shadow-black/5 backdrop-blur-xl",
-                        "hover:bg-white",
-                        "dark:border-white/10 dark:bg-white/[0.07] dark:text-white dark:hover:bg-white/[0.11]",
-                        "transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] active:scale-[0.98]",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-                    )}
-                >
-                    <GooglePlayIcon className="h-7 w-7 shrink-0" />
+                {/* Google Play — actif si disponible, sinon "Bientôt disponible" */}
+                {googlePlayAvailable ? (
+                    <Link
+                        href={googlePlayHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Télécharger Karria sur Google Play"
+                        onClick={() => trackDownloadClick("google_play")}
+                        className={cn(
+                            "group inline-flex w-full items-center justify-center gap-3.5 rounded-2xl border px-7 py-4 sm:w-auto",
+                            "border-black/10 bg-white/70 text-zinc-950 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.25)] backdrop-blur-xl",
+                            "hover:bg-white",
+                            "dark:border-white/10 dark:bg-white/[0.06] dark:text-white dark:hover:bg-white/[0.1]",
+                            "transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.98]",
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                        )}
+                    >
+                        <GooglePlayIcon className="h-7 w-7 shrink-0" />
+                        <span className="flex flex-col items-start leading-none">
+                            <span className="text-[10px] font-medium uppercase tracking-[0.12em] opacity-60">
+                              Disponible sur
+                            </span>
+                            <span className="mt-1 text-lg font-bold tracking-tight">
+                              Google Play
+                            </span>
+                        </span>
+                    </Link>
+                ) : (
+                    <div
+                        aria-label="Karria bientôt disponible sur Google Play"
+                        title="Bientôt disponible sur Google Play"
+                        className={cn(
+                            "relative inline-flex w-full cursor-not-allowed items-center justify-center gap-3.5 rounded-2xl border border-dashed px-7 py-4 sm:w-auto",
+                            "border-black/15 bg-transparent text-zinc-500",
+                            "dark:border-white/15 dark:text-zinc-400",
+                        )}
+                    >
+                        <GooglePlayIcon className="h-7 w-7 shrink-0 opacity-50" />
+                        <span className="flex flex-col items-start leading-none">
+                            <span className="text-[10px] font-medium uppercase tracking-[0.12em] opacity-70">
+                              Google Play
+                            </span>
+                            <span className="mt-1 text-lg font-bold tracking-tight">
+                              Bientôt disponible
+                            </span>
+                        </span>
+                    </div>
+                )}
+            </div>
 
-                    <span className="flex flex-col items-start leading-none">
-            <span className="text-[10px] font-semibold uppercase tracking-wide opacity-60">
-              Disponible sur
-            </span>
-            <span className="mt-1 text-lg font-bold tracking-tight">
-              Google Play
-            </span>
-          </span>
-                </Link>
+            {/* Réassurance — note App Store */}
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <StarRating className="text-amber-400" />
+                <span className="font-medium">Gratuit · iPhone &amp; iPad</span>
             </div>
 
             {showWebCTA && (
