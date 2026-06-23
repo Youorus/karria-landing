@@ -83,6 +83,43 @@ export default function BlogPage() {
               </p>
             </div>
 
+            <section className="mb-16 space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="text-2xl font-bold text-foreground">
+                Ce que vous trouverez sur le blog Karria
+              </h2>
+              <p>
+                Le marché de l&apos;emploi évolue vite, et les bonnes pratiques
+                d&apos;hier ne fonctionnent plus forcément aujourd&apos;hui. Le
+                blog Karria a pour vocation de partager des conseils concrets et
+                actualisés sur la recherche d&apos;emploi, la rédaction de CV et
+                de lettres de motivation, la préparation aux entretiens et
+                l&apos;usage raisonné de l&apos;intelligence artificielle dans
+                votre carrière.
+              </p>
+              <p>
+                Notre ligne éditoriale : des contenus simples, honnêtes et
+                actionnables, sans jargon inutile. En attendant les premiers
+                articles, vous pouvez déjà mettre en pratique nos outils — créer
+                un{" "}
+                <Link href="/cv-ia" className="text-primary hover:underline">
+                  CV optimisé
+                </Link>
+                , générer une{" "}
+                <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
+                  lettre de motivation
+                </Link>{" "}
+                ou explorer le{" "}
+                <Link href="/matching-emploi-ia" className="text-primary hover:underline">
+                  matching emploi par IA
+                </Link>{" "}
+                — et consulter nos{" "}
+                <Link href="/ressources" className="text-primary hover:underline">
+                  ressources carrière
+                </Link>
+                .
+              </p>
+            </section>
+
             <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-3">
               {UPCOMING_TOPICS.map((topic) => (
                   <article

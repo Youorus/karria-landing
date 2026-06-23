@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, GraduationCap, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -17,6 +18,25 @@ export const metadata = buildMetadata({
     "lettre motivation alternance",
   ],
 });
+
+const faqs = [
+  {
+    q: "Comment Karria aide à trouver une alternance ?",
+    a: "Karria filtre les offres d'alternance par secteur, région et niveau d'études, puis génère un CV et des lettres adaptés aux attentes des entreprises qui recrutent en contrat d'apprentissage ou de professionnalisation.",
+  },
+  {
+    q: "Faut-il déjà avoir une école pour postuler ?",
+    a: "Pas nécessairement. De nombreuses entreprises recrutent d'abord l'alternant, qui rejoint ensuite l'école partenaire. Karria vous aide à valoriser votre projet de formation auprès des recruteurs.",
+  },
+  {
+    q: "Karria convient-il aussi aux contrats de professionnalisation ?",
+    a: "Oui. Que vous visiez un contrat d'apprentissage ou de professionnalisation, Karria adapte vos candidatures au type de contrat et au public ciblé par l'entreprise.",
+  },
+  {
+    q: "L'alternance est-elle compatible avec mon niveau d'études ?",
+    a: "L'alternance existe du CAP au Bac+5 et au-delà. Karria filtre les offres correspondant à votre niveau et à votre domaine pour ne vous présenter que des opportunités réalistes.",
+  },
+];
 
 export default function AlternancePage() {
   return (
@@ -46,6 +66,35 @@ export default function AlternancePage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              Trouver une alternance : un vrai parcours du combattant
+            </h2>
+            <p>
+              Décrocher une alternance demande souvent autant d&apos;efforts
+              qu&apos;un emploi à temps plein : il faut convaincre une entreprise
+              de vous former tout en menant ses études, multiplier les
+              candidatures et se démarquer face à de nombreux autres candidats
+              au profil similaire. Beaucoup d&apos;étudiants s&apos;y prennent
+              trop tard ou postulent avec un CV générique.
+            </p>
+            <p>
+              Karria comprend les spécificités de l&apos;alternance et vous fait
+              gagner un temps précieux : offres ciblées par secteur et région,{" "}
+              <Link href="/cv-ia" className="text-primary hover:underline">
+                CV adapté
+              </Link>{" "}
+              aux recruteurs en apprentissage et lettres personnalisées pour
+              chaque entreprise. Si vous hésitez encore sur votre voie,
+              découvrez aussi nos conseils pour les{" "}
+              <Link href="/jeune-diplome" className="text-primary hover:underline">
+                jeunes diplômés
+              </Link>
+              .
+            </p>
+          </section>
+
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">Pourquoi Karria pour votre alternance ?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -64,6 +113,8 @@ export default function AlternancePage() {
               ))}
             </div>
           </section>
+
+          <FaqSection faqs={faqs} />
 
           <section className="text-center">
             <p className="text-muted-foreground mb-6">Explorez aussi</p>

@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Star, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -17,6 +18,25 @@ export const metadata = buildMetadata({
     "trouver travail après diplôme",
   ],
 });
+
+const faqs = [
+  {
+    q: "Comment trouver un emploi sans expérience ?",
+    a: "Sans longue expérience professionnelle, ce sont vos projets académiques, stages, engagements associatifs et compétences qui font la différence. Karria vous aide à les mettre en valeur dans un CV structuré et convaincant.",
+  },
+  {
+    q: "Que mettre dans un CV de jeune diplômé ?",
+    a: "Formation, projets significatifs, stages, compétences techniques et soft skills, et éventuellement vos centres d'intérêt pertinents. Karria sélectionne et reformule ces éléments pour qu'ils parlent aux recruteurs et passent les filtres ATS.",
+  },
+  {
+    q: "Faut-il une lettre de motivation quand on débute ?",
+    a: "Oui, c'est même un atout : elle vous permet d'expliquer votre motivation et de compenser un manque d'expérience. Karria génère une lettre ciblée pour chaque offre en quelques secondes.",
+  },
+  {
+    q: "L'alternance est-elle une bonne alternative ?",
+    a: "Si vous poursuivez vos études, l'alternance combine théorie et expérience et facilite l'embauche ensuite. Découvrez notre page dédiée à l'alternance pour explorer cette voie.",
+  },
+];
 
 export default function JeuneDiplomePage() {
   return (
@@ -46,6 +66,39 @@ export default function JeuneDiplomePage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              Décrocher son premier emploi : le paradoxe de l&apos;expérience
+            </h2>
+            <p>
+              Le premier emploi est souvent le plus difficile à obtenir : les
+              offres réclament de l&apos;expérience que, par définition, vous
+              n&apos;avez pas encore. Résultat, beaucoup de jeunes diplômés
+              sous-estiment la valeur de leurs stages, projets et compétences, et
+              envoient des candidatures peu convaincantes qui se perdent dans la
+              masse.
+            </p>
+            <p>
+              Karria renverse la situation en valorisant ce que vous avez
+              réellement accompli : projets académiques, stages, expériences
+              associatives et compétences concrètes. La plateforme construit un{" "}
+              <Link href="/cv-ia" className="text-primary hover:underline">
+                CV professionnel
+              </Link>{" "}
+              même sans parcours étoffé, génère des{" "}
+              <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
+                lettres
+              </Link>{" "}
+              percutantes et vous oriente vers les offres juniors. Si vous
+              poursuivez vos études, pensez aussi à l&apos;
+              <Link href="/alternance" className="text-primary hover:underline">
+                alternance
+              </Link>
+              .
+            </p>
+          </section>
+
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">Karria, le meilleur allié des jeunes diplômés</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -64,6 +117,8 @@ export default function JeuneDiplomePage() {
               ))}
             </div>
           </section>
+
+          <FaqSection faqs={faqs} />
 
           <section className="text-center">
             <p className="text-muted-foreground mb-6">Explorez aussi</p>

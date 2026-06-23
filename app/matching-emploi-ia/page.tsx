@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Brain, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -77,6 +78,37 @@ export default function MatchingEmploiIaPage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              Qu&apos;est-ce que le matching emploi par IA ?
+            </h2>
+            <p>
+              La recherche d&apos;emploi traditionnelle repose sur des mots-clés :
+              vous tapez un intitulé, vous filtrez par ville, puis vous parcourez
+              des dizaines de pages d&apos;offres dont la plupart ne vous
+              correspondent pas. Le matching par IA inverse cette logique. Au
+              lieu de chercher, vous êtes trouvé : l&apos;algorithme analyse vos
+              compétences, votre expérience et vos aspirations, puis calcule un
+              score de compatibilité avec chaque offre disponible.
+            </p>
+            <p>
+              Résultat : vous ne voyez que les opportunités réellement
+              pertinentes, classées par adéquation avec votre profil. Karria
+              affine ses recommandations au fil de vos interactions et vous
+              alerte dès qu&apos;une offre à fort potentiel est publiée. Une fois
+              l&apos;offre repérée, vous candidatez avec un{" "}
+              <Link href="/cv-ia" className="text-primary hover:underline">
+                CV adapté
+              </Link>{" "}
+              et une{" "}
+              <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
+                lettre ciblée
+              </Link>
+              , générés en quelques secondes.
+            </p>
+          </section>
+
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">
               Un matching qui va au-delà des mots-clés
@@ -91,17 +123,7 @@ export default function MatchingEmploiIaPage() {
             </div>
           </section>
 
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">Questions fréquentes</h2>
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div key={i} className="p-6 rounded-xl bg-card border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <FaqSection faqs={faqs} />
 
           <section className="text-center">
             <p className="text-muted-foreground mb-6">Explorez aussi</p>

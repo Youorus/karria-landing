@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, FileText, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -79,6 +80,39 @@ export default function CvIaPage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              Pourquoi créer son CV avec l&apos;intelligence artificielle ?
+            </h2>
+            <p>
+              En 2026, plus de 80 % des CV sont d&apos;abord lus par un logiciel
+              de tri automatique (ATS) avant d&apos;arriver entre les mains
+              d&apos;un recruteur. Un CV mal structuré, trop graphique ou
+              dépourvu des bons mots-clés est écarté avant même d&apos;être vu.
+              C&apos;est précisément là que l&apos;IA de Karria fait la
+              différence : elle structure votre parcours de façon lisible par
+              les machines comme par les humains.
+            </p>
+            <p>
+              Plutôt que de repartir d&apos;une page blanche à chaque
+              candidature, Karria part de votre profil et de l&apos;offre visée
+              pour générer un CV ciblé, met en avant les expériences les plus
+              pertinentes et reformule vos réalisations avec des verbes
+              d&apos;action mesurables. Vous gagnez un temps considérable tout
+              en augmentant votre taux de réponse. Une fois votre CV prêt,
+              générez une{" "}
+              <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
+                lettre de motivation
+              </Link>{" "}
+              assortie et laissez le{" "}
+              <Link href="/matching-emploi-ia" className="text-primary hover:underline">
+                matching IA
+              </Link>{" "}
+              vous proposer les offres faites pour vous.
+            </p>
+          </section>
+
           {/* Features list */}
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">
@@ -98,22 +132,10 @@ export default function CvIaPage() {
           </section>
 
           {/* FAQ */}
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Questions fréquentes sur la génération de CV par IA
-            </h2>
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-xl bg-card border border-border"
-                >
-                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <FaqSection
+            faqs={faqs}
+            title="Questions fréquentes sur la génération de CV par IA"
+          />
 
           {/* Internal links */}
           <section className="text-center">

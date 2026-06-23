@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, PenLine, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -77,6 +78,34 @@ export default function LettreMotivationIaPage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              La lettre de motivation a-t-elle encore un intérêt en 2026 ?
+            </h2>
+            <p>
+              Beaucoup de candidats la négligent, et pourtant la lettre de
+              motivation reste demandée par une majorité de recruteurs : elle
+              permet de raconter ce qu&apos;un CV ne dit pas, de justifier une
+              transition ou de montrer une réelle compréhension du poste. Le
+              problème, ce sont les lettres génériques recopiées d&apos;une
+              candidature à l&apos;autre, que les recruteurs repèrent
+              immédiatement.
+            </p>
+            <p>
+              Karria résout ce problème en croisant votre profil avec
+              l&apos;offre ciblée pour produire une lettre réellement
+              personnalisée : elle reprend le vocabulaire de l&apos;annonce,
+              relie vos expériences aux besoins de l&apos;entreprise et adopte
+              un ton naturel. Vous obtenez en quelques secondes une base solide
+              que vous pouvez ajuster, puis l&apos;associer à votre{" "}
+              <Link href="/cv-ia" className="text-primary hover:underline">
+                CV optimisé
+              </Link>{" "}
+              pour une candidature parfaitement cohérente.
+            </p>
+          </section>
+
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">
               Une lettre parfaite pour chaque candidature
@@ -94,19 +123,7 @@ export default function LettreMotivationIaPage() {
             </div>
           </section>
 
-          <section className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Questions fréquentes
-            </h2>
-            <div className="space-y-4">
-              {faqs.map((faq, i) => (
-                <div key={i} className="p-6 rounded-xl bg-card border border-border">
-                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <FaqSection faqs={faqs} />
 
           <section className="text-center">
             <p className="text-muted-foreground mb-6">Explorez aussi</p>

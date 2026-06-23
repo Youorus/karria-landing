@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Search, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -25,6 +26,25 @@ const features = [
   "Conseils personnalisés pour chaque étape",
   "Notifications intelligentes sur vos offres favorites",
   "Analyse de vos chances de succès par offre",
+];
+
+const faqs = [
+  {
+    q: "En quoi Karria change la recherche d'emploi ?",
+    a: "Au lieu de parcourir manuellement des dizaines de sites, Karria centralise les offres pertinentes, les classe par compatibilité avec votre profil et prépare vos candidatures. Vous passez moins de temps à chercher et plus de temps à décrocher des entretiens.",
+  },
+  {
+    q: "Combien de temps faut-il pour trouver un emploi avec Karria ?",
+    a: "Cela dépend de votre secteur et de votre profil, mais en automatisant le tri des offres et la préparation des candidatures, Karria vous permet de postuler plus vite et de manière plus ciblée, ce qui augmente vos chances de réponse.",
+  },
+  {
+    q: "Karria convient-il à tous les niveaux d'expérience ?",
+    a: "Oui. Que vous soyez jeune diplômé, en reconversion ou cadre confirmé, Karria adapte ses recommandations et ses documents à votre situation et à vos objectifs de carrière.",
+  },
+  {
+    q: "Dois-je payer pour commencer ma recherche ?",
+    a: "Non, vous pouvez créer votre profil, consulter des offres compatibles et générer vos premiers documents gratuitement, sans carte bancaire.",
+  },
 ];
 
 export default function RechercheEmploiIaPage() {
@@ -58,6 +78,38 @@ export default function RechercheEmploiIaPage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              Pourquoi repenser sa recherche d&apos;emploi ?
+            </h2>
+            <p>
+              La recherche d&apos;emploi classique est chronophage et
+              décourageante : multiplier les comptes sur les job boards, refaire
+              le même CV, suivre ses candidatures dans un tableur et relancer au
+              petit bonheur. La plupart des candidats abandonnent par fatigue
+              avant d&apos;avoir trouvé le bon poste, alors que le problème
+              n&apos;est pas leur profil mais leur méthode.
+            </p>
+            <p>
+              Karria réunit toutes les étapes au même endroit et confie le
+              travail répétitif à l&apos;intelligence artificielle :{" "}
+              <Link href="/matching-emploi-ia" className="text-primary hover:underline">
+                matching des offres
+              </Link>
+              , génération du{" "}
+              <Link href="/cv-ia" className="text-primary hover:underline">
+                CV
+              </Link>{" "}
+              et de la{" "}
+              <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
+                lettre de motivation
+              </Link>
+              , suivi centralisé et alertes intelligentes. Vous gardez le
+              contrôle, mais sans la charge mentale.
+            </p>
+          </section>
+
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">
               Tout ce qu&apos;il vous faut pour trouver plus vite
@@ -71,6 +123,8 @@ export default function RechercheEmploiIaPage() {
               ))}
             </div>
           </section>
+
+          <FaqSection faqs={faqs} />
 
           <section className="text-center">
             <p className="text-muted-foreground mb-6">Explorez aussi</p>

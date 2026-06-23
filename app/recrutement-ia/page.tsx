@@ -1,5 +1,6 @@
 import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Users, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
@@ -17,6 +18,25 @@ export const metadata = buildMetadata({
     "plateforme recrutement IA",
   ],
 });
+
+const faqs = [
+  {
+    q: "Comment l'IA améliore-t-elle le recrutement ?",
+    a: "L'IA permet de qualifier les candidatures sur la base des compétences réelles plutôt que de mots-clés, de réduire le temps de présélection et d'offrir une expérience candidat fluide. Côté Karria, les candidats arrivent avec des profils enrichis et des documents déjà optimisés.",
+  },
+  {
+    q: "Le matching IA remplace-t-il le jugement humain ?",
+    a: "Non. Karria assiste la décision en mettant en avant les profils les plus pertinents et en objectivant la compatibilité candidat-poste, mais la décision finale reste entre les mains du recruteur.",
+  },
+  {
+    q: "Comment Karria améliore l'expérience candidat ?",
+    a: "En aidant les candidats à présenter leur meilleur profil (CV et lettres optimisés, matching transparent), Karria valorise votre marque employeur et réduit les frictions tout au long du processus.",
+  },
+  {
+    q: "Karria s'adresse-t-il aussi aux candidats ?",
+    a: "Oui, Karria est d'abord pensé pour les candidats. Cette page présente la vision côté recrutement, mais l'essentiel de la plateforme accompagne les chercheurs d'emploi dans toutes leurs démarches.",
+  },
+];
 
 export default function RecrutementIaPage() {
   return (
@@ -46,6 +66,34 @@ export default function RecrutementIaPage() {
             </Link>
           </div>
 
+          {/* Intro rédactionnelle */}
+          <section className="mb-20 space-y-4 text-muted-foreground leading-relaxed">
+            <h2 className="text-2xl font-bold text-foreground">
+              Le recrutement à l&apos;ère de l&apos;intelligence artificielle
+            </h2>
+            <p>
+              Le recrutement traditionnel souffre de deux maux : un temps de
+              traitement long et un tri trop souvent basé sur des mots-clés qui
+              écarte de bons profils. En automatisant la mise en relation entre
+              compétences réelles et besoins du poste, l&apos;IA permet de gagner
+              du temps tout en améliorant la qualité des candidatures retenues.
+            </p>
+            <p>
+              Karria aborde le recrutement par l&apos;expérience candidat :
+              lorsque les chercheurs d&apos;emploi disposent d&apos;outils pour
+              présenter leur meilleur profil — un{" "}
+              <Link href="/cv-ia" className="text-primary hover:underline">
+                CV optimisé
+              </Link>{" "}
+              et un{" "}
+              <Link href="/matching-emploi-ia" className="text-primary hover:underline">
+                matching pertinent
+              </Link>{" "}
+              — les recruteurs reçoivent des candidatures mieux ciblées et plus
+              faciles à évaluer. Tout le monde y gagne.
+            </p>
+          </section>
+
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">Une nouvelle ère du recrutement</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -64,6 +112,8 @@ export default function RecrutementIaPage() {
               ))}
             </div>
           </section>
+
+          <FaqSection faqs={faqs} />
 
           <section className="text-center">
             <p className="text-muted-foreground mb-6">Explorez aussi</p>
