@@ -14,13 +14,13 @@ export const SITE_CONFIG = {
 export const CONTACT_EMAILS = {
   general: "hello@karria.fr",
   support: "hello@karria.fr",
-  press: "press@karria.fr",
-  partners: "partners@karria.fr",
-  jobs: "jobs@karria.fr",
-  privacy: "privacy@karria.fr",
-  legal: "legal@karria.fr",
-  billing: "billing@karria.fr",
-  security: "security@karria.fr",
+  press: "hello@karria.fr",
+  partners: "hello@karria.fr",
+  jobs: "hello@karria.fr",
+  privacy: "hello@karria.fr",
+  legal: "hello@karria.fr",
+  billing: "hello@karria.fr",
+  security: "hello@karria.fr",
 };
 
 export const SOCIAL_LINKS = {
