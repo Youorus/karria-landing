@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Brain, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Matching emploi IA — Offres sur-mesure pour votre profil",
@@ -69,7 +70,7 @@ export default function MatchingEmploiIaPage() {
               opportunités qui ont réellement du sens pour votre carrière.
             </p>
             <Link
-              href="/"
+              href={NAV_ROUTES.download}
               className="btn-primary inline-flex items-center gap-2"
             >
               <Sparkles className="w-5 h-5" />

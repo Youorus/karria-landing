@@ -112,7 +112,7 @@ export default function OgImage() {
             fontWeight: 500,
           }}
         >
-          Matching · CV IA · Lettres · Coaching
+          Matching · CV IA · Lettres · Alertes
         </div>
 
         {/* Bottom badge */}

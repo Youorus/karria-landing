@@ -24,7 +24,7 @@ const CTA_PARTICLES = [
 const TRUST_ITEMS = [
   {
     icon: ShieldCheck,
-    label: "Vos données restent protégées",
+    label: "Vos données ne servent qu'au matching, jamais revendues",
   },
   {
     icon: Lock,

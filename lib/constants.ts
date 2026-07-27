@@ -50,11 +50,11 @@ export const NAV_ROUTES = {
   pricing: "/#pricing",
   howItWorks: "/#how-it-works",
   features: "/#features",
+  download: "/#download",
 
   // Resources
   blog: "/blog",
   faq: "/faq",
-  guideCv: "/ressources/guide-cv",
   ressources: "/ressources",
   alternance: "/alternance",
   reconversion: "/reconversion",
@@ -66,8 +66,7 @@ export const NAV_ROUTES = {
   careers: "/carrieres",
   press: "/presse",
   partners: "/partenaires",
-  recruiting: "/recrutement-ia",
-  
+
   // Legal
   privacy: "/confidentialite",
   cgu: "/cgu",
@@ -85,7 +84,6 @@ export const FOOTER_SECTIONS = {
     { label: "CV IA", href: NAV_ROUTES.cv },
     { label: "Lettres IA", href: NAV_ROUTES.letters },
     { label: "Recherche Emploi", href: NAV_ROUTES.search },
-    { label: "Recrutement IA", href: NAV_ROUTES.recruiting },
     { label: "Comparatifs", href: NAV_ROUTES.comparatifs },
     { label: "FAQ", href: NAV_ROUTES.faq },
     { label: "Tarifs", href: NAV_ROUTES.pricing },

@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, PenLine, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Lettre de motivation IA personnalisée en quelques secondes",
@@ -69,7 +70,7 @@ export default function LettreMotivationIaPage() {
               chaque offre et à votre parcours.
             </p>
             <Link
-              href="/"
+              href={NAV_ROUTES.download}
               className="btn-primary inline-flex items-center gap-2"
             >
               <Sparkles className="w-5 h-5" />

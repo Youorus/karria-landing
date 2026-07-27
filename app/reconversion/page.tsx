@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, RefreshCw, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Reconversion professionnelle avec l'IA",
@@ -59,7 +60,7 @@ export default function ReconversionPage() {
               valoriser vos compétences transférables, identifier les secteurs
               porteurs et construire un nouveau chapitre professionnel.
             </p>
-            <Link href="/" className="btn-primary inline-flex items-center gap-2">
+            <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
               <Sparkles className="w-5 h-5" />
               Commencer ma reconversion
               <ArrowRight className="w-5 h-5" />

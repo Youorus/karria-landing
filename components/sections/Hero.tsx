@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { PlatformLogoMarquee } from "@/components/sections/PlatformLogoMarquee";
 import {AuroraText} from "@/components/ui/aurora-text";
 import {AppDownloadCTA} from "@/components/ui/AppDownloadCTA";
 import {Particles} from "@/components/ui/particles";
@@ -70,9 +69,9 @@ export default function Hero() {
                 lineHeight: 0.94,
               }}
           >
-          Arrêtez de chercher.
+          Postulez 5 fois
             <br />
-            <AuroraText>Commencez à trouver.</AuroraText>
+            <AuroraText>plus vite.</AuroraText>
           </motion.h1>
 
           <motion.p
@@ -81,30 +80,22 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.3, ease: EASE }}
               className="mb-10 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
           >
-            Karria trouve les meilleures opportunités,
-            optimise vos candidatures et propulse votre carrière grâce à l’IA.
+            Karria trouve les offres qui vous correspondent, adapte vos
+            candidatures et vous fait gagner un temps réel sur votre recherche.
           </motion.p>
 
           <motion.div
+              id="download"
               initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               transition={{ duration: 1.2, delay: 0.4, ease: EASE }}
-              className="mb-12 flex w-full flex-col items-center gap-6"
+              className="mb-12 flex w-full scroll-mt-28 flex-col items-center gap-6"
           >
             <AppDownloadCTA />
             <p className="text-[13px] font-medium text-muted-foreground/60">
               * Actuellement optimisé pour le marché de l&apos;emploi en France.
             </p>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="relative z-30 mt-auto w-full border-t border-border/40 bg-background/50 py-4 backdrop-blur-md"
-        >
-          <PlatformLogoMarquee />
         </motion.div>
       </section>
   );

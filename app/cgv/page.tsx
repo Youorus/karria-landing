@@ -32,7 +32,7 @@ export default function CGVPage() {
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">1. Services et Tarifs</h3>
                   <p>
-                    Karria propose différents niveaux d&apos;abonnement (Gratuit, Premium, Pro). Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la durée de l&apos;engagement.
+                    Karria propose un plan Gratuit et un abonnement Illimité à 4,99€/mois. Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la durée de l&apos;engagement.
                   </p>
                 </section>
 

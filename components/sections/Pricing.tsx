@@ -1,71 +1,42 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Check, ArrowRight, Star } from "lucide-react";
+import { useRef } from "react";
+import { Check, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
-import { APP_LINKS } from "@/lib/constants";
+import { NAV_ROUTES } from "@/lib/constants";
 
 const PLANS = [
   {
     id: "free",
     name: "Gratuit",
-    price: { monthly: 0, annual: 0 },
-    description: "Pour commencer votre recherche intelligemment.",
-    badge: null,
+    price: 0,
+    description: "Pour commencer votre recherche d'emploi sans limite sur le matching.",
     highlighted: false,
     features: [
-      "5 matchings IA par mois",
-      "1 CV généré",
-      "3 lettres de motivation",
-      "Tableau de bord candidatures",
-      "Alertes emploi (limité)",
-      "Templates basiques",
+      "Matching et recommandations d'offres illimités",
+      "3 CV générés par mois",
+      "3 lettres de motivation générées par mois",
+      "Accès illimité aux templates",
+      "2 photos de profil professionnelles par mois",
     ],
     cta: "Commencer gratuitement",
-    ctaStyle: "secondary",
   },
   {
-    id: "premium",
-    name: "Premium",
-    price: { monthly: 9.99, annual: 7.99 },
-    description: "Pour les candidats qui veulent décrocher plus vite.",
-    badge: "Le plus populaire",
+    id: "illimite",
+    name: "Illimité",
+    price: 4.99,
+    description: "Pour ne plus jamais être limité dans vos candidatures.",
     highlighted: true,
     features: [
-      "Matchings IA illimités",
-      "CV illimités + optimisation IA",
-      "Lettres illimitées",
-      "Score ATS en temps réel",
-      "Analytics de candidatures",
-      "Alertes prioritaires",
-      "Templates premium",
-      "Support prioritaire",
+      "Tout le plan Gratuit inclus",
+      "CV générés illimités",
+      "Lettres de motivation illimitées",
+      "Soutient le développement de Karria et le maintien de la plateforme",
     ],
-    cta: "Démarrer Premium",
-    ctaStyle: "primary",
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    price: { monthly: 19.99, annual: 15.99 },
-    description: "Pour les professionnels qui ne laissent rien au hasard.",
-    badge: null,
-    highlighted: false,
-    features: [
-      "Tout Premium inclus",
-      "Coaching carrière IA",
-      "Analyse de profil LinkedIn",
-      "Préparation entretien IA",
-      "Veille concurrentielle",
-      "Export multi-format",
-      "Accès API développeurs",
-      "Support dédié 24/7",
-    ],
-    cta: "Démarrer Pro",
-    ctaStyle: "secondary",
+    cta: "Passer à l'illimité",
   },
 ];
 
@@ -74,7 +45,6 @@ const EASE = [0.16, 1, 0.3, 1];
 export default function Pricing() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
 
   return (
     <section
@@ -102,48 +72,12 @@ export default function Pricing() {
                 <span className="text-gradient-blue">votre carrière</span>
               </>
             }
-            subtitle="Commencez gratuitement, évoluez selon vos ambitions. Sans engagement."
+            subtitle="Le matching reste gratuit pour tout le monde. Passez à l'illimité quand vous en avez besoin."
           />
         </motion.div>
 
-        {/* Billing toggle */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.0, delay: 0.2, ease: EASE }}
-          className="flex justify-center mt-8 mb-12"
-        >
-          <div className="inline-flex items-center gap-1 p-1 rounded-xl bg-card border border-border/50">
-            <button
-              onClick={() => setBilling("monthly")}
-              className={cn(
-                "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
-                billing === "monthly"
-                  ? "bg-muted text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Mensuel
-            </button>
-            <button
-              onClick={() => setBilling("annual")}
-              className={cn(
-                "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1.5",
-                billing === "annual"
-                  ? "bg-muted text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              )}
-            >
-              Annuel
-              <span className="px-1.5 py-0.5 text-[10px] font-bold rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-                -20%
-              </span>
-            </button>
-          </div>
-        </motion.div>
-
         {/* Plans grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto mt-14">
           {PLANS.map((plan, i) => (
             <motion.div
               key={plan.id}
@@ -157,16 +91,6 @@ export default function Pricing() {
                   : "card bg-card/50 backdrop-blur-sm hover:border-border"
               )}
             >
-              {/* Popular badge */}
-              {plan.badge && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-karria-600 text-white shadow-glow-sm">
-                    <Star className="w-3 h-3 fill-white" />
-                    {plan.badge}
-                  </span>
-                </div>
-              )}
-
               {/* Plan name + price */}
               <div className="mb-6">
                 <p className="font-display font-semibold text-muted-foreground text-sm mb-3">
@@ -174,11 +98,11 @@ export default function Pricing() {
                 </p>
                 <div className="flex items-end gap-1 mb-2">
                   <span className="font-display font-bold text-foreground text-4xl leading-none">
-                    {plan.price[billing] === 0
+                    {plan.price === 0
                       ? "0€"
-                      : `${plan.price[billing].toFixed(2).replace(".", ",")}€`}
+                      : `${plan.price.toFixed(2).replace(".", ",")}€`}
                   </span>
-                  {plan.price[billing] > 0 && (
+                  {plan.price > 0 && (
                     <span className="text-muted-foreground text-sm mb-1.5">/mois</span>
                   )}
                 </div>
@@ -207,7 +131,7 @@ export default function Pricing() {
 
               {/* CTA */}
               <Link
-                href={APP_LINKS.webapp}
+                href={NAV_ROUTES.download}
                 className={cn(
                   "w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold font-display transition-all duration-300",
                   plan.highlighted

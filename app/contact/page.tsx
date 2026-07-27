@@ -2,6 +2,7 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { ContactForm } from "@/components/ui/ContactForm";
 import { Mail, MessageSquare, Linkedin, Instagram, ArrowRight } from "lucide-react";
 import { SVGProps } from "react";
 import { CONTACT_EMAILS, SOCIAL_LINKS } from "@/lib/constants";
@@ -64,27 +65,38 @@ export default function ContactPage() {
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
-          {CONTACT_METHODS.map((method, index) => (
-            <Reveal key={method.title} delay={index * 0.1}>
-              <div className="p-8 rounded-3xl bg-secondary/30 border border-border flex flex-col h-full">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6">
-                  <method.icon className="w-6 h-6" />
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-24">
+          <Reveal className="lg:col-span-3">
+            <div className="p-8 md:p-10 rounded-3xl bg-secondary/30 border border-border h-full">
+              <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message</h2>
+              <ContactForm />
+            </div>
+          </Reveal>
+
+          <div className="lg:col-span-2 space-y-5">
+            {CONTACT_METHODS.map((method, index) => (
+              <Reveal key={method.title} delay={index * 0.1}>
+                <div className="p-6 rounded-3xl bg-secondary/30 border border-border flex items-start gap-4">
+                  <div className="w-11 h-11 shrink-0 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+                    <method.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold mb-1">{method.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      {method.description}
+                    </p>
+                    <Link
+                      href={`mailto:${method.email}`}
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-primary group"
+                    >
+                      {method.label}
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-4">{method.title}</h3>
-                <p className="text-muted-foreground mb-8 flex-grow">
-                  {method.description}
-                </p>
-                <Link 
-                  href={`mailto:${method.email}`}
-                  className="inline-flex items-center gap-2 font-bold text-primary group"
-                >
-                  {method.label}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

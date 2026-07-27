@@ -14,7 +14,7 @@ import { trackLoginClick, trackSignupClick } from "@/lib/analytics-events";
 const NAV_LINKS = [
   {
     label: "Produit",
-    href: "#features",
+    href: NAV_ROUTES.features,
     children: [
       { label: "Matching IA", href: NAV_ROUTES.matching, desc: "Offres personnalisées" },
       { label: "CV IA", href: NAV_ROUTES.cv, desc: "CV optimisés automatiquement" },
@@ -240,14 +240,14 @@ export default function Header() {
 
               <div className="mt-auto space-y-4 pb-8">
                 <Link
-                  href="#"
+                  href={NAV_ROUTES.download}
                   onClick={() => { setMobileOpen(false); trackLoginClick(); }}
                   className="btn-secondary w-full justify-center h-14"
                 >
                   Se connecter
                 </Link>
                 <Link
-                  href="#"
+                  href={NAV_ROUTES.download}
                   onClick={() => { setMobileOpen(false); trackSignupClick("header_mobile"); }}
                   className="btn-primary w-full justify-center h-14 text-lg shadow-xl shadow-primary/20"
                 >

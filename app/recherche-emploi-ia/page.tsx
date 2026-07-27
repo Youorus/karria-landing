@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Search, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Recherche d'emploi IA — Trouvez votre prochain poste",
@@ -59,9 +60,9 @@ export default function RechercheEmploiIaPage() {
               <span>Recherche d&apos;emploi IA</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              La recherche d&apos;emploi
+              Toute votre recherche d&apos;emploi,
               <br />
-              <span className="text-gradient-blue">réinventée par l&apos;IA</span>
+              <span className="text-gradient-blue">centralisée en un seul endroit</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Karria centralise, filtre et personnalise toute votre recherche
@@ -69,7 +70,7 @@ export default function RechercheEmploiIaPage() {
               décrochés.
             </p>
             <Link
-              href="/"
+              href={NAV_ROUTES.download}
               className="btn-primary inline-flex items-center gap-2"
             >
               <Sparkles className="w-5 h-5" />

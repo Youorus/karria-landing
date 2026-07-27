@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight, BookOpen, FileText, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Blog — Conseils carrière, IA et emploi",
@@ -151,7 +152,7 @@ export default function BlogPage() {
                 recherche d’emploi.
               </p>
 
-              <Link href="/" className="btn-primary inline-flex items-center gap-2">
+              <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
                 Découvrir Karria
                 <ArrowRight className="h-5 w-5" />
               </Link>

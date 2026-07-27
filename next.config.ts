@@ -18,6 +18,13 @@ const nextConfig: NextConfig = {
         destination: "https://karria.fr/:path*",
         permanent: true,
       },
+      // /recrutement-ia retiré — l'offre n'est pas réellement pensée pour les recruteurs,
+      // le trafic est redirigé vers la vraie page produit candidat.
+      {
+        source: "/recrutement-ia",
+        destination: "/matching-emploi-ia",
+        permanent: true,
+      },
     ];
   },
   async headers() {

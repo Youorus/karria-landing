@@ -63,12 +63,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/recrutement-ia`,
-      lastModified: now,
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.8,
-    },
-    {
       url: `${SITE_URL}/blog`,
       lastModified: now,
       changeFrequency: "daily" as ChangeFrequency,
@@ -112,6 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/presse`,
+      lastModified: now,
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/partenaires`,
       lastModified: now,
       changeFrequency: "monthly" as ChangeFrequency,
       priority: 0.6,

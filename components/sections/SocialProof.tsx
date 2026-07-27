@@ -2,23 +2,11 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Star, Quote } from "lucide-react";
+import { Gift, ShieldCheck, Zap } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const STATS = [
-  {
-    value: 100000,
-    suffix: "+",
-    label: "Offres analysées par jour",
-    description: "Karria agrège et traite des milliers d’offres partout en France.",
-  },
-  {
-    value: 10,
-    suffix: "+",
-    label: "Plateformes connectées",
-    description: "Les opportunités sont récupérées depuis plusieurs sources d’emploi.",
-  },
   {
     value: 5,
     suffix: "×",
@@ -30,30 +18,27 @@ const STATS = [
     suffix: "%",
     label: "Documents optimisés",
     description: "CV et lettres générés pour être clairs, professionnels et adaptés.",
-  }
+  },
 ];
 
-const TESTIMONIALS = [
+const COMMITMENTS = [
   {
-    name: "Sarah M.",
-    role: "Designer UX",
-    stars: 5,
-    quote:
-        "Avant, je passais mes soirées à chercher des offres. Avec Karria, je vois directement celles qui me correspondent vraiment.",
+    icon: Gift,
+    title: "Le matching reste gratuit",
+    description:
+        "Les recommandations d'offres sont illimitées et gratuites dès l'inscription, sans carte bancaire.",
   },
   {
-    name: "Thomas R.",
-    role: "Développeur full-stack",
-    stars: 5,
-    quote:
-        "Ce que j’aime, c’est le gain de temps. Les offres sont mieux ciblées et mes candidatures sont prêtes beaucoup plus vite.",
+    icon: Zap,
+    title: "Vos documents, prêts en quelques secondes",
+    description:
+        "3 CV et 3 lettres de motivation générés gratuitement chaque mois. Illimité avec l'abonnement à 4,99€/mois.",
   },
   {
-    name: "Léa K.",
-    role: "Marketing manager",
-    stars: 5,
-    quote:
-        "Karria m’a aidée à y voir plus clair. Je savais quoi postuler, comment adapter mon CV et quoi faire ensuite.",
+    icon: ShieldCheck,
+    title: "Vos données ne servent qu'à vous",
+    description:
+        "Elles sont utilisées uniquement pour améliorer votre matching et vos candidatures — jamais revendues, jamais partagées.",
   },
 ];
 
@@ -88,12 +73,12 @@ export default function SocialProof() {
                 <span className="text-gradient-blue">qui parlent.</span>
               </>
             }
-            subtitle="Des milliers de professionnels font déjà confiance à Karria pour réinventer leur recherche d'emploi."
+            subtitle="Karria est conçu pour vous faire gagner du temps, sans jamais vous coûter votre tranquillité."
           />
         </motion.div>
 
         {/* Stats grid */}
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-14 grid grid-cols-2 gap-4 max-w-md mx-auto">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -114,33 +99,26 @@ export default function SocialProof() {
           ))}
         </div>
 
-        {/* Testimonials */}
+        {/* Commitments */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
-          {TESTIMONIALS.map((t, i) => (
+          {COMMITMENTS.map((c, i) => (
             <motion.div
-              key={t.name}
+              key={c.title}
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 + i * 0.1, ease: EASE }}
               className="relative group card card-hover flex flex-col bg-card/50 backdrop-blur-sm"
             >
-              {/* Quote icon */}
-              <Quote className="w-8 h-8 text-karria-800 mb-4" />
-
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: t.stars }).map((_, j) => (
-                  <Star key={j} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                ))}
+              <div className="w-10 h-10 rounded-xl bg-karria-600/10 border border-karria-600/20 flex items-center justify-center mb-4">
+                <c.icon className="w-5 h-5 text-karria-500" />
               </div>
 
-              {/* Quote text */}
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">
-                &ldquo;{t.quote}&rdquo;
-              </p>
+              <h3 className="font-display font-semibold text-foreground text-base mb-2">
+                {c.title}
+              </h3>
 
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">
-                &ldquo;{t.quote}&rdquo;
+              <p className="text-muted-foreground text-sm leading-relaxed flex-1">
+                {c.description}
               </p>
             </motion.div>
           ))}

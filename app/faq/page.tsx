@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/utils";
 
 export const metadata = buildMetadata({
   title: "Questions fréquentes sur Karria et l'IA carrière",
-  description: "Toutes les réponses à vos questions sur Karria : matching IA, génération de CV, abonnement Premium et sécurité des données.",
+  description: "Toutes les réponses à vos questions sur Karria : matching IA, génération de CV, abonnement Illimité et sécurité des données.",
   path: "/faq",
 });
 
@@ -21,7 +21,7 @@ const FAQS = [
       },
       {
         q: "Est-ce que Karria est gratuit ?",
-        a: "Oui, Karria propose un plan gratuit avec accès aux fonctionnalités de base. Pour les utilisateurs souhaitant une assistance IA illimitée et des fonctionnalités avancées, nous proposons un abonnement Premium."
+        a: "Oui. Le matching et les recommandations d'offres sont gratuits et illimités dès l'inscription, avec 3 CV et 3 lettres de motivation générés gratuitement par mois. Pour générer des CV et lettres en illimité, l'abonnement Illimité est à 4,99€/mois."
       }
     ]
   },
@@ -34,7 +34,7 @@ const FAQS = [
       },
       {
         q: "Les CV générés sont-ils compatibles ATS ?",
-        a: "Absolument. Tous nos templates de CV sont conçus pour être parfaitement lus par les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains."
+        a: "Oui. Tous nos templates de CV sont conçus pour être optimisés pour les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains."
       }
     ]
   },
@@ -67,7 +67,7 @@ const faqJsonLd = {
       name: "Est-ce que Karria est gratuit ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Oui, Karria propose un plan gratuit avec accès aux fonctionnalités de base. Pour les utilisateurs souhaitant une assistance IA illimitée et des fonctionnalités avancées, nous proposons un abonnement Premium.",
+        text: "Oui. Le matching et les recommandations d'offres sont gratuits et illimités dès l'inscription, avec 3 CV et 3 lettres de motivation générés gratuitement par mois. Pour générer des CV et lettres en illimité, l'abonnement Illimité est à 4,99€/mois.",
       },
     },
     {
@@ -83,7 +83,7 @@ const faqJsonLd = {
       name: "Les CV générés sont-ils compatibles ATS ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Absolument. Tous nos templates de CV sont conçus pour être parfaitement lus par les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains.",
+        text: "Oui. Tous nos templates de CV sont conçus pour être optimisés pour les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains.",
       },
     },
     {

@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { ArrowRight, BarChart2, Check, X, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Comparatif des plateformes d'emploi et de CV IA",
@@ -67,7 +68,7 @@ const versus = [
 const faqs = [
   {
     q: "Karria est-il vraiment gratuit ?",
-    a: "Oui, vous pouvez créer votre profil, recevoir des offres compatibles et générer vos premiers documents gratuitement. Des fonctionnalités avancées sont disponibles via des formules payantes, mais aucune carte bancaire n'est requise pour commencer.",
+    a: "Oui, vous pouvez créer votre profil, recevoir des offres compatibles et générer vos premiers documents gratuitement. La génération illimitée de CV et de lettres est disponible via l'abonnement Illimité à 4,99€/mois, mais aucune carte bancaire n'est requise pour commencer.",
   },
   {
     q: "En quoi le matching IA de Karria est-il différent ?",
@@ -226,7 +227,7 @@ export default function ComparatifsPage() {
         </section>
 
         <div className="text-center">
-          <Link href="/" className="btn-primary inline-flex items-center gap-2">
+          <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
             Essayer Karria gratuitement
             <ArrowRight className="w-5 h-5" />
           </Link>

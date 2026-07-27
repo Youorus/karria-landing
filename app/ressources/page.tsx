@@ -1,6 +1,7 @@
 import { buildMetadata } from "@/lib/metadata";
 import { ArrowRight, Library, FileText, Search, Sparkles, X } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Ressources carrière — Guides et outils gratuits",
@@ -19,12 +20,12 @@ export const metadata = buildMetadata({
 });
 
 const resources = [
-  { title: "Guide ultime du CV 2026", desc: "Tout ce que vous devez savoir pour créer un CV parfait en 2026.", href: "/blog", tag: "Guide" },
-  { title: "Templates CV gratuits", desc: "Téléchargez des modèles de CV professionnels et modernes.", href: "/cv-ia", tag: "Template" },
-  { title: "Checklist candidature complète", desc: "Ne ratez plus jamais un élément essentiel dans vos candidatures.", href: "/cv-ia", tag: "Checklist" },
-  { title: "Guide de la lettre de motivation", desc: "Structure, ton et contenu pour une lettre qui convertit.", href: "/lettre-motivation-ia", tag: "Guide" },
-  { title: "Comprendre les ATS en 2026", desc: "Comment fonctionnent les logiciels de tri automatique et comment les passer.", href: "/blog/ats-optimisation", tag: "Technique" },
-  { title: "Guide reconversion professionnelle", desc: "Étapes, outils et stratégies pour réussir votre transition.", href: "/reconversion", tag: "Guide" },
+  { title: "Créer un CV optimisé pour les ATS", desc: "Un CV professionnel, adapté à chaque offre et structuré pour passer les filtres de tri automatique.", href: "/cv-ia", tag: "Outil" },
+  { title: "Écrire une lettre de motivation ciblée", desc: "Une lettre personnalisée et prête à envoyer, générée pour chaque candidature.", href: "/lettre-motivation-ia", tag: "Outil" },
+  { title: "Trouver les offres qui vous correspondent", desc: "Le matching IA identifie les opportunités compatibles avec votre profil, sans perdre de temps.", href: "/matching-emploi-ia", tag: "Outil" },
+  { title: "Organiser toute sa recherche d'emploi", desc: "Centralisez vos candidatures, vos alertes et votre suivi au même endroit.", href: "/recherche-emploi-ia", tag: "Outil" },
+  { title: "Réussir sa reconversion professionnelle", desc: "Étapes et conseils pour valoriser vos compétences transférables.", href: "/reconversion", tag: "Guide" },
+  { title: "Décrocher son alternance", desc: "Offres ciblées, CV adapté et préparation aux entretiens.", href: "/alternance", tag: "Guide" },
 ];
 
 const categories = [
@@ -34,7 +35,7 @@ const categories = [
     body: "Un CV efficace en 2026 doit convaincre deux lecteurs : le logiciel ATS qui filtre les candidatures, puis le recruteur humain. Nos ressources vous expliquent comment structurer vos rubriques, choisir les bons mots-clés et adapter votre CV à chaque offre.",
     links: [
       { label: "Créer mon CV avec l'IA", href: "/cv-ia" },
-      { label: "Comprendre les ATS", href: "/blog/ats-optimisation" },
+      { label: "Comprendre les ATS", href: "/faq" },
     ],
   },
   {
@@ -60,7 +61,7 @@ const categories = [
 const faqs = [
   {
     q: "Les ressources Karria sont-elles gratuites ?",
-    a: "Oui. Tous les guides, modèles et checklists sont accessibles gratuitement. Vous pouvez également utiliser les outils IA de Karria gratuitement pour mettre ces conseils en pratique.",
+    a: "Oui. Toutes les pages et outils présentés dans cette section sont accessibles gratuitement, sans carte bancaire.",
   },
   {
     q: "À qui s'adressent ces ressources ?",
@@ -209,7 +210,7 @@ export default function RessourcesPage() {
         </section>
 
         <div className="text-center">
-          <Link href="/" className="btn-primary inline-flex items-center gap-2">
+          <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
             Utiliser tous les outils Karria
             <ArrowRight className="w-5 h-5" />
           </Link>

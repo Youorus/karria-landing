@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, FileText, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "CV IA professionnel et optimisé en quelques secondes",
@@ -44,7 +45,7 @@ const faqs = [
   },
   {
     q: "Combien de CV puis-je créer avec Karria ?",
-    a: "Avec le plan Free vous pouvez créer un CV de base. Les plans Premium et Pro offrent un nombre illimité de CV adaptés par offre.",
+    a: "Avec le plan Gratuit, vous pouvez générer 3 CV par mois. L'abonnement Illimité à 4,99€/mois vous donne un nombre illimité de CV adaptés par offre.",
   },
 ];
 
@@ -71,7 +72,7 @@ export default function CvIaPage() {
               quelques secondes.
             </p>
             <Link
-              href="/"
+              href={NAV_ROUTES.download}
               className="btn-primary inline-flex items-center gap-2"
             >
               <Sparkles className="w-5 h-5" />

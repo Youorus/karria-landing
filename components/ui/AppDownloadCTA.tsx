@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { APP_LINKS } from "@/lib/constants";
+import { APP_LINKS, NAV_ROUTES } from "@/lib/constants";
 import { trackDownloadClick, trackCTAClick } from "@/lib/analytics-events";
 
 type AppDownloadCTAProps = {
@@ -14,18 +14,6 @@ type AppDownloadCTAProps = {
     /** Affiche Google Play comme bouton actif. Par défaut "Bientôt disponible". */
     googlePlayAvailable?: boolean;
 };
-
-function StarRating({ className }: { className?: string }) {
-    return (
-        <span className={cn("flex items-center gap-0.5", className)} aria-hidden>
-            {Array.from({ length: 5 }).map((_, i) => (
-                <svg key={i} viewBox="0 0 24 24" fill="currentColor" className="h-3 w-3">
-                    <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-            ))}
-        </span>
-    );
-}
 
 function AppleIcon({ className }: { className?: string }) {
     return (
@@ -50,7 +38,7 @@ export function AppDownloadCTA({
                                    className,
                                    appStoreHref = APP_LINKS.appStore,
                                    googlePlayHref = APP_LINKS.googlePlay,
-                                   webHref = APP_LINKS.webapp,
+                                   webHref = NAV_ROUTES.download,
                                    showWebCTA = true,
                                    googlePlayAvailable = APP_LINKS.googlePlayAvailable,
                                }: AppDownloadCTAProps) {
@@ -138,9 +126,8 @@ export function AppDownloadCTA({
                 )}
             </div>
 
-            {/* Réassurance — note App Store */}
+            {/* Réassurance */}
             <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <StarRating className="text-amber-400" />
                 <span className="font-medium">Gratuit · iPhone &amp; iPad</span>
             </div>
 

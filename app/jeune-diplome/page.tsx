@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Star, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Premier emploi pour jeune diplômé avec l'IA",
@@ -59,7 +60,7 @@ export default function JeuneDiplomePage() {
               compétences, construire un profil attractif et trouver les offres
               les plus adaptées à votre profil de jeune diplômé.
             </p>
-            <Link href="/" className="btn-primary inline-flex items-center gap-2">
+            <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
               <Sparkles className="w-5 h-5" />
               Lancer ma carrière
               <ArrowRight className="w-5 h-5" />

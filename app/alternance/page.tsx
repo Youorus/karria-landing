@@ -3,6 +3,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, GraduationCap, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Trouver une alternance grâce à l'IA",
@@ -59,7 +60,7 @@ export default function AlternancePage() {
               accompagne pas à pas : offres ciblées, CV adapté, lettres
               personnalisées pour chaque entreprise.
             </p>
-            <Link href="/" className="btn-primary inline-flex items-center gap-2">
+            <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
               <Sparkles className="w-5 h-5" />
               Trouver mon alternance
               <ArrowRight className="w-5 h-5" />
