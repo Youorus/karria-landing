@@ -4,7 +4,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.karria.app",
-      "sha256_cert_fingerprints": ["EMPREINTE_SHA256_A_COMPLETER"]
+      "sha256_cert_fingerprints": ["B2:9A:66:78:F9:0B:C2:36:48:4F:E6:60:52:50:34:CD:D8:3D:3C:8F:6E:E7:94:7F:D3:8B:39:45:02:40:90:93"]
     }
   }
 ]
