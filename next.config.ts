@@ -11,9 +11,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Force non-www → www (or inverse — adjust to your DNS setup)
+      // Force non-www → www (or inverse — adjust to your DNS setup).
+      // Les fichiers `.well-known` (liens universels iOS, App Links Android)
+      // doivent être servis sans redirection sur les deux hôtes.
       {
-        source: "/(.*)",
+        source: "/:path((?!\\.well-known).*)",
         has: [{ type: "host", value: "www.karria.fr" }],
         destination: "https://karria.fr/:path*",
         permanent: true,
@@ -45,6 +47,22 @@ const nextConfig: NextConfig = {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
           },
+        ],
+      },
+      {
+        // Liens universels iOS : Apple exige `application/json`, sans extension.
+        source: "/.well-known/apple-app-site-association",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+        ],
+      },
+      {
+        // App Links Android : vérifié par Google à l'installation.
+        source: "/.well-known/assetlinks.json",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
         ],
       },
       {

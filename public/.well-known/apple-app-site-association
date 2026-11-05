@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["TEAMID_A_COMPLETER.com.karria.app"],
+        "components": [
+          { "/": "/offre/*", "comment": "Une offre partagée s'ouvre dans l'app" },
+          { "/": "/app", "comment": "Le lien intelligent : l'app est déjà là" }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["TEAMID_A_COMPLETER.com.karria.app"]
+  }
+}
