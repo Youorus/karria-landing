@@ -34,6 +34,9 @@ export default function PrivacyPage() {
                   <p>
                     Nous collectons uniquement les informations nécessaires pour vous offrir le meilleur accompagnement carrière : vos coordonnées, votre parcours professionnel, et vos préférences de recherche d&apos;emploi. Ces données sont utilisées exclusivement pour alimenter nos algorithmes de matching et d&apos;optimisation.
                   </p>
+                  <p>
+                    À la création de votre compte, nous enregistrons également le pays et le fuseau horaire indiqués par les réglages de votre appareil (réglage « Région »). Ce pays est déduit du réglage de l&apos;appareil et non de votre position ni de votre adresse IP ; il sert uniquement à établir des statistiques sur la provenance de nos utilisateurs et est supprimé avec votre compte.
+                  </p>
                 </section>
 
                 <section>
@@ -83,7 +86,7 @@ export default function PrivacyPage() {
                 
                 <div className="mt-10 pt-10 border-t border-border/50">
                   <p className="text-[11px] uppercase tracking-wider font-bold text-muted-foreground mb-2">Dernière mise à jour</p>
-                  <p className="text-sm">24 Mai 2026</p>
+                  <p className="text-sm">21 Novembre 2026</p>
                 </div>
               </div>
             </Reveal>
