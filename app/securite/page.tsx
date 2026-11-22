@@ -3,34 +3,34 @@ import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { ShieldCheck, Lock, EyeOff, Server } from "lucide-react";
-import { CONTACT_EMAILS } from "@/lib/constants";
+import { CONTACT_EMAILS, NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Sécurité des données",
-  description: "Découvrez les mesures de sécurité avancées mises en place par Karria pour protéger vos données professionnelles et personnelles.",
+  description: "Comment Karria protège tes données : échanges chiffrés en HTTPS, connexion sans mot de passe, hébergement en Allemagne. Ce qui est en place, sans exagération.",
   path: "/securite",
 });
 
 const SECURITY_FEATURES = [
   {
     icon: Lock,
-    title: "Chiffrement AES-256",
-    description: "Toutes vos données personnelles et documents sont chiffrés au repos et en transit avec les standards les plus élevés du marché."
+    title: "Échanges chiffrés",
+    description: "Tout ce qui circule entre ton téléphone, ce site et nos serveurs passe par HTTPS (TLS 1.2 au minimum, HSTS activé). Tes données ne voyagent jamais en clair."
   },
   {
     icon: EyeOff,
-    title: "Anonymisation par IA",
-    description: "Nos algorithmes peuvent anonymiser vos données sensibles lors des phases de matching pour garantir une totale impartialité."
+    title: "Aucun mot de passe",
+    description: "Tu te connectes avec un code à six chiffres reçu par e-mail, ou avec Apple ou Google. Le code expire et le nombre d'essais est limité. Karria ne stocke donc aucun mot de passe."
   },
   {
     icon: ShieldCheck,
-    title: "Audit Permanent",
-    description: "Nous réalisons des tests d'intrusion réguliers et des audits de sécurité pour prévenir toute vulnérabilité potentielle."
+    title: "Un code audité",
+    description: "Un audit de sécurité du code de Karria a été mené en novembre 2026, et ses constats ont été corrigés. Des freins limitent aussi les abus : nombre de requêtes et d'essais plafonné, taille des envois bornée, fichiers importés contrôlés."
   },
   {
     icon: Server,
-    title: "Hébergement Souverain",
-    description: "Vos données sont hébergées sur des serveurs sécurisés conformes aux normes de sécurité internationales les plus strictes."
+    title: "Hébergement en Allemagne",
+    description: "Ton compte, tes CV, tes documents et tes messages sont hébergés chez Hetzner Online GmbH, dans son centre de données de Falkenstein, en Allemagne, donc dans l'Union européenne."
   }
 ];
 
@@ -43,7 +43,7 @@ export default function SecurityPage() {
             eyebrow="Confiance"
             headingLevel={1}
             title="Sécurité & Intégrité"
-            subtitle="La protection de vos données n'est pas une option, c'est le cœur de notre architecture."
+            subtitle="Ce qui protège tes données aujourd'hui, dit simplement et sans exagération."
             align="left"
             className="mb-20"
           />
@@ -69,14 +69,17 @@ export default function SecurityPage() {
               <section>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Notre engagement</h3>
                 <p>
-                  Karria a été conçu avec une approche &quot;Security by Design&quot;. Chaque nouvelle fonctionnalité passe par une revue de sécurité rigoureuse avant d&apos;être déployée. Nous travaillons quotidiennement pour assurer que vos informations professionnelles restent entre de bonnes mains : les vôtres.
+                  Karria est une jeune application, tenue par une petite équipe. Cette page décrit ce qui est réellement en place aujourd&apos;hui, rien de plus, et nous la mettrons à jour à chaque évolution. Tu gardes la main sur tes données : c&apos;est toi qui décides si l&apos;IA peut lire ton CV, et tu peux{" "}
+                  <Link href={NAV_ROUTES.accountDeletion} className="text-primary hover:underline">supprimer ton compte</Link>{" "}
+                  et ses données quand tu veux. Le détail figure dans notre{" "}
+                  <Link href={NAV_ROUTES.privacy} className="text-primary hover:underline">politique de confidentialité</Link>.
                 </p>
               </section>
               
               <section>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Signalement de vulnérabilité</h3>
                 <p>
-                  Si vous pensez avoir découvert une faille de sécurité sur notre plateforme, nous vous encourageons à nous en informer immédiatement. Nous traitons chaque signalement avec la plus haute priorité.
+                  Tu penses avoir trouvé une faille de sécurité sur Karria ? Écris-nous sans attendre : nous lisons chaque signalement et nous te répondons.
                 </p>
                 <Link 
                   href={`mailto:${CONTACT_EMAILS.security}`}
