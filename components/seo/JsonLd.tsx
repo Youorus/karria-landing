@@ -1,4 +1,6 @@
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/utils";
+import { SOCIAL_LINKS } from "@/lib/constants";
+import { PRICING, STORE_LINKS } from "@/lib/karria";
 
 export function JsonLd() {
   const organizationSchema = {
@@ -9,28 +11,29 @@ export function JsonLd() {
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/logo-full.svg`,
-      width: 577,
-      height: 203,
+      url: `${SITE_URL}/icons/icon-512.png`,
+      width: 512,
+      height: 512,
     },
     description: SITE_DESCRIPTION,
     foundingDate: "2024",
     areaServed: "FR",
     sameAs: [
-      "https://twitter.com/karriaapp",
-      "https://linkedin.com/company/karria",
-      "https://instagram.com/karria.app",
+      SOCIAL_LINKS.x,
+      SOCIAL_LINKS.linkedin,
+      SOCIAL_LINKS.instagram,
+      SOCIAL_LINKS.tiktok,
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      availableLanguage: ["French", "English"],
+      availableLanguage: ["French"],
       email: "hello@karria.fr",
     },
     brand: {
       "@type": "Brand",
       name: SITE_NAME,
-      logo: `${SITE_URL}/logo.svg`,
+      logo: `${SITE_URL}/icons/icon-512.png`,
     },
     address: {
       "@type": "PostalAddress",
@@ -52,42 +55,42 @@ export function JsonLd() {
         "@type": "SiteNavigationElement",
         position: 1,
         name: "Matching Emploi IA",
-        description: "Trouvez les meilleures offres d'emploi grâce à notre algorithme de matching intelligent.",
+        description: "Un fil d'offres personnalisé parmi plus de 500 000 offres en France.",
         url: `${SITE_URL}/matching-emploi-ia`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 2,
         name: "CV IA",
-        description: "Générez un CV optimisé pour les ATS en quelques secondes avec l'IA.",
+        description: "Atelier CV, 9 modèles, score ATS et CV adapté à chaque offre.",
         url: `${SITE_URL}/cv-ia`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 3,
         name: "Lettre de Motivation IA",
-        description: "Créez des lettres de motivation personnalisées et percutantes pour chaque offre.",
+        description: "Une lettre de motivation rédigée pour chaque offre.",
         url: `${SITE_URL}/lettre-motivation-ia`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 4,
         name: "Blog Carrière",
-        description: "Conseils, guides et actualités sur le recrutement et l'IA.",
+        description: "Conseils sur la recherche d'emploi, le CV et la lettre de motivation.",
         url: `${SITE_URL}/blog`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 5,
         name: "À Propos",
-        description: "Découvrez la vision de Karria et l'équipe derrière la plateforme.",
+        description: "L'histoire de Karria et de son fondateur.",
         url: `${SITE_URL}/about`,
       },
       {
         "@type": "SiteNavigationElement",
         position: 6,
         name: "Tarifs",
-        description: "Découvrez nos plans et commencez à propulser votre carrière gratuitement.",
+        description: "Karria est gratuite. Karria sans pub : 4,99 € par mois ou 49,90 € par an.",
         url: `${SITE_URL}/#pricing`,
       },
     ],
@@ -117,14 +120,6 @@ export function JsonLd() {
       "@id": `${SITE_URL}/#organization`,
     },
     inLanguage: "fr-FR",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/blog?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   const softwareApplicationSchema = {
@@ -135,31 +130,43 @@ export function JsonLd() {
     description: SITE_DESCRIPTION,
     applicationCategory: "BusinessApplication",
     applicationSubCategory: "Career Management",
-    operatingSystem: ["iOS", "Web"],
+    operatingSystem: "iOS, Android",
+    inLanguage: "fr-FR",
+    countriesSupported: "FR",
+    installUrl: STORE_LINKS.appStore,
     offers: [
       {
         "@type": "Offer",
         price: "0",
         priceCurrency: "EUR",
-        name: "Plan Gratuit",
-        description: "Matching illimité, 3 CV et 3 lettres de motivation générés par mois, templates illimités, 2 photos de profil professionnelles par mois",
+        name: "Karria (gratuit)",
+        description:
+          "Recherche d'offres illimitée. Version gratuite financée par des annonces, avec des limites mensuelles sur les CV, les lettres et l'optimisation ATS.",
       },
       {
         "@type": "Offer",
-        price: "4.99",
+        price: PRICING.monthly.toFixed(2),
         priceCurrency: "EUR",
-        name: "Plan Illimité",
-        description: "CV et lettres de motivation générés en illimité",
-        billingPeriod: "P1M",
+        name: `${PRICING.planName} (mensuel)`,
+        description: "Retire les annonces et lève les limites mensuelles. Sans engagement.",
+      },
+      {
+        "@type": "Offer",
+        price: PRICING.yearly.toFixed(2),
+        priceCurrency: "EUR",
+        name: `${PRICING.planName} (annuel)`,
+        description: "Retire les annonces et lève les limites mensuelles. Sans engagement.",
       },
     ],
     featureList: [
-      "Matching emploi IA",
-      "Génération de CV IA",
-      "Génération de lettres de motivation IA",
-      "Optimisation ATS",
-      "Dashboard candidatures",
-      "Alertes emploi personnalisées",
+      "Fil d'offres personnalisé",
+      "Assistante de recherche à l'écrit ou à la voix",
+      "Alertes sur les recherches enregistrées",
+      "Atelier CV avec 9 modèles",
+      "Score ATS et optimisation",
+      "CV adapté et lettre de motivation pour chaque offre",
+      "Export PDF ou Word, envoi par e-mail",
+      "Dossiers de suivi des candidatures",
     ],
     publisher: {
       "@id": `${SITE_URL}/#organization`,

@@ -28,19 +28,18 @@ export default function Error({
       </Reveal>
       
       <Reveal delay={0.1}>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-destructive">Erreur Système</h1>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 text-destructive">Erreur</h1>
       </Reveal>
       
       <Reveal delay={0.2}>
         <h2 className="text-xl md:text-2xl font-semibold mb-6">
-          Une turbulence imprévue a été détectée.
+          Quelque chose s’est mal passé.
         </h2>
       </Reveal>
       
       <Reveal delay={0.3}>
         <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10">
-          Nos algorithmes travaillent déjà à la résolution du problème. 
-          En attendant, vous pouvez essayer de rafraîchir la page.
+          Tu peux réessayer. Si l’erreur persiste, écris-nous à hello@karria.fr.
         </p>
       </Reveal>
       

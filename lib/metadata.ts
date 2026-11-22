@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL, SITE_NAME } from "./utils";
+import { SITE_URL, SITE_NAME, SITE_TAGLINE, OG_IMAGE } from "./utils";
 
 interface PageMetaOptions {
   title: string;
@@ -47,10 +47,10 @@ export function buildMetadata({
       type: "website",
       images: [
         {
-          url: `${SITE_URL}/opengraph-image`,
+          url: `${SITE_URL}${OG_IMAGE}`,
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} — La plateforme IA qui réinvente votre carrière`,
+          alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
         },
       ],
     },
@@ -58,7 +58,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [`${SITE_URL}/opengraph-image`],
+      images: [`${SITE_URL}${OG_IMAGE}`],
       creator: "@karriaapp",
     },
     robots: noIndex
@@ -85,7 +85,6 @@ export const DEFAULT_KEYWORDS = [
   "lettre de motivation IA",
   "candidature intelligente",
   "coaching carrière IA",
-  "recrutement IA",
   "offres emploi personnalisées",
   "plateforme carrière",
   "optimisation profil candidat",

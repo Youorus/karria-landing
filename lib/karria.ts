@@ -1,0 +1,43 @@
+/**
+ * KARRIA — la vérité sur l'app, en un seul endroit.
+ *
+ * Liens des stores, slogan, prix et limites : tout texte du site qui cite
+ * l'un de ces éléments le lit ici. Pour changer le lien Google Play, il n'y a
+ * que `STORE_LINKS.googlePlay` à modifier.
+ */
+
+/** Liens de téléchargement. Le seul endroit où ils sont écrits. */
+export const STORE_LINKS = {
+  appStore: "https://apps.apple.com/fr/app/id6776608930",
+  // À remplacer par le lien définitif dès que la fiche Google Play est en ligne.
+  googlePlay: "https://play.google.com/store/apps/details?id=com.karria.app",
+} as const;
+
+export const SLOGAN = "Trouve ton job, soigne ton CV";
+
+/** Chiffres vérifiés (offres : 544 000 actives mesurées le 20/11/2026). */
+export const FACTS = {
+  activeOffers: 500_000,
+  activeOffersLabel: "plus de 500 000",
+  cvTemplates: 9,
+  contracts: "CDI, CDD, alternance, stage, intérim",
+} as const;
+
+/** Tarification. Karria est gratuite ; une seule offre payante. */
+export const PRICING = {
+  planName: "Karria sans pub",
+  monthly: 4.99,
+  yearly: 49.9,
+  monthlyLabel: "4,99 €",
+  yearlyLabel: "49,90 €",
+  /** Limites de la version gratuite. */
+  freeLimits: {
+    cvExportsWithoutMentionPerMonth: 3,
+    atsOptimizationsPerMonth: 3,
+    aiPortraitsPerMonth: 3,
+    cvImportsPerMonth: 5,
+    tailoredCvsPerMonth: 20,
+    lettersPerMonth: 30,
+    assistantMessagesPerDay: 40,
+  },
+} as const;

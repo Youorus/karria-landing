@@ -9,7 +9,7 @@ import Logo from "@/components/ui/Logo";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 
 import { NAV_ROUTES } from "@/lib/constants";
-import { trackLoginClick, trackSignupClick } from "@/lib/analytics-events";
+import { trackSignupClick } from "@/lib/analytics-events";
 
 const NAV_LINKS = [
   {
@@ -17,9 +17,9 @@ const NAV_LINKS = [
     href: NAV_ROUTES.features,
     children: [
       { label: "Matching IA", href: NAV_ROUTES.matching, desc: "Offres personnalisées" },
-      { label: "CV IA", href: NAV_ROUTES.cv, desc: "CV optimisés automatiquement" },
-      { label: "Lettres IA", href: NAV_ROUTES.letters, desc: "Candidatures ciblées" },
-      { label: "Recherche Emploi", href: NAV_ROUTES.search, desc: "Trouvez votre prochain rôle" },
+      { label: "CV IA", href: NAV_ROUTES.cv, desc: "Atelier CV et score ATS" },
+      { label: "Lettres IA", href: NAV_ROUTES.letters, desc: "Une lettre pour chaque offre" },
+      { label: "Recherche Emploi", href: NAV_ROUTES.search, desc: "Trouve ton prochain poste" },
     ],
   },
   {
@@ -28,18 +28,18 @@ const NAV_LINKS = [
     children: [
       { label: "Blog", href: NAV_ROUTES.blog, desc: "Conseils et actualités" },
       { label: "FAQ", href: NAV_ROUTES.faq, desc: "Questions fréquentes" },
-      { label: "Alternance", href: NAV_ROUTES.alternance, desc: "Guides & opportunités" },
-      { label: "Jeune diplômé", href: NAV_ROUTES.jeuneDiplome, desc: "Lancez votre carrière" },
+      { label: "Alternance", href: NAV_ROUTES.alternance, desc: "Guide et offres" },
+      { label: "Jeune diplômé", href: NAV_ROUTES.jeuneDiplome, desc: "Lance ta carrière" },
     ],
   },
   {
     label: "Entreprise",
     href: NAV_ROUTES.about,
     children: [
-      { label: "À propos", href: NAV_ROUTES.about, desc: "Notre vision & Marc Takoumba" },
-      { label: "Carrières", href: NAV_ROUTES.careers, desc: "Rejoignez l'aventure" },
-      { label: "Presse", href: NAV_ROUTES.press, desc: "Espace media & kits" },
-      { label: "Partenaires", href: NAV_ROUTES.partners, desc: "Collaborons ensemble" },
+      { label: "À propos", href: NAV_ROUTES.about, desc: "Notre histoire" },
+      { label: "Carrières", href: NAV_ROUTES.careers, desc: "Candidature spontanée" },
+      { label: "Presse", href: NAV_ROUTES.press, desc: "Contact presse" },
+      { label: "Partenaires", href: NAV_ROUTES.partners, desc: "Écoles et associations" },
     ],
   },
   { label: "Tarifs", href: NAV_ROUTES.pricing },
@@ -67,6 +67,17 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setActiveDropdown(null);
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
+  }, []);
+
+  useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -90,10 +101,14 @@ export default function Header() {
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between md:h-20">
+          <div className="relative flex h-16 items-center justify-between lg:h-20">
             {/* Logo */}
             <div className="relative z-10 flex h-full items-center justify-start">
-              <Logo variant="full" size="sm" />
+              <Logo
+                variant="full"
+                size="sm"
+                linkClassName="h-11 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+              />
             </div>
 
             {/* Desktop Nav */}
@@ -103,7 +118,11 @@ export default function Header() {
               aria-label="Navigation principale"
             >
                 {NAV_LINKS.map((link) => (
-                  <div key={link.label} className="relative">
+                  <div
+                    key={link.label}
+                    className="relative"
+                    onMouseLeave={() => link.children && setActiveDropdown(null)}
+                  >
                     {link.children ? (
                       <button
                         onMouseEnter={() => setActiveDropdown(link.label)}
@@ -113,7 +132,8 @@ export default function Header() {
                           )
                         }
                         className={cn(
-                          "flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                          "flex h-10 items-center gap-1.5 px-4 rounded-full text-sm font-medium leading-none transition-colors duration-300",
+                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                           activeDropdown === link.label
                             ? "text-foreground bg-accent"
                             : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
@@ -132,7 +152,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={link.href}
-                        className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all duration-300"
+                        className="flex h-10 items-center px-4 rounded-full text-sm font-medium leading-none text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       >
                         {link.label}
                       </Link>
@@ -146,24 +166,27 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 10, scale: 0.98 }}
                           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                          onMouseLeave={() => setActiveDropdown(null)}
-                          className="absolute top-full left-0 mt-3 w-72 rounded-3xl border border-border bg-popover/95 backdrop-blur-xl shadow-2xl shadow-primary/5 overflow-hidden p-2"
-                          role="menu"
+                          className="absolute top-full left-0 w-72 pt-3"
                         >
+                          <div
+                            className="rounded-3xl border border-border bg-popover/95 backdrop-blur-xl shadow-2xl shadow-primary/5 overflow-hidden p-2"
+                            role="menu"
+                          >
                           {link.children.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
                               onClick={() => setActiveDropdown(null)}
-                              className="flex flex-col gap-1 px-4 py-3 rounded-2xl hover:bg-accent transition-all duration-200 group"
+                              className="flex flex-col gap-1 px-4 py-3 rounded-2xl hover:bg-accent focus-visible:bg-accent focus-visible:outline-none transition-colors duration-200 group"
                               role="menuitem"
                             >
-                              <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                              <span className="text-sm font-medium text-foreground group-hover:text-primary group-focus-visible:text-primary transition-colors">
                                 {child.label}
                               </span>
                               <span className="text-[11px] text-muted-foreground leading-tight">{child.desc}</span>
                             </Link>
                           ))}
+                          </div>
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -172,17 +195,18 @@ export default function Header() {
             </nav>
 
             {/* Desktop CTAs */}
-            <div className="relative z-10 hidden h-full items-center justify-end gap-4 md:flex">
+            <div className="relative z-10 hidden h-full items-center justify-end gap-4 lg:flex">
               <AnimatedThemeToggler />
             </div>
 
             {/* Mobile menu toggle */}
-            <div className="relative z-10 flex h-full items-center justify-end gap-3 md:hidden">
+            <div className="relative z-10 flex h-full items-center justify-end gap-2 lg:hidden">
               <AnimatedThemeToggler />
               <button
-                className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:bg-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-expanded={mobileOpen}
+                aria-controls="menu-mobile"
                 aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
               >
                 {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -200,11 +224,11 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-background md:hidden pt-20"
-            aria-hidden={!mobileOpen}
+            id="menu-mobile"
+            className="fixed inset-0 z-40 bg-background lg:hidden pt-16"
           >
-            <div className="flex flex-col h-full overflow-y-auto px-6 py-8">
-              <nav className="flex flex-col gap-2 mb-12" aria-label="Navigation mobile">
+            <div className="mx-auto flex h-full max-w-xl flex-col overflow-y-auto px-4 py-6 sm:px-6">
+              <nav className="flex flex-col gap-2 mb-10" aria-label="Navigation mobile">
                 {NAV_LINKS.map((link) => (
                   <div key={link.label}>
                     {link.children ? (
@@ -217,7 +241,7 @@ export default function Header() {
                             key={child.label}
                             href={child.href}
                             onClick={() => setMobileOpen(false)}
-                            className="flex items-center justify-between px-4 py-4 rounded-2xl text-foreground hover:bg-accent transition-all"
+                            className="flex min-h-[52px] items-center justify-between px-4 rounded-2xl text-foreground hover:bg-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                           >
                             <span className="font-medium">{child.label}</span>
                             <ArrowRight className="w-4 h-4 text-muted-foreground" />
@@ -228,30 +252,23 @@ export default function Header() {
                       <Link
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between px-4 py-4 rounded-2xl text-xl font-semibold text-foreground hover:bg-accent transition-all"
+                        className="flex min-h-[52px] items-center justify-between px-4 rounded-2xl font-medium text-foreground hover:bg-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                       >
                         {link.label}
-                        <ArrowRight className="w-5 h-5 text-muted-foreground" />
+                        <ArrowRight className="w-4 h-4 text-muted-foreground" />
                       </Link>
                     )}
                   </div>
                 ))}
               </nav>
 
-              <div className="mt-auto space-y-4 pb-8">
-                <Link
-                  href={NAV_ROUTES.download}
-                  onClick={() => { setMobileOpen(false); trackLoginClick(); }}
-                  className="btn-secondary w-full justify-center h-14"
-                >
-                  Se connecter
-                </Link>
+              <div className="mt-auto pb-6">
                 <Link
                   href={NAV_ROUTES.download}
                   onClick={() => { setMobileOpen(false); trackSignupClick("header_mobile"); }}
-                  className="btn-primary w-full justify-center h-14 text-lg shadow-xl shadow-primary/20"
+                  className="btn-primary w-full justify-center h-14 text-base shadow-xl shadow-primary/20"
                 >
-                  Commencer gratuitement
+                  Télécharger Karria
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>

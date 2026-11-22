@@ -3,6 +3,8 @@
  * This file contains all links, emails, and external resources used across the application.
  */
 
+import { STORE_LINKS } from "./karria";
+
 export const SITE_CONFIG = {
   name: "Karria",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://karria.fr",
@@ -28,17 +30,11 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/company/karria",
   instagram: "https://instagram.com/karria.app",
   tiktok: "https://tiktok.com/@karria.fr",
-  github: "https://github.com/karria-app",
   founderInstagram: "https://instagram.com/marctakoumba",
 };
 
-export const APP_LINKS = {
-  appStore: "https://apps.apple.com/app/karria/id6776608930",
-  googlePlay: "#",
-  webapp: "https://app.karria.fr",
-  // Google Play n'est pas encore disponible — bascule à true au lancement
-  googlePlayAvailable: false,
-};
+// Les liens des stores vivent dans lib/karria.ts (une seule source).
+export const APP_LINKS = STORE_LINKS;
 
 export const NAV_ROUTES = {
   // Product
@@ -59,7 +55,7 @@ export const NAV_ROUTES = {
   alternance: "/alternance",
   reconversion: "/reconversion",
   jeuneDiplome: "/jeune-diplome",
-  
+
   // Company
   about: "/about",
   contact: "/contact",

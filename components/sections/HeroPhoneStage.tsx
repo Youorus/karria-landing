@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import {
     BellRing,
-    Brain,
+    MessageCircle,
     BriefcaseBusiness,
     CheckCircle2,
     FileCheck2,
@@ -18,16 +18,16 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const FLOATING_BADGES = [
     {
         icon: BriefcaseBusiness,
-        label: "Match IA",
-        value: "Nouveau match 97%",
+        label: "Offres",
+        value: "500 000+ offres",
         tone: "blue",
         position: "top-[5%] left-[-15%]",
         delay: 0.1,
     },
     {
-        icon: Brain,
-        label: "IA active",
-        value: "Profil analysé",
+        icon: MessageCircle,
+        label: "Assistante",
+        value: "À l’écrit ou à la voix",
         tone: "violet",
         position: "right-[-25%] top-[15%]",
         delay: 0.25,
@@ -35,7 +35,7 @@ const FLOATING_BADGES = [
     {
         icon: BellRing,
         label: "Alerte",
-        value: "Opportunité détectée",
+        value: "Nouvelle offre pour toi",
         tone: "amber",
         position: "bottom-[20%] right-[-20%]",
         delay: 0.4,
@@ -43,7 +43,7 @@ const FLOATING_BADGES = [
     {
         icon: FileCheck2,
         label: "CV",
-        value: "Score ATS 94/100",
+        value: "9 modèles, score ATS",
         tone: "emerald",
         position: "left-[-20%] bottom-[15%]",
         delay: 0.55,
@@ -115,7 +115,8 @@ export function HeroLogoStage({ className }: { className?: string }) {
                 {/* iPhone Mockup avec Image Intégrée */}
                 <div className="relative group">
                     <PhoneMockup 
-                        src="/hero.jpg" 
+                        src="/screens/karria-fil-offres.webp"
+                        alt="Le fil d’offres de l’app Karria" 
                         className="w-full drop-shadow-[0_32px_64px_rgba(0,0,0,0.2)]"
                     />
                     
@@ -127,7 +128,7 @@ export function HeroLogoStage({ className }: { className?: string }) {
                         className="absolute -bottom-6 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 rounded-full border border-border bg-background/90 px-5 py-2.5 shadow-2xl backdrop-blur-xl min-w-[220px] justify-center"
                     >
                         <Sparkles className="h-4 w-4 text-primary animate-pulse" />
-                        <span className="text-xs font-bold whitespace-nowrap">Assistant carrière IA</span>
+                        <span className="text-xs font-bold whitespace-nowrap">Trouve ton job, soigne ton CV</span>
                         <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                     </motion.div>
                 </div>

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Lock, ShieldCheck, Star, UserCheck } from "lucide-react";
+import { ShieldCheck, Star, Trash2, UserCheck } from "lucide-react";
 import {AppDownloadCTA} from "@/components/ui/AppDownloadCTA";
 
 
@@ -24,15 +24,15 @@ const CTA_PARTICLES = [
 const TRUST_ITEMS = [
   {
     icon: ShieldCheck,
-    label: "Vos données ne servent qu'au matching, jamais revendues",
+    label: "Tu décides si l’IA peut lire ton CV",
   },
   {
-    icon: Lock,
-    label: "Votre parcours vous appartient",
+    icon: Trash2,
+    label: "Ton compte s’efface depuis l’app",
   },
   {
     icon: UserCheck,
-    label: "Vous gardez le contrôle",
+    label: "Une vraie personne te répond",
   },
 ];
 
@@ -86,7 +86,7 @@ export function FinalCTA() {
           >
             <Star className="h-3.5 w-3.5 fill-current" />
             <span className="uppercase tracking-wide">
-            L’assistant carrière qui reste avec vous
+            L’assistante qui cherche avec toi
           </span>
             <Star className="h-3.5 w-3.5 fill-current" />
           </motion.div>
@@ -98,10 +98,10 @@ export function FinalCTA() {
               transition={{ duration: 1, delay: 0.1, ease: EASE }}
               className="mb-8 text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl"
           >
-            Votre carrière va changer.
+            Trouve ton job.
             <br />
             <span className="text-gradient-blue">
-            Karria sera là.
+            Soigne ton CV.
           </span>
           </motion.h2>
 
@@ -111,9 +111,8 @@ export function FinalCTA() {
               transition={{ duration: 1, delay: 0.2, ease: EASE }}
               className="mx-auto mb-14 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-2xl"
           >
-            Premier emploi, nouvelle opportunité, reconversion, évolution ou
-            nouveau départ : Karria vous accompagne dans les moments importants
-            de votre vie professionnelle.
+            Premier emploi, alternance, stage ou reconversion : Karria cherche
+            avec toi, sur iPhone et Android.
           </motion.p>
 
           <motion.div
@@ -122,7 +121,7 @@ export function FinalCTA() {
               transition={{ duration: 1, delay: 0.3, ease: EASE }}
               className="mb-16"
           >
-            <AppDownloadCTA showWebCTA={false} />
+            <AppDownloadCTA />
           </motion.div>
 
           <motion.div

@@ -3,9 +3,11 @@ import { cn } from "@/lib/utils";
 
 export interface IphoneProps extends React.HTMLAttributes<HTMLDivElement> {
   src?: string;
+  /** Classes de la zone écran (rayon, fond) quand le cadre est redimensionné. */
+  screenClassName?: string;
 }
 
-export function Iphone({ src, className, children, ...props }: IphoneProps) {
+export function Iphone({ src, className, screenClassName, children, ...props }: IphoneProps) {
   return (
     <div
       className={cn(
@@ -24,11 +26,11 @@ export function Iphone({ src, className, children, ...props }: IphoneProps) {
       <div className="absolute -right-[11px] sm:-right-[13px] top-[22%] h-[11%] w-[3px] rounded-r-lg bg-zinc-800 dark:bg-zinc-700" />
       
       {/* Inner Screen Container */}
-      <div className="relative h-full w-full overflow-hidden rounded-[8%] bg-background">
+      <div className={cn("relative h-full w-full overflow-hidden rounded-[8%] bg-background", screenClassName)}>
         {src ? (
           <Image
             src={src}
-            alt="Iphone screen content"
+            alt="Écran de l’app Karria"
             fill
             className="object-cover"
           />

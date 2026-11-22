@@ -20,7 +20,7 @@ type PhoneMockupProps = {
 export default function PhoneMockup({
                                         className,
                                         animate = true,
-                                        src = "/screens/dashboard.jpg",
+                                        src = "/screens/karria-fil-offres.webp",
                                         alt = "Aperçu de l'application Karria",
                                         screenKey,
                                     }: PhoneMockupProps) {
@@ -37,9 +37,12 @@ export default function PhoneMockup({
             {/* Halo */}
             <div className="pointer-events-none absolute inset-[-12%] rounded-full bg-primary/15 blur-3xl dark:bg-primary/25" />
 
-            <Iphone className="h-[610px] w-[300px] rounded-[3.2rem] border-[8px] border-zinc-950 bg-zinc-950 shadow-2xl shadow-black/20 dark:border-white/10 dark:bg-zinc-950 dark:shadow-primary/10">
+            <Iphone
+                className="h-[610px] w-[300px] rounded-[3.2rem] border-[8px] border-zinc-950 bg-zinc-950 shadow-2xl shadow-black/20 dark:border-white/10 dark:bg-zinc-950 dark:shadow-primary/10"
+                screenClassName="rounded-[2.7rem] bg-zinc-950"
+            >
                 {/* Zone écran — overflow:hidden + border-radius identique au inner */}
-                <div className="relative h-full w-full overflow-hidden rounded-[2.55rem]">
+                <div className="relative h-full w-full overflow-hidden rounded-[2.7rem]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={screenKey ?? src}

@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { UserCircle, BrainCircuit, Target, Rocket } from "lucide-react";
+import { FileText, MessageCircle, Rocket, Target } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
@@ -10,35 +10,33 @@ import { NAV_ROUTES } from "@/lib/constants";
 const STEPS = [
   {
     number: "01",
-    icon: UserCircle,
-    title: "Créez votre profil",
-    description:
-      "Renseignez votre parcours, vos compétences, vos ambitions et vos préférences en quelques minutes. Karria construit votre identité professionnelle.",
-    detail: "Profil enrichi automatiquement",
+    icon: MessageCircle,
+    title: "Dis ce que tu cherches",
+    description: "Écris ou parle à Karria : un métier, un lieu, un contrat.",
+    detail: "À l’écrit ou à la voix",
   },
   {
     number: "02",
-    icon: BrainCircuit,
-    title: "L'IA comprend votre parcours",
+    icon: Target,
+    title: "Parcours ton fil",
     description:
-      "Notre moteur IA analyse en profondeur votre profil : compétences techniques, soft skills, évolution de carrière et objectifs à court et long terme.",
-    detail: "Analyse en temps réel",
+      "CDI, CDD, alternance, stage, intérim : les offres qui collent le mieux en premier.",
+    detail: "500 000+ offres",
   },
   {
     number: "03",
-    icon: Target,
-    title: "Karria trouve vos opportunités",
-    description:
-      "Recevez uniquement des offres qui correspondent vraiment à votre profil, avec un score de matching détaillé pour chaque opportunité.",
-    detail: "Matching précis à 97%",
+    icon: FileText,
+    title: "Soigne ton CV",
+    description: "Importe-le, choisis un modèle, vérifie ton score ATS.",
+    detail: "9 modèles",
   },
   {
     number: "04",
     icon: Rocket,
-    title: "Postulez avec vos meilleurs atouts",
+    title: "Postule et suis tes candidatures",
     description:
-      "CV adapté, lettre personnalisée, profil optimisé — Karria génère les documents parfaits pour chaque candidature, en quelques secondes.",
-    detail: "Documents prêts en < 10s",
+      "CV adapté, lettre, export ou e-mail. Chaque candidature a son dossier.",
+    detail: "PDF, Word ou e-mail",
   },
 ];
 
@@ -73,7 +71,7 @@ export default function HowItWorks() {
                 <span className="text-gradient-blue">Efficace.</span>
               </>
             }
-            subtitle="En 4 étapes, Karria transforme votre recherche d'emploi en une expérience fluide et personnalisée."
+            subtitle="Quatre étapes, de la première recherche à la candidature envoyée."
           />
         </motion.div>
 
@@ -99,8 +97,8 @@ export default function HowItWorks() {
                     <step.icon className="w-7 h-7 text-karria-400 group-hover:text-karria-300 transition-colors" />
                   </div>
                   {/* Step number */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-karria-600 border-2 border-background flex items-center justify-center">
-                    <span className="text-[10px] font-bold text-white font-mono">{i + 1}</span>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary border-2 border-background flex items-center justify-center">
+                    <span className="text-[10px] font-bold text-primary-foreground font-mono">{i + 1}</span>
                   </div>
                 </div>
 
@@ -129,10 +127,10 @@ export default function HowItWorks() {
           className="mt-16 flex justify-center"
         >
           <Link
-            href={NAV_ROUTES.pricing}
+            href={NAV_ROUTES.download}
             className="btn-primary px-8 py-4 text-base gap-2.5 shadow-glow"
           >
-            Commencer maintenant — c&apos;est gratuit
+            Télécharger Karria, c&apos;est gratuit
           </Link>
         </motion.div>
       </div>

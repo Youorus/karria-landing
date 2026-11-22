@@ -62,16 +62,17 @@ export function AnimatedThemeToggler({ className }: AnimatedThemeTogglerProps) {
     });
   };
 
-  if (!mounted) return <div className="w-9 h-9" />;
+  if (!mounted) return <div className="h-11 w-11 lg:h-10 lg:w-10" />;
 
   return (
     <button
       onClick={toggleTheme}
       className={cn(
-        "relative flex h-9 w-9 items-center justify-center rounded-full border bg-background hover:bg-accent transition-colors",
+        "relative flex h-11 w-11 items-center justify-center rounded-full border bg-background hover:bg-accent transition-colors lg:h-10 lg:w-10",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         className
       )}
-      aria-label="Toggle theme"
+      aria-label={resolvedTheme === "dark" ? "Passer au thème clair" : "Passer au thème sombre"}
     >
       <AnimatePresence mode="wait" initial={false}>
         <motion.div

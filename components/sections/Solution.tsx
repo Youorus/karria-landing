@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {Brain, Bell, Sparkles, Search} from "lucide-react";
+import { Bell, ListFilter, Search, Sparkles } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { staggerContainer, fadeUp } from "@/lib/animations";
@@ -10,31 +10,31 @@ import { cn } from "@/lib/utils";
 export const SOLUTIONS = [
   {
     icon: Search,
-    title: "Karria cherche les bonnes offres pour vous",
+    title: "Karria cherche pour toi",
     description:
-        "Plus besoin de passer des heures sur des dizaines de sites. Karria rassemble et sélectionne les opportunités qui correspondent réellement à votre profil.",
-    highlight: "Moins de recherche inutile",
+        "Dis-lui ce que tu veux : elle lance la recherche parmi plus de 500 000 offres.",
+    highlight: "Moins de recherche",
   },
   {
-    icon: Brain,
-    title: "L’IA apprend à vous connaître",
+    icon: ListFilter,
+    title: "Un fil trié pour toi",
     description:
-        "Karria comprend vos compétences, votre expérience et vos objectifs pour vous proposer des offres plus pertinentes au fil du temps.",
-    highlight: "Offres plus adaptées",
+        "Les offres les plus pertinentes d’abord, avec des filtres et un tri.",
+    highlight: "Offres pertinentes",
   },
   {
     icon: Sparkles,
-    title: "Vos candidatures se préparent plus vite",
+    title: "Des candidatures prêtes plus vite",
     description:
-        "CV, lettres et contenus sont adaptés automatiquement selon l’offre visée pour vous faire gagner un temps énorme.",
-    highlight: "Gain de temps réel",
+        "Un CV adapté et une lettre pour chaque offre qui te plaît.",
+    highlight: "Moins de travail répété",
   },
   {
     icon: Bell,
-    title: "Soyez alerté au bon moment",
+    title: "Une alerte au bon moment",
     description:
-        "Recevez uniquement les opportunités importantes pour votre profil, afin de postuler plus vite et avant les autres candidats.",
-    highlight: "Opportunités ciblées",
+        "Dès qu’une offre correspond à une recherche enregistrée, tu es prévenu.",
+    highlight: "Alertes à la carte",
   },
 ];
 
@@ -56,11 +56,11 @@ export default function Solution() {
                 eyebrow="La solution Karria"
                 title={
                   <>
-                    Une nouvelle intelligence{" "}
-                    <span className="text-gradient-blue">pour votre carrière</span>
+                    Une assistante{" "}
+                    <span className="text-gradient-blue">pour ta recherche</span>
                   </>
                 }
-                subtitle="Karria réinvente chaque étape de votre recherche d'emploi avec une IA pensée pour vous aider à décrocher plus d'entretiens, plus vite."
+                subtitle="Karria cherche, trie et prépare avec toi. Tu gardes la main."
             />
           </Reveal>
 

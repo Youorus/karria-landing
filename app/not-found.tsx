@@ -27,8 +27,8 @@ export default function NotFound() {
       
       <Reveal delay={0.3}>
         <p className="text-muted-foreground text-lg max-w-md mx-auto mb-10">
-          Même la meilleure IA peut se tromper de chemin. 
-          Laissez-nous vous ramener vers votre prochaine opportunité.
+          Même la meilleure IA peut se tromper de chemin.
+          On te ramène vers ta recherche.
         </p>
       </Reveal>
       
@@ -48,7 +48,7 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-border bg-background hover:bg-secondary transition-all duration-300 font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
-            Voir les offres
+            Découvrir la recherche d’emploi
           </Link>
         </div>
       </Reveal>

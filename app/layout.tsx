@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
 import "./globals.css";
-import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, cn } from "@/lib/utils";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SITE_TAGLINE, OG_IMAGE, cn } from "@/lib/utils";
 import { DEFAULT_KEYWORDS } from "@/lib/metadata";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -26,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — La plateforme IA qui réinvente votre carrière`,
+    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
@@ -35,18 +35,17 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   category: "Technology",
-  manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon.svg", type: "image/svg+xml" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/logo.svg", type: "image/svg+xml" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: [{ url: "/karria_light_icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
-    title: `${SITE_NAME} — La plateforme IA qui réinvente votre carrière`,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -54,18 +53,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: `${SITE_URL}/opengraph-image`,
+        url: `${SITE_URL}${OG_IMAGE}`,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} — Matching IA, CV, Lettres de motivation`,
+        alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — La plateforme IA qui réinvente votre carrière`,
+    title: `${SITE_NAME} — ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/opengraph-image`],
+    images: [`${SITE_URL}${OG_IMAGE}`],
     creator: "@karriaapp",
     site: "@karriaapp",
   },

@@ -36,6 +36,13 @@ const nextConfig: NextConfig = {
         destination: "https://apps.apple.com/fr/app/id6776608930",
         permanent: false,
       },
+      // L ancienne image de partage était générée à /opengraph-image : les
+      // liens déjà partagés continuent d afficher une image.
+      {
+        source: "/opengraph-image",
+        destination: "/og-karria.jpg",
+        permanent: true,
+      },
       {
         source: "/recrutement-ia",
         destination: "/matching-emploi-ia",

@@ -3,28 +3,28 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Brain,
+  Bell,
+  Briefcase,
   FileText,
-  Sparkles,
+  FolderOpen,
+  MessageCircle,
   PenLine,
   ShieldCheck,
-  Palette,
-  LayoutDashboard,
-  Bell,
+  Sparkles,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type Feature, FEATURES_DATA } from "@/lib/features";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 const ICON_MAP: Record<string, React.ElementType> = {
-  Brain,
+  Bell,
+  Briefcase,
   FileText,
-  Sparkles,
+  FolderOpen,
+  MessageCircle,
   PenLine,
   ShieldCheck,
-  Palette,
-  LayoutDashboard,
-  Bell,
+  Sparkles,
 };
 
 const TAG_STYLES = {
@@ -94,7 +94,7 @@ function FeatureCard({
   feature: Feature;
   size?: "sm" | "md";
 }) {
-  const Icon = ICON_MAP[feature.iconName] ?? Brain;
+  const Icon = ICON_MAP[feature.iconName] ?? Sparkles;
 
   return (
     <div
@@ -179,7 +179,7 @@ export default function Features() {
                   <span className="text-gradient-blue">candidater mieux.</span>
                 </>
               }
-              subtitle="Matching, CV, lettres, alertes et suivi : Karria réunit l’essentiel pour avancer plus vite."
+              subtitle="Offres, assistante, CV, lettres, alertes et suivi : tout est au même endroit."
           />
         </motion.div>
 
@@ -223,7 +223,7 @@ export default function Features() {
             </motion.div>
           ))}
 
-          {/* Features 5–7: balanced last row */}
+          {/* Features 5–7 : dernière rangée complète (2 + 1 + 1) */}
           {otherFeatures.slice(4).map((feature, i) => (
             <motion.div
               key={feature.id}

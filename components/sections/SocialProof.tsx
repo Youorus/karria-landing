@@ -5,40 +5,41 @@ import { useRef } from "react";
 import { Gift, ShieldCheck, Zap } from "lucide-react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { FACTS, PRICING } from "@/lib/karria";
 
 const STATS = [
   {
-    value: 5,
-    suffix: "×",
-    label: "Recherche plus rapide",
-    description: "Moins de temps perdu à chercher, trier et comparer les offres.",
+    value: FACTS.activeOffers,
+    suffix: "+",
+    label: "Offres actives en France",
+    description: "Mises à jour chaque jour : CDI, CDD, alternance, stage, intérim.",
   },
   {
-    value: 98,
-    suffix: "%",
-    label: "Documents optimisés",
-    description: "CV et lettres générés pour être clairs, professionnels et adaptés.",
+    value: FACTS.cvTemplates,
+    suffix: "",
+    label: "Modèles de CV",
+    description: "Avec ta couleur, et chaque ligne retouchable.",
   },
 ];
 
 const COMMITMENTS = [
   {
     icon: Gift,
-    title: "Le matching reste gratuit",
+    title: "La recherche d’offres est gratuite",
     description:
-        "Les recommandations d'offres sont illimitées et gratuites dès l'inscription, sans carte bancaire.",
+        "Et illimitée. Karria est financée par des annonces discrètes.",
   },
   {
     icon: Zap,
-    title: "Vos documents, prêts en quelques secondes",
+    title: `Sans pub pour ${PRICING.monthlyLabel} par mois`,
     description:
-        "3 CV et 3 lettres de motivation générés gratuitement chaque mois. Illimité avec l'abonnement à 4,99€/mois.",
+        `« ${PRICING.planName} » retire les annonces et lève les limites mensuelles. Sans engagement.`,
   },
   {
     icon: ShieldCheck,
-    title: "Vos données ne servent qu'à vous",
+    title: "Tes données t’appartiennent",
     description:
-        "Elles sont utilisées uniquement pour améliorer votre matching et vos candidatures — jamais revendues, jamais partagées.",
+        "Tu décides si l’IA peut lire ton CV, et ton compte s’efface depuis l’app.",
   },
 ];
 
@@ -66,19 +67,19 @@ export default function SocialProof() {
           transition={{ duration: 1.0, ease: EASE }}
         >
           <SectionHeader
-            eyebrow="Traction"
+            eyebrow="En chiffres"
             title={
               <>
-                Des résultats{" "}
-                <span className="text-gradient-blue">qui parlent.</span>
+                Des faits,{" "}
+                <span className="text-gradient-blue">pas des promesses.</span>
               </>
             }
-            subtitle="Karria est conçu pour vous faire gagner du temps, sans jamais vous coûter votre tranquillité."
+            subtitle="Ce que tu trouves dans l’app aujourd’hui."
           />
         </motion.div>
 
         {/* Stats grid */}
-        <div className="mt-14 grid grid-cols-2 gap-4 max-w-md mx-auto">
+        <div className="mt-14 grid grid-cols-1 gap-4 max-w-xl mx-auto xs:grid-cols-2">
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}

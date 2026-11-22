@@ -9,44 +9,32 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 const STORY_STEPS = [
   {
-    id: "analysis",
-    screen: "/app-screen-onboarding.png",
-    title: "Karria apprend à vous connaître",
+    id: "assistante",
+    screen: "/screens/karria-assistante.webp",
+    title: "Dis à Karria ce que tu cherches",
     description:
-        "L’IA analyse votre profil, vos compétences et vos objectifs pour comprendre ce qui vous correspond vraiment.",
+        "À l’écrit ou à la voix. Elle comprend le métier, le lieu et le contrat, puis lance la recherche.",
   },
   {
-    id: "matching",
-    screen: "/app-screen-matching.png",
-    title: "Recevez des offres faites pour vous",
+    id: "offres",
+    screen: "/screens/karria-fil-offres.webp",
+    title: "Des offres faites pour toi",
     description:
-        "Karria détecte automatiquement les opportunités les plus adaptées à votre profil et à vos ambitions.",
-    floatingBadge: {
-      side: "right",
-      label: "Match détecté",
-      labelColor: "text-emerald-500",
-      value: "97 % Compatibilité",
-    },
+        "Plus de 500 000 offres en France, mises à jour chaque jour. Les plus pertinentes en premier.",
   },
   {
-    id: "generation",
-    screen: "/app-screen-cv.png",
-    title: "Vos candidatures sont prêtes plus vite",
+    id: "cv",
+    screen: "/screens/karria-atelier-cv.webp",
+    title: "Un CV qui te ressemble",
     description:
-        "CV, lettres et contenus sont optimisés automatiquement pour chaque offre afin de maximiser vos chances.",
-    floatingBadge: {
-      side: "left",
-      label: "IA Optimizer",
-      labelColor: "text-amber-500",
-      value: "CV optimisé",
-    },
+        "Importe ton CV, choisis un modèle et ta couleur, retouche chaque ligne.",
   },
   {
-    id: "profile",
-    screen: "/app-screen-profile.png",
-    title: "Pilotez toute votre carrière au même endroit",
+    id: "candidature",
+    screen: "/screens/karria-dossier-candidature.webp",
+    title: "Un CV adapté à chaque offre",
     description:
-        "Suivez vos candidatures, vos quotas et vos avantages depuis un espace personnel pensé pour avancer plus vite.",
+        "Avec la lettre de motivation qui va avec. Tu exportes en PDF ou en Word, ou tu envoies par e-mail.",
   },
 ] as const;
 
@@ -147,7 +135,7 @@ export default function StorytellingScroll() {
 
                 <PhoneMockup
                     src={activeStep.screen}
-                    alt={activeStep.title}
+                    alt={`Écran de l’app Karria : ${activeStep.title}`}
                     screenKey={activeStep.id}
                     animate={false}
                     className="scale-[0.55] origin-center sm:scale-[0.75] md:scale-90 lg:scale-100"

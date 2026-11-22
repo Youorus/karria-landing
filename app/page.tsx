@@ -10,17 +10,17 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata = buildMetadata({
-  title: "Plateforme IA pour votre carrière",
+  title: "Trouve ton job, soigne ton CV",
   description:
-    "Karria transforme votre recherche d'emploi grâce à l'IA : matching personnalisé, CV optimisé, lettres ciblées. Lancez-vous gratuitement.",
+    "Karria trouve les offres qui te correspondent, t'aide à faire un CV qui passe et te prévient dès qu'une nouvelle offre arrive. Gratuite, sur iPhone et Android.",
   path: "/",
   keywords: [
-    "plateforme carrière IA",
-    "recherche emploi intelligence artificielle",
-    "matching emploi IA",
-    "CV IA automatique",
-    "lettre motivation IA",
-    "coaching carrière intelligent",
+    "application recherche emploi",
+    "offres d'emploi France",
+    "alternance stage intérim",
+    "CV IA",
+    "score ATS",
+    "lettre de motivation IA",
   ],
 });
 

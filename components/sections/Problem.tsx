@@ -11,9 +11,9 @@ const PAIN_POINTS = [
   {
     icon: Clock,
     stat: "Des heures perdues",
-    title: "Chercher un emploi est devenu épuisant",
+    title: "Chercher est épuisant",
     description:
-        "Passer des heures sur des dizaines de sites, lire des offres sans fin et essayer de trouver celles qui correspondent vraiment.",
+        "Des dizaines de sites, des offres sans fin, et peu qui te correspondent.",
     iconBg: "bg-orange-500/10",
     iconColor: "text-orange-500",
     statColor: "text-orange-500",
@@ -21,9 +21,9 @@ const PAIN_POINTS = [
   {
     icon: FileCheck2,
     stat: "CV après CV",
-    title: "Chaque candidature demande de tout refaire",
+    title: "Tout refaire à chaque candidature",
     description:
-        "Adapter son CV, modifier ses textes, écrire une nouvelle lettre de motivation… encore et encore.",
+        "Adapter le CV, réécrire la lettre, encore et encore.",
     iconBg: "bg-amber-500/10",
     iconColor: "text-amber-500",
     statColor: "text-amber-500",
@@ -31,9 +31,9 @@ const PAIN_POINTS = [
   {
     icon: X,
     stat: "Très peu de réponses",
-    title: "La plupart des candidatures restent ignorées",
+    title: "Des candidatures sans retour",
     description:
-        "Des dizaines de candidatures envoyées sans jamais recevoir de réponse ni obtenir un entretien.",
+        "Tu envoies, tu attends, et souvent rien ne revient.",
     iconBg: "bg-red-500/10",
     iconColor: "text-red-500",
     statColor: "text-red-500",
@@ -41,19 +41,19 @@ const PAIN_POINTS = [
   {
     icon: Users,
     stat: "Une forte concurrence",
-    title: "Des centaines de personnes postulent aux mêmes offres",
+    title: "Tout le monde vise les mêmes offres",
     description:
-        "Sortir du lot devient presque impossible quand tout le monde postule au même moment.",
+        "Arriver tard, c’est passer après les autres.",
     iconBg: "bg-pink-500/10",
     iconColor: "text-pink-500",
     statColor: "text-pink-500",
   },
   {
     icon: Bot,
-    stat: "0 aide réelle",
-    title: "Les plateformes actuelles ne vous accompagnent pas",
+    stat: "Peu d’aide",
+    title: "Des sites qui listent, sans aider",
     description:
-        "La plupart des sites affichent des offres sans vraiment aider à trouver, préparer et réussir.",
+        "Ils affichent des offres. Le reste, c’est pour toi.",
     iconBg: "bg-violet-500/10",
     iconColor: "text-violet-500",
     statColor: "text-violet-500",
@@ -84,7 +84,7 @@ export default function Problem() {
                     <span className="text-red-500">est cassée.</span>
                   </>
                 }
-                subtitle="Des millions de candidats investissent des semaines entières dans des candidatures qui ne reçoivent jamais de réponse. Il faut changer ça."
+                subtitle="Trop de sites à surveiller, trop de candidatures à refaire, trop peu de réponses."
             />
           </Reveal>
 
@@ -151,7 +151,7 @@ export default function Problem() {
           <Reveal variant="fadeUp" delay={0.4}>
             <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-border/40 pt-8">
               <p className="text-xl sm:text-2xl font-semibold text-foreground leading-snug max-w-lg">
-                Karria est conçu pour résoudre{" "}
+                Karria s&apos;attaque à{" "}
                 <span className="text-red-500">chacun de ces problèmes.</span>
               </p>
             </div>

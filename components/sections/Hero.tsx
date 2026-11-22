@@ -54,7 +54,7 @@ export default function Hero() {
           >
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-semibold tracking-wide text-primary uppercase">
-              🇫🇷 Disponible uniquement en France
+              🇫🇷 Disponible en France
             </span>
             <BorderBeam size={100} duration={8} borderWidth={1.5} colorFrom="var(--primary)" colorTo="transparent" />
           </motion.div>
@@ -69,9 +69,9 @@ export default function Hero() {
                 lineHeight: 0.94,
               }}
           >
-          Postulez 5 fois
+            Trouve ton job,
             <br />
-            <AuroraText>plus vite.</AuroraText>
+            <AuroraText>soigne ton CV.</AuroraText>
           </motion.h1>
 
           <motion.p
@@ -80,8 +80,8 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.3, ease: EASE }}
               className="mb-10 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
           >
-            Karria trouve les offres qui vous correspondent, adapte vos
-            candidatures et vous fait gagner un temps réel sur votre recherche.
+            Karria trouve les offres qui te correspondent, t&apos;aide à faire
+            un CV qui passe et te prévient dès qu&apos;une nouvelle offre arrive.
           </motion.p>
 
           <motion.div
@@ -92,9 +92,6 @@ export default function Hero() {
               className="mb-12 flex w-full scroll-mt-28 flex-col items-center gap-6"
           >
             <AppDownloadCTA />
-            <p className="text-[13px] font-medium text-muted-foreground/60">
-              * Actuellement optimisé pour le marché de l&apos;emploi en France.
-            </p>
           </motion.div>
         </motion.div>
       </section>

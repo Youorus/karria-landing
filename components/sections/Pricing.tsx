@@ -7,36 +7,40 @@ import { cn } from "@/lib/utils";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
+
+const L = PRICING.freeLimits;
 
 const PLANS = [
   {
     id: "free",
     name: "Gratuit",
     price: 0,
-    description: "Pour commencer votre recherche d'emploi sans limite sur le matching.",
+    description: "Financée par des annonces discrètes.",
     highlighted: false,
     features: [
-      "Matching et recommandations d'offres illimités",
-      "3 CV générés par mois",
-      "3 lettres de motivation générées par mois",
-      "Accès illimité aux templates",
-      "2 photos de profil professionnelles par mois",
+      "Recherche d’offres illimitée",
+      `${L.assistantMessagesPerDay} messages par jour à l’assistante`,
+      `${L.tailoredCvsPerMonth} CV adaptés à une offre et ${L.lettersPerMonth} lettres par mois`,
+      `${L.cvImportsPerMonth} imports de CV et ${L.atsOptimizationsPerMonth} optimisations ATS par mois`,
+      `${L.cvExportsWithoutMentionPerMonth} CV exportés sans la mention Karria par mois ; ensuite avec la mention, jamais bloqué`,
+      `${L.aiPortraitsPerMonth} portraits retravaillés par IA par mois`,
     ],
-    cta: "Commencer gratuitement",
+    cta: "Télécharger Karria",
   },
   {
-    id: "illimite",
-    name: "Illimité",
-    price: 4.99,
-    description: "Pour ne plus jamais être limité dans vos candidatures.",
+    id: "sans-pub",
+    name: PRICING.planName,
+    price: PRICING.monthly,
+    description: `Ou ${PRICING.yearlyLabel} par an. Sans engagement.`,
     highlighted: true,
     features: [
-      "Tout le plan Gratuit inclus",
-      "CV générés illimités",
-      "Lettres de motivation illimitées",
-      "Soutient le développement de Karria et le maintien de la plateforme",
+      "Tout ce que contient la version gratuite",
+      "Plus aucune annonce",
+      "Plus de limites mensuelles",
+      "Tu soutiens le développement de Karria",
     ],
-    cta: "Passer à l'illimité",
+    cta: "Passer à Karria sans pub",
   },
 ];
 
@@ -68,11 +72,11 @@ export default function Pricing() {
             eyebrow="Tarifs"
             title={
               <>
-                Investissez dans{" "}
-                <span className="text-gradient-blue">votre carrière</span>
+                Karria est{" "}
+                <span className="text-gradient-blue">gratuite.</span>
               </>
             }
-            subtitle="Le matching reste gratuit pour tout le monde. Passez à l'illimité quand vous en avez besoin."
+            subtitle="Une seule option payante : retirer les annonces et lever les limites mensuelles."
           />
         </motion.div>
 
@@ -99,8 +103,8 @@ export default function Pricing() {
                 <div className="flex items-end gap-1 mb-2">
                   <span className="font-display font-bold text-foreground text-4xl leading-none">
                     {plan.price === 0
-                      ? "0€"
-                      : `${plan.price.toFixed(2).replace(".", ",")}€`}
+                      ? "0 €"
+                      : `${plan.price.toFixed(2).replace(".", ",")} €`}
                   </span>
                   {plan.price > 0 && (
                     <span className="text-muted-foreground text-sm mb-1.5">/mois</span>
@@ -153,7 +157,7 @@ export default function Pricing() {
           transition={{ duration: 1.0, delay: 0.6, ease: EASE }}
           className="text-center text-muted-foreground/80 text-sm mt-10"
         >
-          Paiement sécurisé · Sans engagement · Annulable à tout moment
+          Sans engagement · L’abonnement se prend dans l’app
         </motion.p>
       </div>
     </section>
