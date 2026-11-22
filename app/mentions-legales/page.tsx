@@ -51,7 +51,7 @@ export default function LegalPage() {
                       Directeur de la publication
                     </h3>
                     <p>
-                      Directeur de la publication :{" "}
+                      Le directeur de la publication est{" "}
                       {EDITEUR.directeurDePublication}.
                     </p>
                   </section>
