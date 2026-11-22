@@ -29,7 +29,7 @@ const PRESS_ASSETS = [
     icon: Download,
     title: "Kit média",
     description:
-        "Un kit complet avec visuels, captures et informations fondateur sera ajouté prochainement.",
+        "Un kit complet avec visuels, captures et informations sur Karria sera ajouté prochainement.",
   },
 ];
 

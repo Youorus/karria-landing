@@ -40,11 +40,6 @@ export function JsonLd() {
       addressLocality: "Paris",
       addressCountry: "FR",
     },
-    founder: {
-      "@type": "Person",
-      name: "Marc Takoumba",
-      url: "https://instagram.com/marctakoumba",
-    },
   };
 
   const sitenavigationSchema = {
@@ -83,7 +78,7 @@ export function JsonLd() {
         "@type": "SiteNavigationElement",
         position: 5,
         name: "À Propos",
-        description: "L'histoire de Karria et de son fondateur.",
+        description: "L'histoire de Karria et sa mission.",
         url: `${SITE_URL}/about`,
       },
       {

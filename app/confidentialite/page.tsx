@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { CONTACT_EMAILS, NAV_ROUTES, SITE_CONFIG } from "@/lib/constants";
-import { PRICING } from "@/lib/karria";
+import { EDITEUR, PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Politique de Confidentialité",
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
                 <section>
                   <h3 className={H3}>1. Qui traite vos données</h3>
                   <p>
-                    Karria est éditée par {SITE_CONFIG.founder}, son fondateur, en son nom : la structure juridique de Karria n&apos;est pas encore créée. C&apos;est lui qui décide de l&apos;usage fait de vos données et qui en répond. Pour toute question, écrivez à{" "}
+                    Le responsable de traitement est {EDITEUR.raisonSociale}, {EDITEUR.formeJuridique}, {EDITEUR.siege} ({EDITEUR.immatriculation}). Karria est le service qu&apos;elle édite. Pour toute question sur vos données, écrivez à{" "}
                     <Link href={`mailto:${CONTACT_EMAILS.privacy}`} className={LINK}>{CONTACT_EMAILS.privacy}</Link>.
                   </p>
                 </section>

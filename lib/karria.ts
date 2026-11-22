@@ -41,3 +41,19 @@ export const PRICING = {
     assistantMessagesPerDay: 40,
   },
 } as const;
+
+/**
+ * L'entité légale qui édite Karria (entreprise individuelle).
+ * Le seul endroit où ces coordonnées sont écrites : les Mentions légales,
+ * la Confidentialité et les CGV les lisent ici. Le nom n'apparaît nulle part
+ * ailleurs sur le site.
+ */
+export const EDITEUR = {
+  raisonSociale: "Nkue Takoumba Marc Junior (EI)",
+  formeJuridique: "entreprise individuelle (entrepreneur individuel)",
+  siege: "23 avenue Léon Bollée, 75013 Paris, France",
+  immatriculation: "R.C.S. Paris 130 777 196 — SIREN 130 777 196",
+  tva: "TVA non applicable, article 293 B du Code général des impôts",
+  directeurDePublication: "Marc Junior Nkue Takoumba",
+  contact: "hello@karria.fr",
+} as const;

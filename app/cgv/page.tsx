@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { CONTACT_EMAILS } from "@/lib/constants";
-import { PRICING } from "@/lib/karria";
+import { EDITEUR, PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Conditions Générales de Vente",
@@ -33,6 +33,9 @@ export default function CGVPage() {
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">1. Services et Tarifs</h3>
                   <p>
+                    Le vendeur est {EDITEUR.raisonSociale}, {EDITEUR.formeJuridique}, {EDITEUR.siege} ({EDITEUR.immatriculation}). Karria est le service qu&apos;elle édite. {EDITEUR.tva}.
+                  </p>
+                  <p className="mt-4">
                     Karria est gratuite, financée par des annonces. Une seule offre payante existe : l&apos;abonnement « {PRICING.planName} », à {PRICING.monthlyLabel} par mois ou {PRICING.yearlyLabel} par an, sans engagement. Il retire les annonces et lève les limites mensuelles de la version gratuite. Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la période déjà payée.
                   </p>
                 </section>

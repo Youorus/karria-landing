@@ -9,7 +9,6 @@ export const SITE_CONFIG = {
   name: "Karria",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://karria.fr",
   foundingDate: "2024",
-  founder: "Marc Takoumba",
   location: "Paris, France",
 };
 
@@ -30,7 +29,6 @@ export const SOCIAL_LINKS = {
   linkedin: "https://linkedin.com/company/karria",
   instagram: "https://instagram.com/karria.app",
   tiktok: "https://tiktok.com/@karria.fr",
-  founderInstagram: "https://instagram.com/marctakoumba",
 };
 
 // Les liens des stores vivent dans lib/karria.ts (une seule source).

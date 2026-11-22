@@ -2,12 +2,12 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { CONTACT_EMAILS } from "@/lib/constants";
+import { EDITEUR } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Mentions légales",
   description:
-      "Qui édite et qui héberge le site et l'application Karria. Cette page sera complétée lors de la création officielle de la structure juridique.",
+      "Éditeur et hébergeurs du site et de l'application Karria.",
   path: "/mentions-legales",
 });
 
@@ -20,7 +20,7 @@ export default function LegalPage() {
                 eyebrow="Transparence"
                 headingLevel={1}
                 title="Mentions légales"
-                subtitle="Qui édite et qui héberge Karria. Cette page sera complétée dès la création de la structure juridique."
+                subtitle="Qui édite Karria, et qui héberge le site et l’application."
                 align="left"
                 className="mb-20"
             />
@@ -35,13 +35,14 @@ export default function LegalPage() {
                       Éditeur du site
                     </h3>
                     <p>
-                      Le site Karria est actuellement édité par Marc Takoumba,
-                      fondateur du projet Karria, en son nom.
-                    </p>
-
-                    <p className="mt-4">
-                      Les informations relatives à la structure juridique
-                      officielle de Karria seront ajoutées dès sa création.
+                      Karria est un service édité par {EDITEUR.raisonSociale},{" "}
+                      {EDITEUR.formeJuridique}.
+                      <br />
+                      Adresse de l’établissement : {EDITEUR.siege}.
+                      <br />
+                      {EDITEUR.immatriculation}.
+                      <br />
+                      {EDITEUR.tva}.
                     </p>
                   </section>
 
@@ -50,8 +51,8 @@ export default function LegalPage() {
                       Directeur de la publication
                     </h3>
                     <p>
-                      Le directeur de la publication est Marc Takoumba, fondateur
-                      de Karria.
+                      Directeur de la publication :{" "}
+                      {EDITEUR.directeurDePublication}.
                     </p>
                   </section>
 
@@ -100,10 +101,10 @@ export default function LegalPage() {
                       vous pouvez écrire à l’adresse suivante :
                       <br />
                       <Link
-                          href={`mailto:${CONTACT_EMAILS.general}`}
+                          href={`mailto:${EDITEUR.contact}`}
                           className="text-primary hover:underline"
                       >
-                        {CONTACT_EMAILS.general}
+                        {EDITEUR.contact}
                       </Link>
                     </p>
                   </section>
@@ -113,9 +114,8 @@ export default function LegalPage() {
                       Mise à jour
                     </h3>
                     <p>
-                      Ces mentions légales seront mises à jour dès que les
-                      informations juridiques définitives de Karria seront
-                      disponibles.
+                      Ces mentions légales sont mises à jour à chaque changement
+                      des informations ci-dessus.
                     </p>
                   </section>
                 </div>

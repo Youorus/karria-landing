@@ -48,10 +48,10 @@ const ABOUT_HERO = {
       "Karria aide les candidats à gagner du temps, mieux candidater et retrouver de la clarté dans leur recherche.",
 };
 
-const FOUNDER = {
-  name: "Marc Takoumba",
-  role: "Fondateur de Karria",
-  image: "/marc-takoumba.jpg",
+const TEAM = {
+  name: "L’équipe Karria",
+  role: "Une petite équipe, à Paris",
+  image: "/icons/icon-512.png",
   quote:
       "Chercher un travail ne devrait pas devenir un travail à temps plein.",
 };
@@ -63,7 +63,7 @@ const ORIGIN_CONTENT = {
   intro:
     "Karria est né d’une expérience réelle, d’une frustration vécue, et d’une envie profonde : créer un outil utile, accessible et sincèrement pensé pour les candidats.",
   finalText:
-    "Ce projet a été construit avec beaucoup d’amour, d’énergie et de vision. Si tu utilises Karria, si tu trouves un emploi grâce à lui, ou si tu as une idée pour l’améliorer, je serai toujours heureux de te lire.",
+    "Ce projet a été construit avec beaucoup d’amour, d’énergie et de vision. Si tu utilises Karria, si tu trouves un emploi grâce à lui, ou si tu as une idée pour l’améliorer, nous serons toujours heureux de te lire.",
   finalStrong: "Karria a été pensé pour faire partie de ton parcours.",
 };
 
@@ -133,24 +133,24 @@ export default function AboutPage() {
               <aside className="relative mx-auto w-full max-w-sm lg:sticky lg:top-28 lg:self-start">
                 <div className="relative mx-auto aspect-square w-full overflow-hidden rounded-full shadow-2xl shadow-primary/10">
                   <Image
-                    src={FOUNDER.image}
-                    alt={`${FOUNDER.name}, ${FOUNDER.role}`}
+                    src={TEAM.image}
+                    alt="Logo de Karria"
                     fill
                     className="h-full w-full object-cover"
                   />
                 </div>
 
                 <div className="mt-8 text-center">
-                  <p className="text-xl font-bold text-foreground">{FOUNDER.name}</p>
+                  <p className="text-xl font-bold text-foreground">{TEAM.name}</p>
                   <p className="mt-1 text-sm font-medium text-muted-foreground">
-                    {FOUNDER.role}
+                    {TEAM.role}
                   </p>
                 </div>
 
                 <div className="mt-8 rounded-[2rem] bg-background/80 p-6 text-center shadow-xl shadow-primary/5 backdrop-blur-xl">
                   <Quote className="mx-auto mb-4 h-6 w-6 text-primary" />
                   <p className="text-base font-medium leading-relaxed text-foreground">
-                    “{FOUNDER.quote}”
+                    “{TEAM.quote}”
                   </p>
                 </div>
               </aside>
