@@ -3,10 +3,11 @@ import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { CONTACT_EMAILS } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Conditions Générales de Vente",
-  description: "Conditions de vente de l'abonnement « Karria sans pub » : prix, paiement, résiliation et remboursement.",
+  description: `Conditions de vente de l'abonnement « ${PRICING.planName} » : prix, paiement par Stripe, résiliation et remboursement.`,
   path: "/cgv",
 });
 
@@ -19,7 +20,7 @@ export default function CGVPage() {
             eyebrow="Commercial"
             headingLevel={1}
             title="Conditions Générales de Vente"
-            subtitle="L'abonnement « Karria sans pub », ses prix et vos droits en tant que client."
+            subtitle={`L'abonnement « ${PRICING.planName} », ses prix et vos droits en tant que client.`}
             align="left"
             className="mb-20"
           />
@@ -32,7 +33,7 @@ export default function CGVPage() {
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">1. Services et Tarifs</h3>
                   <p>
-                    Karria est gratuite, financée par des annonces. Une seule offre payante existe : l&apos;abonnement « Karria sans pub », à 4,99 € par mois ou 49,90 € par an, sans engagement. Il retire les annonces et lève les limites mensuelles de la version gratuite. Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la durée de l&apos;engagement.
+                    Karria est gratuite, financée par des annonces. Une seule offre payante existe : l&apos;abonnement « {PRICING.planName} », à {PRICING.monthlyLabel} par mois ou {PRICING.yearlyLabel} par an, sans engagement. Il retire les annonces et lève les limites mensuelles de la version gratuite. Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la période déjà payée.
                   </p>
                 </section>
 
@@ -42,15 +43,14 @@ export default function CGVPage() {
                   </h3>
 
                   <p>
-                    Les paiements liés à l’application Karria sont effectués directement via
-                    l’App Store d’Apple ou le Google Play Store, selon la plateforme utilisée.
-                    Karria ne collecte ni ne stocke aucune information bancaire sur ses propres
-                    serveurs.
+                    Le paiement de l’abonnement est effectué par Stripe, sur une page de
+                    paiement sécurisée ouverte depuis l’application Karria. Il ne passe ni
+                    par l’App Store d’Apple ni par le Google Play Store.
                   </p>
 
                   <p className="mt-4">
-                    La gestion des abonnements, achats intégrés, renouvellements, annulations et
-                    remboursements dépend des conditions et procédures propres à Apple ou Google.
+                    Karria ne voit ni ne stocke les numéros de carte : ils sont saisis et
+                    conservés par Stripe. Karria ne conserve que l’état de votre abonnement.
                   </p>
                 </section>
 
@@ -60,19 +60,21 @@ export default function CGVPage() {
                   </h3>
 
                   <p>
-                    Certains services de Karria peuvent être proposés sous forme d’abonnements
-                    mensuels ou annuels via l’App Store d’Apple ou le Google Play Store.
+                    L’abonnement « {PRICING.planName} » est proposé au mois ou à l’année,
+                    sans engagement.
                   </p>
 
                   <p className="mt-4">
-                    Les abonnements sont renouvelés automatiquement selon les règles de la
-                    plateforme utilisée, sauf résiliation effectuée par l’utilisateur avant la
+                    Il est renouvelé automatiquement à chaque échéance, mensuelle ou
+                    annuelle, sauf résiliation effectuée par l’utilisateur avant la
                     prochaine date de renouvellement.
                   </p>
 
                   <p className="mt-4">
-                    La gestion des abonnements, modifications, annulations et remboursements
-                    s’effectue directement depuis les paramètres de votre compte Apple ou Google.
+                    Vous pouvez résilier à tout moment depuis l’application Karria, qui
+                    ouvre le portail de gestion de l’abonnement fourni par Stripe. La
+                    gestion de l’abonnement ne s’effectue pas depuis les paramètres de
+                    votre compte Apple ou Google.
                   </p>
                 </section>
 
@@ -82,15 +84,16 @@ export default function CGVPage() {
                   </h3>
 
                   <p>
-                    Les achats et abonnements effectués via l’App Store d’Apple ou le Google
-                    Play Store sont soumis aux règles et politiques de remboursement propres à
-                    chaque plateforme.
+                    L’abonnement étant souscrit directement auprès de Karria et réglé par
+                    Stripe, les règles et politiques de remboursement de l’App Store
+                    d’Apple et du Google Play Store ne s’appliquent pas.
                   </p>
 
                   <p className="mt-4">
                     Toute demande de remboursement, d’annulation ou d’exercice du droit de
-                    rétractation doit être effectuée directement auprès d’Apple ou de Google,
-                    conformément à leurs conditions d’utilisation respectives.
+                    rétractation, dans les conditions prévues par le Code de la
+                    consommation, doit nous être adressée par e-mail à{" "}
+                    <Link href={`mailto:${CONTACT_EMAILS.billing}`} className="text-primary hover:underline">{CONTACT_EMAILS.billing}</Link>.
                   </p>
                 </section>
 
