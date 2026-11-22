@@ -20,6 +20,22 @@ const nextConfig: NextConfig = {
       },
       // /recrutement-ia retiré — l'offre n'est pas réellement pensée pour les recruteurs,
       // le trafic est redirigé vers la vraie page produit candidat.
+      // L app mobile ouvre /conditions-generales pour ses conditions générales :
+      // la page vit à /cgu. Sans cette redirection, le lien de l écran de
+      // connexion tombait sur une 404.
+      {
+        source: "/conditions-generales",
+        destination: "/cgu",
+        permanent: false,
+      },
+      // /app est l adresse écrite en pied des CV exportés par Karria. En
+      // attendant la page de lien intelligent (branche « partage »), elle mène
+      // à la fiche de l app sur l App Store.
+      {
+        source: "/app",
+        destination: "https://apps.apple.com/fr/app/id6776608930",
+        permanent: false,
+      },
       {
         source: "/recrutement-ia",
         destination: "/matching-emploi-ia",
