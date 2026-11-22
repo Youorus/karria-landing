@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, FileText, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "CV IA : atelier, modèles et score ATS",
@@ -44,7 +45,7 @@ const faqs = [
   },
   {
     q: "Combien de CV puis-je créer avec Karria ?",
-    a: "La version gratuite permet chaque mois 5 imports de CV, 20 CV adaptés à une offre, 3 optimisations ATS et 3 exports sans la mention Karria ; au-delà, le CV s'exporte avec la mention, sans jamais être bloqué. L'offre « Karria sans pub » (4,99 € par mois ou 49,90 € par an, sans engagement) retire les annonces et lève ces limites mensuelles.",
+    a: `La version gratuite permet chaque mois 5 imports de CV, 20 CV adaptés à une offre, 3 optimisations ATS et 3 exports sans la mention Karria ; au-delà, le CV s'exporte avec la mention, sans jamais être bloqué. L'offre « ${PRICING.planName} » (${PRICING.monthlyLabel} par mois ou ${PRICING.yearlyLabel} par an, sans engagement) retire les annonces et lève ces limites mensuelles.`,
   },
 ];
 

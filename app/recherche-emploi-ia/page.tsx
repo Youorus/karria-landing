@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Search, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Recherche d'emploi IA : trouve ton prochain poste",
@@ -43,7 +44,7 @@ const faqs = [
   },
   {
     q: "Dois-je payer pour commencer ma recherche ?",
-    a: "Non. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante, « Karria sans pub » (4,99 € par mois ou 49,90 € par an, sans engagement), retire les annonces et lève les limites mensuelles.",
+    a: `Non. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante, « ${PRICING.planName} » (${PRICING.monthlyLabel} par mois ou ${PRICING.yearlyLabel} par an, sans engagement), retire les annonces et lève les limites mensuelles.`,
   },
 ];
 

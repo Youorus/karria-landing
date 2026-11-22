@@ -2,6 +2,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { ArrowRight, BarChart2, Check, X, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Comparatif des plateformes d'emploi et de CV IA",
@@ -68,7 +69,7 @@ const versus = [
 const faqs = [
   {
     q: "Karria est-il vraiment gratuit ?",
-    a: "Oui. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante, « Karria sans pub » (4,99 € par mois ou 49,90 € par an, sans engagement), retire les annonces et lève les limites mensuelles.",
+    a: `Oui. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante, « ${PRICING.planName} » (${PRICING.monthlyLabel} par mois ou ${PRICING.yearlyLabel} par an, sans engagement), retire les annonces et lève les limites mensuelles.`,
   },
   {
     q: "En quoi le matching IA de Karria est-il différent ?",

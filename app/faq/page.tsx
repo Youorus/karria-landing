@@ -3,6 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { Reveal } from "@/components/ui/Reveal";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { NAV_ROUTES } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata = buildMetadata({
@@ -21,7 +22,7 @@ const FAQS = [
       },
       {
         q: "Est-ce que Karria est gratuite ?",
-        a: "Oui. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante existe : « Karria sans pub », à 4,99 € par mois ou 49,90 € par an, sans engagement. Elle retire les annonces et lève les limites mensuelles.",
+        a: `Oui. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante existe : « ${PRICING.planName} », à ${PRICING.monthlyLabel} par mois ou ${PRICING.yearlyLabel} par an, sans engagement. Elle retire les annonces et lève les limites mensuelles.`,
       },
       {
         q: "Quelles sont les limites de la version gratuite ?",

@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, PenLine, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
+import { PRICING } from "@/lib/karria";
 
 export const metadata = buildMetadata({
   title: "Lettre de motivation IA adaptée à chaque offre",
@@ -39,7 +40,7 @@ const faqs = [
   },
   {
     q: "Puis-je générer plusieurs lettres pour différentes offres ?",
-    a: "Oui. Chaque candidature a sa lettre. La version gratuite permet 30 lettres par mois ; l'offre « Karria sans pub » (4,99 € par mois ou 49,90 € par an) lève cette limite.",
+    a: `Oui. Chaque candidature a sa lettre. La version gratuite permet 30 lettres par mois ; l'offre « ${PRICING.planName} » (${PRICING.monthlyLabel} par mois ou ${PRICING.yearlyLabel} par an) lève cette limite.`,
   },
   {
     q: "La lettre est-elle compatible avec les exigences ATS ?",
