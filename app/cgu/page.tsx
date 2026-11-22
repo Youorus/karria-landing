@@ -72,7 +72,7 @@ export default function CGUPage() {
               <div className="sticky top-32 p-8 rounded-3xl bg-secondary/50 border border-border">
                 <h4 className="text-lg font-bold mb-4">Besoin d&apos;aide ?</h4>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Si vous avez des questions sur nos conditions, notre équipe juridique est à votre disposition.
+                  Si vous avez des questions sur nos conditions, écrivez-nous : nous vous répondons.
                 </p>
                 <Link 
                   href={`mailto:${CONTACT_EMAILS.legal}`}

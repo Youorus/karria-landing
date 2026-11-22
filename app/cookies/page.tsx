@@ -5,7 +5,7 @@ import { CookiePreferencesButton } from "@/components/analytics/CookiePreference
 
 export const metadata = buildMetadata({
   title: "Gestion des Cookies",
-  description: "Apprenez-en plus sur l'utilisation des cookies sur Karria et comment vous pouvez les gérer pour une expérience personnalisée.",
+  description: "Ce que le site karria.fr enregistre dans votre navigateur, à quoi servent les cookies de mesure d'audience et comment modifier votre choix.",
   path: "/cookies",
 });
 
@@ -18,7 +18,7 @@ export default function CookiesPage() {
             eyebrow="Préférences"
             headingLevel={1}
             title="Politique des Cookies"
-            subtitle="Nous utilisons des cookies pour améliorer votre expérience et personnaliser nos services."
+            subtitle="Ce que le site karria.fr enregistre dans votre navigateur, et comment modifier votre choix."
             align="left"
             className="mb-20"
           />
@@ -38,28 +38,28 @@ export default function CookiesPage() {
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">2. Cookies essentiels</h3>
                   <p>
-                    Ces cookies sont indispensables au bon fonctionnement de Karria. Ils vous permettent de rester connecté à votre compte et de naviguer en toute sécurité.
+                    Le site karria.fr ne demande aucun compte. Il mémorise seulement, dans votre navigateur, votre choix concernant les cookies et le thème d&apos;affichage (clair ou sombre), pour ne pas vous les redemander à chaque visite.
                   </p>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">3. Cookies de performance et d&apos;analyse</h3>
                   <p>
-                    Nous utilisons ces cookies pour comprendre comment nos utilisateurs interagissent avec la plateforme, afin d&apos;identifier les points d&apos;amélioration et d&apos;optimiser nos parcours.
+                    Avec votre accord, nous utilisons Google Analytics pour comprendre comment le site est consulté et l&apos;améliorer. Sans votre accord, aucun cookie de mesure n&apos;est déposé.
                   </p>
                 </section>
 
                 <section>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">4. Cookies de personnalisation</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-4">4. Cookies publicitaires</h3>
                   <p>
-                    Ces cookies nous permettent de vous proposer des offres d&apos;emploi et du contenu adaptés à vos recherches précédentes et à votre profil.
+                    Le site n&apos;affiche pas de publicité. En acceptant les cookies, vous autorisez toutefois Google à utiliser les mesures d&apos;audience du site à des fins publicitaires (mesure et personnalisation de ses annonces). Si vous refusez, ces usages restent désactivés.
                   </p>
                 </section>
 
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">5. Gestion de vos choix</h3>
                   <p>
-                    Vous pouvez modifier vos préférences en matière de cookies à tout moment via les réglages de votre navigateur ou directement sur notre bandeau de consentement.
+                    Vous pouvez modifier vos préférences en matière de cookies à tout moment avec le bouton ci-dessous, ou via les réglages de votre navigateur.
                   </p>
                 </section>
               </div>
