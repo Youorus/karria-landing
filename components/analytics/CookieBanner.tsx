@@ -29,8 +29,8 @@ export function CookieBanner() {
             <Cookie className="w-4 h-4 text-primary" />
           </div>
           <p className="text-sm text-foreground/80 leading-relaxed">
-            Nous utilisons des cookies pour analyser notre trafic et améliorer
-            votre expérience.{" "}
+            Nous utilisons des cookies pour mesurer l&apos;audience du site et
+            améliorer ton expérience.{" "}
             <Link
               href="/cookies"
               className="text-primary hover:underline font-semibold"
