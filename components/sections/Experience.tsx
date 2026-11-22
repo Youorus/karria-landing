@@ -70,7 +70,7 @@ export default function Experience() {
           className="font-display font-bold tracking-tight text-foreground mb-6"
           style={{ fontSize: "clamp(2rem, 4.5vw, 3.75rem)", lineHeight: 1.1 }}
         >
-          Votre carrière mérite une{" "}
+          Ta carrière mérite une{" "}
           <span className="text-gradient-blue">intelligence</span>{" "}
           à sa hauteur.
         </motion.h2>
@@ -94,9 +94,9 @@ export default function Experience() {
           className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-14"
         >
           {[
-            { emoji: "🎯", title: "Précision", desc: "Uniquement des offres qui ont du sens pour vous" },
+            { emoji: "🎯", title: "Précision", desc: "Uniquement des offres qui ont du sens pour toi" },
             { emoji: "⚡", title: "Rapidité", desc: "De la recherche à la candidature en quelques minutes" },
-            { emoji: "🤝", title: "Confiance", desc: "Votre parcours mis en valeur, vos données respectées" },
+            { emoji: "🤝", title: "Confiance", desc: "Ton parcours mis en valeur, tes données respectées" },
           ].map((val) => (
             <div
               key={val.title}

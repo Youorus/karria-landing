@@ -7,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Trouver une alternance grâce à l'IA",
   description:
-    "Karria vous aide à trouver une alternance : offres ciblées, CV adapté et lettre de motivation pour chaque entreprise, alertes dès qu'une nouvelle offre correspond.",
+    "Karria t'aide à trouver une alternance : offres ciblées, CV adapté et lettre de motivation pour chaque entreprise, alertes dès qu'une nouvelle offre correspond.",
   path: "/alternance",
   keywords: [
     "trouver alternance IA",
@@ -22,19 +22,19 @@ export const metadata = buildMetadata({
 const faqs = [
   {
     q: "Comment Karria aide à trouver une alternance ?",
-    a: "Dites à Karria le métier, le lieu et le contrat : elle lance la recherche parmi les offres d'alternance et classe les plus pertinentes en premier. Pour chaque offre, elle prépare un CV adapté et une lettre de motivation.",
+    a: "Dis à Karria le métier, le lieu et le contrat : elle lance la recherche parmi les offres d'alternance et classe les plus pertinentes en premier. Pour chaque offre, elle prépare un CV adapté et une lettre de motivation.",
   },
   {
     q: "Faut-il déjà avoir une école pour postuler ?",
-    a: "Pas nécessairement. De nombreuses entreprises recrutent d'abord l'alternant, qui rejoint ensuite l'école partenaire. Karria vous aide à valoriser votre projet de formation auprès des recruteurs.",
+    a: "Pas nécessairement. De nombreuses entreprises recrutent d'abord l'alternant, qui rejoint ensuite l'école partenaire. Karria t'aide à valoriser ton projet de formation auprès des recruteurs.",
   },
   {
     q: "Karria convient-il aussi aux contrats de professionnalisation ?",
-    a: "Oui. Que vous visiez un contrat d'apprentissage ou de professionnalisation, Karria adapte vos candidatures au type de contrat et au public ciblé par l'entreprise.",
+    a: "Oui. Que tu vises un contrat d'apprentissage ou de professionnalisation, Karria adapte tes candidatures au type de contrat et au public ciblé par l'entreprise.",
   },
   {
     q: "L'alternance est-elle compatible avec mon niveau d'études ?",
-    a: "L'alternance existe du CAP au Bac+5 et au-delà. Précisez votre domaine et votre niveau à Karria pour cibler les offres qui vous concernent.",
+    a: "L'alternance existe du CAP au Bac+5 et au-delà. Précise ton domaine et ton niveau à Karria pour cibler les offres qui te concernent.",
   },
 ];
 
@@ -49,13 +49,13 @@ export default function AlternancePage() {
               <span>Alternance</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              Décrochez votre alternance
+              Décroche ton alternance
               <br />
               <span className="text-gradient-blue">avec l&apos;aide de Karria</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Karria comprend les spécificités de l&apos;alternance et vous
-              accompagne pas à pas : offres ciblées, CV adapté, lettres
+              Karria comprend les spécificités de l&apos;alternance et
+              t&apos;accompagne pas à pas : offres ciblées, CV adapté, lettres
               personnalisées pour chaque entreprise.
             </p>
             <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
@@ -73,20 +73,20 @@ export default function AlternancePage() {
             <p>
               Décrocher une alternance demande souvent autant d&apos;efforts
               qu&apos;un emploi à temps plein : il faut convaincre une entreprise
-              de vous former tout en menant ses études, multiplier les
+              de te former tout en menant ses études, multiplier les
               candidatures et se démarquer face à de nombreux autres candidats
               au profil similaire. Beaucoup d&apos;étudiants s&apos;y prennent
               trop tard ou postulent avec un CV générique.
             </p>
             <p>
-              Karria comprend les spécificités de l&apos;alternance et vous fait
+              Karria comprend les spécificités de l&apos;alternance et te fait
               gagner un temps précieux : offres ciblées par secteur et région,{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
                 CV adapté
               </Link>{" "}
               aux recruteurs en apprentissage et lettres personnalisées pour
-              chaque entreprise. Si vous hésitez encore sur votre voie,
-              découvrez aussi nos conseils pour les{" "}
+              chaque entreprise. Si tu hésites encore sur ta voie,
+              découvre aussi nos conseils pour les{" "}
               <Link href="/jeune-diplome" className="text-primary hover:underline">
                 jeunes diplômés
               </Link>
@@ -95,7 +95,7 @@ export default function AlternancePage() {
           </section>
 
           <section className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">Pourquoi Karria pour votre alternance ?</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">Pourquoi Karria pour ton alternance ?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 "Offres d'alternance par métier et par lieu",
@@ -103,7 +103,7 @@ export default function AlternancePage() {
                 "Lettres de motivation percutantes pour les entreprises",
                 "Les offres les plus pertinentes en premier",
                 "Une alerte dès qu'une nouvelle offre correspond",
-                "Un dossier par candidature pour suivre où vous en êtes",
+                "Un dossier par candidature pour suivre où tu en es",
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />

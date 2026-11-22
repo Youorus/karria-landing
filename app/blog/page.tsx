@@ -6,7 +6,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Blog : conseils carrière, IA et emploi",
   description:
-      "Retrouvez bientôt les guides Karria sur la recherche d’emploi, les CV, les lettres de motivation et l’IA appliquée à la carrière.",
+      "Retrouve bientôt les guides Karria sur la recherche d’emploi, les CV, les lettres de motivation et l’IA appliquée à la carrière.",
   path: "/blog",
   keywords: [
     "blog emploi",
@@ -23,12 +23,12 @@ const UPCOMING_TOPICS = [
     icon: FileText,
     title: "Créer un CV plus clair",
     description:
-        "Des conseils simples pour mieux présenter votre parcours et donner envie aux recruteurs de vous lire.",
+        "Des conseils simples pour mieux présenter ton parcours et donner envie aux recruteurs de te lire.",
     tag: "CV",
   },
   {
     icon: Sparkles,
-    title: "Utiliser l’IA sans perdre votre personnalité",
+    title: "Utiliser l’IA sans perdre ta personnalité",
     description:
         "Comment gagner du temps avec l’IA tout en gardant une candidature sincère, humaine et crédible.",
     tag: "IA carrière",
@@ -57,7 +57,7 @@ export default function BlogPage() {
               <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight md:text-6xl">
                 Des conseils pour mieux avancer
                 <br />
-                <span className="text-gradient-blue">dans votre carrière.</span>
+                <span className="text-gradient-blue">dans ta carrière.</span>
               </h1>
 
               <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
@@ -84,7 +84,7 @@ export default function BlogPage() {
 
             <section className="mb-16 space-y-4 text-muted-foreground leading-relaxed">
               <h2 className="text-2xl font-bold text-foreground">
-                Ce que vous trouverez sur le blog Karria
+                Ce que tu trouveras sur le blog Karria
               </h2>
               <p>
                 Le marché de l&apos;emploi évolue vite, et les bonnes pratiques
@@ -93,12 +93,12 @@ export default function BlogPage() {
                 actualisés sur la recherche d&apos;emploi, la rédaction de CV et
                 de lettres de motivation, la préparation aux entretiens et
                 l&apos;usage raisonné de l&apos;intelligence artificielle dans
-                votre carrière.
+                ta carrière.
               </p>
               <p>
                 Notre ligne éditoriale : des contenus simples, honnêtes et
                 actionnables, sans jargon inutile. En attendant les premiers
-                articles, vous pouvez déjà mettre en pratique nos outils — créer
+                articles, tu peux déjà mettre en pratique nos outils — créer
                 un{" "}
                 <Link href="/cv-ia" className="text-primary hover:underline">
                   CV optimisé
@@ -146,7 +146,7 @@ export default function BlogPage() {
 
             <div className="text-center">
               <p className="mb-6 text-muted-foreground">
-                En attendant, découvrez comment Karria peut simplifier votre
+                En attendant, découvre comment Karria peut simplifier ta
                 recherche d’emploi.
               </p>
 

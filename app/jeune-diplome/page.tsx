@@ -7,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Premier emploi pour jeune diplômé avec l'IA",
   description:
-    "Jeune diplômé à la recherche de votre premier emploi ? Karria vous accompagne avec l'IA pour construire un profil attractif, postuler aux bonnes offres et décrocher vos premiers entretiens.",
+    "Jeune diplômé à la recherche de ton premier emploi ? Karria t'accompagne avec l'IA pour construire un profil attractif, postuler aux bonnes offres et décrocher tes premiers entretiens.",
   path: "/jeune-diplome",
   keywords: [
     "emploi jeune diplômé",
@@ -22,19 +22,19 @@ export const metadata = buildMetadata({
 const faqs = [
   {
     q: "Comment trouver un emploi sans expérience ?",
-    a: "Sans longue expérience professionnelle, ce sont vos projets académiques, stages, engagements associatifs et compétences qui font la différence. Karria vous aide à les mettre en valeur dans un CV structuré et convaincant.",
+    a: "Sans longue expérience professionnelle, ce sont tes projets académiques, stages, engagements associatifs et compétences qui font la différence. Karria t'aide à les mettre en valeur dans un CV structuré et convaincant.",
   },
   {
     q: "Que mettre dans un CV de jeune diplômé ?",
-    a: "Formation, projets significatifs, stages, compétences techniques et soft skills, et éventuellement vos centres d'intérêt pertinents. Karria sélectionne et reformule ces éléments pour qu'ils parlent aux recruteurs et passent les filtres ATS.",
+    a: "Formation, projets significatifs, stages, compétences techniques et soft skills, et éventuellement tes centres d'intérêt pertinents. Karria sélectionne et reformule ces éléments pour qu'ils parlent aux recruteurs et passent les filtres ATS.",
   },
   {
     q: "Faut-il une lettre de motivation quand on débute ?",
-    a: "Oui, c'est même un atout : elle vous permet d'expliquer votre motivation et de compenser un manque d'expérience. Karria rédige une lettre ciblée pour chaque offre.",
+    a: "Oui, c'est même un atout : elle te permet d'expliquer ta motivation et de compenser un manque d'expérience. Karria rédige une lettre ciblée pour chaque offre.",
   },
   {
     q: "L'alternance est-elle une bonne alternative ?",
-    a: "Si vous poursuivez vos études, l'alternance combine théorie et expérience et facilite l'embauche ensuite. Découvrez notre page dédiée à l'alternance pour explorer cette voie.",
+    a: "Si tu poursuis tes études, l'alternance combine théorie et expérience et facilite l'embauche ensuite. Découvre notre page dédiée à l'alternance pour explorer cette voie.",
   },
 ];
 
@@ -49,14 +49,14 @@ export default function JeuneDiplomePage() {
               <span>Jeune diplômé</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              Votre premier emploi,
+              Ton premier emploi,
               <br />
               <span className="text-gradient-blue">trouvé par Karria</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Votre diplôme en poche, Karria vous aide à valoriser vos
+              Ton diplôme en poche, Karria t&apos;aide à valoriser tes
               compétences, construire un profil attractif et trouver les offres
-              les plus adaptées à votre profil de jeune diplômé.
+              les plus adaptées à ton profil de jeune diplômé.
             </p>
             <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
               <Sparkles className="w-5 h-5" />
@@ -72,14 +72,14 @@ export default function JeuneDiplomePage() {
             </h2>
             <p>
               Le premier emploi est souvent le plus difficile à obtenir : les
-              offres réclament de l&apos;expérience que, par définition, vous
-              n&apos;avez pas encore. Résultat, beaucoup de jeunes diplômés
+              offres réclament de l&apos;expérience que, par définition, tu
+              n&apos;as pas encore. Résultat, beaucoup de jeunes diplômés
               sous-estiment la valeur de leurs stages, projets et compétences, et
               envoient des candidatures peu convaincantes qui se perdent dans la
               masse.
             </p>
             <p>
-              Karria renverse la situation en valorisant ce que vous avez
+              Karria renverse la situation en valorisant ce que tu as
               réellement accompli : projets académiques, stages, expériences
               associatives et compétences concrètes. La plateforme construit un{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
@@ -89,8 +89,8 @@ export default function JeuneDiplomePage() {
               <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
                 lettres
               </Link>{" "}
-              percutantes et vous oriente vers les offres juniors. Si vous
-              poursuivez vos études, pensez aussi à l&apos;
+              percutantes et t&apos;oriente vers les offres juniors. Si tu
+              poursuis tes études, pense aussi à l&apos;
               <Link href="/alternance" className="text-primary hover:underline">
                 alternance
               </Link>
@@ -102,11 +102,11 @@ export default function JeuneDiplomePage() {
             <h2 className="text-2xl font-bold mb-8 text-center">Ce que Karria apporte aux jeunes diplômés</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Mise en valeur de vos projets académiques et stages",
+                "Mise en valeur de tes projets académiques et stages",
                 "CV professionnel même sans expérience extensive",
-                "Offres juniors et premiers emplois filtrées pour vous",
+                "Offres juniors et premiers emplois filtrées pour toi",
                 "Lettres percutantes malgré un profil en construction",
-                "Score ATS de votre CV et optimisation en un geste",
+                "Score ATS de ton CV et optimisation en un geste",
                 "Une alerte dès qu'une nouvelle offre correspond",
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">

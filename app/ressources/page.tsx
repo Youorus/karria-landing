@@ -6,7 +6,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Ressources carrière : guides et outils",
   description:
-    "Les guides Karria pour votre recherche d'emploi : CV, lettre de motivation, offres, alternance, premier emploi et reconversion.",
+    "Les guides Karria pour ta recherche d'emploi : CV, lettre de motivation, offres, alternance, premier emploi et reconversion.",
   path: "/ressources",
   keywords: [
     "ressources recherche emploi",
@@ -22,9 +22,9 @@ export const metadata = buildMetadata({
 const resources = [
   { title: "Créer un CV optimisé pour les ATS", desc: "Un CV professionnel, adapté à chaque offre et structuré pour passer les filtres de tri automatique.", href: "/cv-ia", tag: "Outil" },
   { title: "Écrire une lettre de motivation ciblée", desc: "Une lettre personnalisée et prête à envoyer, générée pour chaque candidature.", href: "/lettre-motivation-ia", tag: "Outil" },
-  { title: "Trouver les offres qui vous correspondent", desc: "Dites à Karria ce que vous cherchez : les offres les plus pertinentes arrivent en premier.", href: "/matching-emploi-ia", tag: "Outil" },
-  { title: "Organiser toute sa recherche d'emploi", desc: "Centralisez vos candidatures, vos alertes et votre suivi au même endroit.", href: "/recherche-emploi-ia", tag: "Outil" },
-  { title: "Réussir sa reconversion professionnelle", desc: "Étapes et conseils pour valoriser vos compétences transférables.", href: "/reconversion", tag: "Guide" },
+  { title: "Trouver les offres qui te correspondent", desc: "Dis à Karria ce que tu cherches : les offres les plus pertinentes arrivent en premier.", href: "/matching-emploi-ia", tag: "Outil" },
+  { title: "Organiser toute sa recherche d'emploi", desc: "Centralise tes candidatures, tes alertes et ton suivi au même endroit.", href: "/recherche-emploi-ia", tag: "Outil" },
+  { title: "Réussir sa reconversion professionnelle", desc: "Étapes et conseils pour valoriser tes compétences transférables.", href: "/reconversion", tag: "Guide" },
   { title: "Décrocher son alternance", desc: "Offres ciblées, CV adapté et lettre pour chaque entreprise.", href: "/alternance", tag: "Guide" },
 ];
 
@@ -32,7 +32,7 @@ const categories = [
   {
     icon: FileText,
     title: "Rédiger un CV qui passe les filtres",
-    body: "Un CV efficace en 2026 doit convaincre deux lecteurs : le logiciel ATS qui filtre les candidatures, puis le recruteur humain. Nos ressources vous expliquent comment structurer vos rubriques, choisir les bons mots-clés et adapter votre CV à chaque offre.",
+    body: "Un CV efficace en 2026 doit convaincre deux lecteurs : le logiciel ATS qui filtre les candidatures, puis le recruteur humain. Nos ressources t'expliquent comment structurer tes rubriques, choisir les bons mots-clés et adapter ton CV à chaque offre.",
     links: [
       { label: "Créer mon CV avec l'IA", href: "/cv-ia" },
       { label: "Comprendre les ATS", href: "/faq" },
@@ -41,7 +41,7 @@ const categories = [
   {
     icon: Search,
     title: "Trouver les bonnes offres",
-    body: "Postuler à tout va est rarement efficace. Apprenez à cibler les offres réellement compatibles avec votre profil, à exploiter le matching IA et à organiser le suivi de vos candidatures pour ne plus rien laisser passer.",
+    body: "Postuler à tout va est rarement efficace. Apprends à cibler les offres réellement compatibles avec ton profil, à exploiter le matching IA et à organiser le suivi de tes candidatures pour ne plus rien laisser passer.",
     links: [
       { label: "Le matching emploi par IA", href: "/matching-emploi-ia" },
       { label: "Optimiser sa recherche d'emploi", href: "/recherche-emploi-ia" },
@@ -50,7 +50,7 @@ const categories = [
   {
     icon: Sparkles,
     title: "Convaincre en entretien et par écrit",
-    body: "De la lettre de motivation aux questions pièges en entretien, ces ressources vous aident à raconter votre parcours de façon claire et percutante, et à préparer vos entretiens.",
+    body: "De la lettre de motivation aux questions pièges en entretien, ces ressources t'aident à raconter ton parcours de façon claire et percutante, et à préparer tes entretiens.",
     links: [
       { label: "Générer une lettre de motivation", href: "/lettre-motivation-ia" },
       { label: "Réussir sa reconversion", href: "/reconversion" },
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "À qui s'adressent ces ressources ?",
-    a: "À tous les profils : étudiants et jeunes diplômés, candidats en alternance, personnes en reconversion ou cadres expérimentés. Chaque guide est pensé pour s'adapter à votre situation.",
+    a: "À tous les profils : étudiants et jeunes diplômés, candidats en alternance, personnes en reconversion ou cadres expérimentés. Chaque guide est pensé pour s'adapter à ta situation.",
   },
   {
     q: "À quelle fréquence sont-elles mises à jour ?",
@@ -97,13 +97,13 @@ export default function RessourcesPage() {
             <span>Ressources</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
-            Tout ce qu&apos;il vous faut
+            Tout ce qu&apos;il te faut
             <br />
-            <span className="text-gradient-blue">pour réussir votre carrière</span>
+            <span className="text-gradient-blue">pour réussir ta carrière</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Des guides pratiques et les outils de Karria pour avancer dans
-            votre recherche d&apos;emploi.
+            ta recherche d&apos;emploi.
           </p>
         </div>
 
@@ -113,12 +113,12 @@ export default function RessourcesPage() {
             La recherche d&apos;emploi a profondément changé. Beaucoup de candidatures passent d&apos;abord entre les mains
             d&apos;un logiciel avant d&apos;arriver à un recruteur, et les
             attentes en matière de personnalisation n&apos;ont jamais été aussi
-            fortes. Pour vous donner toutes les chances, nous avons rassemblé
-            ici nos meilleures ressources, organisées par étape clé de votre
+            fortes. Pour te donner toutes les chances, nous avons rassemblé
+            ici nos meilleures ressources, organisées par étape clé de ton
             parcours.
           </p>
           <p>
-            Que vous prépariez votre premier CV, que vous visiez une{" "}
+            Que tu prépares ton premier CV, que tu vises une{" "}
             <Link href="/reconversion" className="text-primary hover:underline">
               reconversion
             </Link>
@@ -126,11 +126,11 @@ export default function RessourcesPage() {
             <Link href="/alternance" className="text-primary hover:underline">
               alternance
             </Link>{" "}
-            ou votre{" "}
+            ou ton{" "}
             <Link href="/jeune-diplome" className="text-primary hover:underline">
               premier emploi
             </Link>
-            , vous trouverez des conseils concrets et des outils pour passer à
+            , tu trouveras des conseils concrets et des outils pour passer à
             l&apos;action immédiatement.
           </p>
         </section>

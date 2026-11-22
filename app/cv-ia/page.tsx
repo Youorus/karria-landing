@@ -7,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "CV IA : atelier, modèles et score ATS",
   description:
-    "Importez votre CV ou créez-le avec Karria : 9 modèles, score ATS, optimisation en un geste et CV adapté à chaque offre d'emploi.",
+    "Importe ton CV ou crée-le avec Karria : 9 modèles, score ATS, optimisation en un geste et CV adapté à chaque offre d'emploi.",
   path: "/cv-ia",
   keywords: [
     "CV IA",
@@ -32,7 +32,7 @@ const features = [
 const faqs = [
   {
     q: "Comment Karria génère-t-il mon CV avec l'IA ?",
-    a: "Karria analyse votre parcours, vos compétences et l'offre ciblée pour produire automatiquement un CV structuré, clair et optimisé pour les recruteurs et les logiciels ATS.",
+    a: "Karria analyse ton parcours, tes compétences et l'offre ciblée pour produire automatiquement un CV structuré, clair et optimisé pour les recruteurs et les logiciels ATS.",
   },
   {
     q: "Est-ce que le CV est optimisé pour les ATS ?",
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: "Puis-je personnaliser mon CV après génération ?",
-    a: "Oui. Dans l'atelier, vous changez de modèle et de couleur, retouchez chaque ligne, puis exportez en PDF ou en Word, ou envoyez le CV par e-mail.",
+    a: "Oui. Dans l'atelier, tu changes de modèle et de couleur, tu retouches chaque ligne, puis tu exportes en PDF ou en Word, ou tu envoies le CV par e-mail.",
   },
   {
     q: "Combien de CV puis-je créer avec Karria ?",
@@ -60,13 +60,13 @@ export default function CvIaPage() {
               <span>CV IA</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              Votre CV professionnel,
+              Ton CV professionnel,
               <br />
               <span className="text-gradient-blue">généré par l&apos;IA</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Importez votre CV ou créez-le avec Karria, choisissez un modèle,
-              vérifiez votre score ATS, puis adaptez-le à chaque offre.
+              Importe ton CV ou crée-le avec Karria, choisis un modèle,
+              vérifie ton score ATS, puis adapte-le à chaque offre.
             </p>
             <Link
               href={NAV_ROUTES.download}
@@ -89,31 +89,31 @@ export default function CvIaPage() {
               recruteur. Un CV mal structuré, trop graphique ou
               dépourvu des bons mots-clés est écarté avant même d&apos;être vu.
               C&apos;est précisément là que l&apos;IA de Karria fait la
-              différence : elle structure votre parcours de façon lisible par
+              différence : elle structure ton parcours de façon lisible par
               les machines comme par les humains.
             </p>
             <p>
               Plutôt que de repartir d&apos;une page blanche à chaque
-              candidature, Karria part de votre profil et de l&apos;offre visée
+              candidature, Karria part de ton profil et de l&apos;offre visée
               pour générer un CV ciblé, met en avant les expériences les plus
-              pertinentes et reformule vos réalisations avec des verbes
-              d&apos;action mesurables. Vous gagnez du temps sur chaque candidature. Une fois votre CV prêt,
-              générez une{" "}
+              pertinentes et reformule tes réalisations avec des verbes
+              d&apos;action mesurables. Tu gagnes du temps sur chaque candidature. Une fois ton CV prêt,
+              génère une{" "}
               <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
                 lettre de motivation
               </Link>{" "}
-              assortie et laissez le{" "}
+              assortie et laisse le{" "}
               <Link href="/matching-emploi-ia" className="text-primary hover:underline">
                 matching IA
               </Link>{" "}
-              vous proposer les offres faites pour vous.
+              te proposer les offres faites pour toi.
             </p>
           </section>
 
           {/* Features list */}
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Tout ce dont vous avez besoin pour un CV parfait
+              Tout ce dont tu as besoin pour un CV parfait
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((f, i) => (

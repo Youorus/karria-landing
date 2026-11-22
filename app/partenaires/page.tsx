@@ -8,7 +8,7 @@ import { CONTACT_EMAILS } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Partenaires",
   description:
-    "Karria construit ses premiers partenariats. Écoles, associations, entreprises : contactez-nous pour en discuter.",
+    "Karria construit ses premiers partenariats. Écoles, associations, entreprises : contacte-nous pour en discuter.",
   path: "/partenaires",
 });
 
@@ -17,13 +17,13 @@ const PARTNER_TYPES = [
     icon: Building2,
     title: "Écoles & organismes de formation",
     description:
-      "Aider vos étudiants et alumni à mieux préparer leurs candidatures grâce à Karria.",
+      "Aider tes étudiants et alumni à mieux préparer leurs candidatures grâce à Karria.",
   },
   {
     icon: Handshake,
     title: "Associations & acteurs de l'emploi",
     description:
-      "Faciliter l'accès à Karria pour les personnes que vous accompagnez.",
+      "Faciliter l'accès à Karria pour les personnes que tu accompagnes.",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function PartenairesPage() {
             <h2 className="mb-6 text-3xl font-bold">Parlons-en directement</h2>
             <p className="mb-8 max-w-2xl text-lg text-background/70">
               Chaque demande de partenariat est lue et traitée personnellement
-              par l&apos;équipe Karria. Écrivez-nous en décrivant votre projet.
+              par l&apos;équipe Karria. Écris-nous en décrivant ton projet.
             </p>
             <Link
               href={`mailto:${CONTACT_EMAILS.partners}`}

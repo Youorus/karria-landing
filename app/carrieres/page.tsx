@@ -119,7 +119,7 @@ export default function CareersPage() {
                   Candidature spontanée
                 </p>
                 <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                  Vous vous reconnaissez dans la mission de Karria ? Écrivez-nous
+                  Tu te reconnais dans la mission de Karria ? Écris-nous
                   à hello@karria.fr.
                 </p>
               </div>
@@ -129,12 +129,12 @@ export default function CareersPage() {
           <Reveal>
             <div className="rounded-[2.5rem] border border-border bg-secondary/30 p-10 text-center md:p-16">
               <h3 className="mb-4 text-2xl font-bold">
-                Vous voulez contribuer à Karria ?
+                Tu veux contribuer à Karria ?
               </h3>
 
               <p className="mx-auto mb-8 max-w-xl text-muted-foreground">
-                Présentez-vous, racontez ce qui vous touche dans la mission, et ce
-                que vous aimeriez construire avec Karria.
+                Présente-toi, raconte ce qui te touche dans la mission, et ce
+                que tu aimerais construire avec Karria.
               </p>
 
               <Link

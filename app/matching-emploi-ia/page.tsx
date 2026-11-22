@@ -5,9 +5,9 @@ import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Matching emploi IA : des offres pour votre profil",
+  title: "Matching emploi IA : des offres pour ton profil",
   description:
-    "Dites à Karria ce que vous cherchez : elle classe les plus pertinentes parmi plus de 500 000 offres en France et vous alerte dès qu'une nouvelle correspond.",
+    "Dis à Karria ce que tu cherches : elle classe les plus pertinentes parmi plus de 500 000 offres en France et t'alerte dès qu'une nouvelle correspond.",
   path: "/matching-emploi-ia",
   keywords: [
     "matching emploi IA",
@@ -23,7 +23,7 @@ const features = [
   "CDI, CDD, alternance, stage et intérim",
   "Les offres les plus pertinentes en premier",
   "Plus de 500 000 offres actives, mises à jour chaque jour",
-  "Alertes sur vos recherches enregistrées",
+  "Alertes sur tes recherches enregistrées",
   "Filtres et tri : pertinence, date, proximité",
   "Une recherche lancée à l'écrit ou à la voix",
 ];
@@ -31,11 +31,11 @@ const features = [
 const faqs = [
   {
     q: "Comment fonctionne le matching IA de Karria ?",
-    a: "Vous dites à Karria ce que vous cherchez (métier, lieu, contrat), à l'écrit ou à la voix. Elle lance la recherche parmi plus de 500 000 offres actives en France et classe les plus pertinentes en premier dans votre fil.",
+    a: "Tu dis à Karria ce que tu cherches (métier, lieu, contrat), à l'écrit ou à la voix. Elle lance la recherche parmi plus de 500 000 offres actives en France et classe les plus pertinentes en premier dans ton fil.",
   },
   {
     q: "Comment affiner les offres proposées ?",
-    a: "En précisant votre recherche à Karria, ou avec les filtres et le tri du fil. Vos recherches sont enregistrées : vous les retrouvez et les modifiez quand vous voulez.",
+    a: "En précisant ta recherche à Karria, ou avec les filtres et le tri du fil. Tes recherches sont enregistrées : tu les retrouves et les modifies quand tu veux.",
   },
   {
     q: "Quels types d'offres sont disponibles dans Karria ?",
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "Puis-je recevoir des alertes pour les nouvelles offres ?",
-    a: "Oui. Dès qu'une nouvelle offre correspond à une recherche enregistrée, vous recevez une notification. Chaque alerte s'active ou se désactive séparément, dans les réglages de l'app.",
+    a: "Oui. Dès qu'une nouvelle offre correspond à une recherche enregistrée, tu reçois une notification. Chaque alerte s'active ou se désactive séparément, dans les réglages de l'app.",
   },
 ];
 
@@ -58,13 +58,13 @@ export default function MatchingEmploiIaPage() {
               <span>Matching IA</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              Les offres qui vous
+              Les offres qui te
               <br />
               <span className="text-gradient-blue">correspondent vraiment</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Arrêtez de chercher. Laissez l&apos;IA travailler pour vous.
-              Dites à Karria ce que vous cherchez : elle classe pour vous les
+              Arrête de chercher. Laisse l&apos;IA travailler pour toi.
+              Dis à Karria ce que tu cherches : elle classe pour toi les
               offres les plus pertinentes.
             </p>
             <Link
@@ -84,16 +84,16 @@ export default function MatchingEmploiIaPage() {
             </h2>
             <p>
               La recherche d&apos;emploi traditionnelle repose sur des mots-clés :
-              vous tapez un intitulé, vous filtrez par ville, puis vous parcourez
-              des dizaines de pages d&apos;offres dont la plupart ne vous
-              correspondent pas. Le matching par IA inverse cette logique. Vous décrivez ce que vous cherchez, et Karria classe les offres
-              par pertinence au lieu de vous laisser tout trier.
+              tu tapes un intitulé, tu filtres par ville, puis tu parcours
+              des dizaines de pages d&apos;offres dont la plupart ne te
+              correspondent pas. Le matching par IA inverse cette logique. Tu décris ce que tu cherches, et Karria classe les offres
+              par pertinence au lieu de te laisser tout trier.
             </p>
             <p>
               Résultat : les offres les plus pertinentes arrivent en premier
-              dans votre fil, et Karria vous alerte dès qu&apos;une nouvelle
+              dans ton fil, et Karria t&apos;alerte dès qu&apos;une nouvelle
               offre correspond à une recherche enregistrée. Une fois
-              l&apos;offre repérée, vous candidatez avec un{" "}
+              l&apos;offre repérée, tu candidates avec un{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
                 CV adapté
               </Link>{" "}

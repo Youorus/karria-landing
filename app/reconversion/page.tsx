@@ -7,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Reconversion professionnelle avec l'IA",
   description:
-    "Vous envisagez une reconversion professionnelle ? Karria vous accompagne avec l'IA pour identifier les opportunités qui correspondent à vos nouvelles ambitions et transférer vos compétences.",
+    "Tu envisages une reconversion professionnelle ? Karria t'accompagne avec l'IA pour identifier les opportunités qui correspondent à tes nouvelles ambitions et transférer tes compétences.",
   path: "/reconversion",
   keywords: [
     "reconversion professionnelle IA",
@@ -22,11 +22,11 @@ export const metadata = buildMetadata({
 const faqs = [
   {
     q: "Comment réussir une reconversion professionnelle ?",
-    a: "Une reconversion réussie repose sur l'identification de vos compétences transférables, une bonne connaissance du secteur visé et une candidature qui met en valeur votre nouvelle direction. Karria vous accompagne sur chacune de ces étapes.",
+    a: "Une reconversion réussie repose sur l'identification de tes compétences transférables, une bonne connaissance du secteur visé et une candidature qui met en valeur ta nouvelle direction. Karria t'accompagne sur chacune de ces étapes.",
   },
   {
     q: "Comment valoriser une expérience dans un autre domaine ?",
-    a: "Karria repositionne votre parcours en mettant l'accent sur les compétences transférables (gestion de projet, relation client, organisation…) plutôt que sur les intitulés de poste, afin de rassurer les recruteurs de votre nouveau secteur.",
+    a: "Karria repositionne ton parcours en mettant l'accent sur les compétences transférables (gestion de projet, relation client, organisation…) plutôt que sur les intitulés de poste, afin de rassurer les recruteurs de ton nouveau secteur.",
   },
   {
     q: "Est-il trop tard pour se reconvertir ?",
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: "Karria aide-t-il à choisir un nouveau métier ?",
-    a: "Karria ne remplace pas un bilan de compétences. Vous pouvez en revanche lui dire que vous voulez changer de métier : elle lance la recherche et vous montre les offres du domaine visé, que vous affinez avec elle.",
+    a: "Karria ne remplace pas un bilan de compétences. Tu peux en revanche lui dire que tu veux changer de métier : elle lance la recherche et te montre les offres du domaine visé, que tu affines avec elle.",
   },
 ];
 
@@ -49,13 +49,13 @@ export default function ReconversionPage() {
               <span>Reconversion</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              Votre reconversion,
+              Ta reconversion,
               <br />
               <span className="text-gradient-blue">accompagnée par Karria</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Changer de voie est une décision courageuse. Karria vous aide à
-              valoriser vos compétences transférables, identifier les secteurs
+              Changer de voie est une décision courageuse. Karria t&apos;aide à
+              valoriser tes compétences transférables, identifier les secteurs
               porteurs et construire un nouveau chapitre professionnel.
             </p>
             <Link href={NAV_ROUTES.download} className="btn-primary inline-flex items-center gap-2">
@@ -73,36 +73,36 @@ export default function ReconversionPage() {
             <p>
               La plus grande crainte lors d&apos;une reconversion, c&apos;est
               d&apos;avoir l&apos;impression de tout recommencer. En réalité,
-              vous avez accumulé des compétences transférables — organisation,
+              tu as accumulé des compétences transférables — organisation,
               communication, gestion, expertise sectorielle — qui ont de la
-              valeur dans votre nouveau domaine. Le défi est de les présenter de
-              manière convaincante à des recruteurs qui ne connaissent pas votre
+              valeur dans ton nouveau domaine. Le défi est de les présenter de
+              manière convaincante à des recruteurs qui ne connaissent pas ton
               parcours d&apos;origine.
             </p>
             <p>
-              Karria vous aide à faire ce travail de traduction : analyse de vos
-              acquis, identification des secteurs porteurs adaptés à votre
+              Karria t&apos;aide à faire ce travail de traduction : analyse de tes
+              acquis, identification des secteurs porteurs adaptés à ton
               profil,{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
                 CV repositionné
               </Link>{" "}
-              et lettres axées sur votre valeur ajoutée. Ensuite, le{" "}
+              et lettres axées sur ta valeur ajoutée. Ensuite, le{" "}
               <Link href="/matching-emploi-ia" className="text-primary hover:underline">
                 matching IA
               </Link>{" "}
-              vous oriente vers les offres de votre nouveau domaine.
+              t&apos;oriente vers les offres de ton nouveau domaine.
             </p>
           </section>
 
           <section className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">Comment Karria accompagne votre reconversion</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">Comment Karria accompagne ta reconversion</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Un CV qui met en avant vos compétences transférables",
+                "Un CV qui met en avant tes compétences transférables",
                 "Une recherche lancée à l'écrit ou à la voix : « je veux changer de métier »",
-                "CV repositionné pour votre nouveau métier",
-                "Lettres de motivation axées sur votre valeur ajoutée",
-                "Matching avec des offres dans votre nouveau domaine",
+                "CV repositionné pour ton nouveau métier",
+                "Lettres de motivation axées sur ta valeur ajoutée",
+                "Matching avec des offres dans ton nouveau domaine",
                 "Une équipe humaine joignable dans l'app",
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">

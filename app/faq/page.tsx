@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/utils";
 
 export const metadata = buildMetadata({
   title: "Questions fréquentes sur Karria",
-  description: "Les réponses à vos questions sur Karria : offres, CV, alertes, limites de la version gratuite, offre « Karria sans pub » et données.",
+  description: "Les réponses à tes questions sur Karria : offres, CV, alertes, limites de la version gratuite, offre « Karria sans pub » et données.",
   path: "/faq",
 });
 
@@ -17,7 +17,7 @@ const FAQS = [
     questions: [
       {
         q: "Qu'est-ce que Karria ?",
-        a: "Karria est une application mobile française, sur iPhone et Android. Elle trouve les offres d'emploi qui vous correspondent parmi plus de 500 000 offres actives en France (CDI, CDD, alternance, stage, intérim), vous aide à faire votre CV et vous prévient dès qu'une nouvelle offre arrive.",
+        a: "Karria est une application mobile française, sur iPhone et Android. Elle trouve les offres d'emploi qui te correspondent parmi plus de 500 000 offres actives en France (CDI, CDD, alternance, stage, intérim), t'aide à faire ton CV et te prévient dès qu'une nouvelle offre arrive.",
       },
       {
         q: "Est-ce que Karria est gratuite ?",
@@ -34,11 +34,11 @@ const FAQS = [
     questions: [
       {
         q: "Comment Karria trouve-t-elle des offres pour moi ?",
-        a: "Vous dites à Karria ce que vous cherchez, à l'écrit ou à la voix : un métier, un lieu, un contrat. Elle lance la recherche et classe les offres les plus pertinentes en premier. Vos recherches sont enregistrées, et vous recevez une alerte dès qu'une nouvelle offre correspond ; chaque alerte s'active ou se désactive séparément.",
+        a: "Tu dis à Karria ce que tu cherches, à l'écrit ou à la voix : un métier, un lieu, un contrat. Elle lance la recherche et classe les offres les plus pertinentes en premier. Tes recherches sont enregistrées, et tu reçois une alerte dès qu'une nouvelle offre correspond ; chaque alerte s'active ou se désactive séparément.",
       },
       {
         q: "Les CV sont-ils compatibles ATS ?",
-        a: "Karria note votre CV comme le ferait un logiciel de recrutement (ATS), vous explique ce qui bloque et l'optimise en un geste. Vous choisissez parmi 9 modèles, puis exportez en PDF ou en Word.",
+        a: "Karria note ton CV comme le ferait un logiciel de recrutement (ATS), t'explique ce qui bloque et l'optimise en un geste. Tu choisis parmi 9 modèles, puis tu exportes en PDF ou en Word.",
       },
     ],
   },
@@ -47,7 +47,7 @@ const FAQS = [
     questions: [
       {
         q: "Mes données sont-elles en sécurité ?",
-        a: "Vous décidez si l'IA peut lire votre CV, vous pouvez supprimer vos documents à tout moment, et votre compte se supprime directement depuis l'app. Le détail figure dans notre politique de confidentialité.",
+        a: "Tu décides si l'IA peut lire ton CV, tu peux supprimer tes documents à tout moment, et ton compte se supprime directement depuis l'app. Le détail figure dans notre politique de confidentialité.",
       },
     ],
   },
@@ -79,7 +79,7 @@ export default function FAQPage() {
             eyebrow="Aide"
             headingLevel={1}
             title="Questions Fréquentes"
-            subtitle="Tout ce que vous devez savoir pour tirer le meilleur parti de Karria."
+            subtitle="Tout ce que tu dois savoir pour tirer le meilleur parti de Karria."
             className="mb-20"
           />
         </Reveal>
@@ -112,9 +112,9 @@ export default function FAQPage() {
 
         <Reveal delay={0.5}>
           <div className="mt-24 p-10 rounded-3xl bg-secondary/50 border border-border text-center">
-            <h3 className="text-2xl font-bold mb-4">Vous n&apos;avez pas trouvé votre réponse ?</h3>
+            <h3 className="text-2xl font-bold mb-4">Tu n&apos;as pas trouvé ta réponse ?</h3>
             <p className="text-muted-foreground mb-8">
-              Écrivez-nous : une vraie personne vous répond.
+              Écris-nous : une vraie personne te répond.
             </p>
             <Link 
               href={NAV_ROUTES.contact}

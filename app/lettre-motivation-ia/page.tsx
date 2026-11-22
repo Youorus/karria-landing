@@ -7,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Lettre de motivation IA adaptée à chaque offre",
   description:
-    "Générez une lettre de motivation personnalisée et convaincante grâce à l'IA. Karria adapte chaque lettre à l'offre et à votre profil et vous laisse la relire et la modifier.",
+    "Génère une lettre de motivation personnalisée et convaincante grâce à l'IA. Karria adapte chaque lettre à l'offre et à ton profil et te laisse la relire et la modifier.",
   path: "/lettre-motivation-ia",
   keywords: [
     "lettre de motivation IA",
@@ -20,7 +20,7 @@ export const metadata = buildMetadata({
 });
 
 const features = [
-  "Lettre personnalisée selon l'offre et votre profil",
+  "Lettre personnalisée selon l'offre et ton profil",
   "Ton professionnel et naturel",
   "À relire et à modifier avant l'envoi",
   "Adaptée à tous les secteurs d'activité",
@@ -31,11 +31,11 @@ const features = [
 const faqs = [
   {
     q: "Comment Karria personnalise-t-il ma lettre de motivation ?",
-    a: "Karria analyse simultanément votre profil, vos expériences et la description de l'offre pour rédiger une lettre qui met en avant vos atouts les plus pertinents et répond directement aux besoins de l'employeur.",
+    a: "Karria analyse simultanément ton profil, tes expériences et la description de l'offre pour rédiger une lettre qui met en avant tes atouts les plus pertinents et répond directement aux besoins de l'employeur.",
   },
   {
     q: "Les lettres générées sonnent-elles naturel ?",
-    a: "Oui. Karria utilise des modèles de langage avancés pour produire des lettres qui sonnent authentiques, professionnelles et non robotiques. Vous pouvez toujours les modifier à votre guise.",
+    a: "Oui. Karria utilise des modèles de langage avancés pour produire des lettres qui sonnent authentiques, professionnelles et non robotiques. Tu peux toujours les modifier à ta guise.",
   },
   {
     q: "Puis-je générer plusieurs lettres pour différentes offres ?",
@@ -60,11 +60,11 @@ export default function LettreMotivationIaPage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
               Une lettre de motivation
               <br />
-              <span className="text-gradient-blue">qui vous ressemble vraiment</span>
+              <span className="text-gradient-blue">qui te ressemble vraiment</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Fini les lettres génériques copiées-collées. Karria rédige une lettre de motivation adaptée à
-              chaque offre et à votre parcours.
+              chaque offre et à ton parcours.
             </p>
             <Link
               href={NAV_ROUTES.download}
@@ -91,12 +91,12 @@ export default function LettreMotivationIaPage() {
               immédiatement.
             </p>
             <p>
-              Karria résout ce problème en croisant votre profil avec
+              Karria résout ce problème en croisant ton profil avec
               l&apos;offre ciblée pour produire une lettre réellement
               personnalisée : elle reprend le vocabulaire de l&apos;annonce,
-              relie vos expériences aux besoins de l&apos;entreprise et adopte
-              un ton naturel. Vous obtenez une base solide
-              que vous pouvez ajuster, puis l&apos;associer à votre{" "}
+              relie tes expériences aux besoins de l&apos;entreprise et adopte
+              un ton naturel. Tu obtiens une base solide
+              que tu peux ajuster, puis l&apos;associer à ton{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
                 CV optimisé
               </Link>{" "}

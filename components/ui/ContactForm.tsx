@@ -43,7 +43,7 @@ export function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50"
-            placeholder="Votre nom"
+            placeholder="Ton nom"
           />
         </div>
         <div>
@@ -57,7 +57,7 @@ export function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full rounded-xl border border-border bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50"
-            placeholder="vous@exemple.com"
+            placeholder="toi@exemple.com"
           />
         </div>
       </div>
@@ -91,7 +91,7 @@ export function ContactForm() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           className="w-full resize-none rounded-xl border border-border bg-background/50 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-primary/50"
-          placeholder="Comment pouvons-nous vous aider ?"
+          placeholder="Comment pouvons-nous t'aider ?"
         />
       </div>
 
@@ -101,7 +101,7 @@ export function ContactForm() {
       </button>
 
       <p className="text-xs text-muted-foreground">
-        L&apos;envoi ouvre votre application mail habituelle, pré-remplie avec votre message.
+        L&apos;envoi ouvre ton application mail habituelle, pré-remplie avec ton message.
       </p>
     </form>
   );

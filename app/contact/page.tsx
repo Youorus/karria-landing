@@ -8,8 +8,8 @@ import { SVGProps } from "react";
 import { CONTACT_EMAILS, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Contactez l'équipe Karria",
-  description: "Une question ? Un partenariat ? Ou juste envie de dire bonjour ? Contactez l'équipe Karria et notre fondateur Marc Takoumba.",
+  title: "Contacte l'équipe Karria",
+  description: "Une question ? Un partenariat ? Ou juste envie de dire bonjour ? Contacte l'équipe Karria et notre fondateur Marc Takoumba.",
   path: "/contact",
 });
 
@@ -31,7 +31,7 @@ const CONTACT_METHODS = [
   {
     icon: Mail,
     title: "Support & Aide",
-    description: "Notre équipe est là pour vous aider avec l'application.",
+    description: "Notre équipe est là pour t'aider avec l'application.",
     email: CONTACT_EMAILS.support,
     label: "Nous écrire"
   },
@@ -59,8 +59,8 @@ export default function ContactPage() {
           <SectionHeader
             eyebrow="Contact"
             headingLevel={1}
-            title="Parlons de votre avenir"
-            subtitle="Une question sur Karria ? Notre équipe est à votre écoute pour vous accompagner dans votre réussite."
+            title="Parlons de ton avenir"
+            subtitle="Une question sur Karria ? Notre équipe est à ton écoute pour t'accompagner dans ta réussite."
             className="mb-20"
           />
         </Reveal>
@@ -68,7 +68,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-24">
           <Reveal className="lg:col-span-3">
             <div className="p-8 md:p-10 rounded-3xl bg-secondary/30 border border-border h-full">
-              <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message</h2>
+              <h2 className="text-2xl font-bold mb-6">Envoie-nous un message</h2>
               <ContactForm />
             </div>
           </Reveal>
@@ -102,9 +102,9 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <Reveal>
             <div className="p-10 md:p-16 rounded-[2.5rem] bg-foreground text-background">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Contactez Marc</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Contacte Marc</h2>
               <p className="text-background/70 text-lg mb-10 leading-relaxed">
-                Le fondateur de Karria, Marc Takoumba, est très attaché aux retours des utilisateurs. Vous pouvez le contacter directement sur Instagram pour partager votre expérience ou vos idées.
+                Le fondateur de Karria, Marc Takoumba, est très attaché aux retours des utilisateurs. Tu peux le contacter directement sur Instagram pour partager ton expérience ou tes idées.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
@@ -122,9 +122,9 @@ export default function ContactPage() {
 
           <Reveal delay={0.2}>
             <div className="space-y-10">
-              <h3 className="text-3xl font-bold">Suivez l&apos;aventure</h3>
+              <h3 className="text-3xl font-bold">Suis l&apos;aventure</h3>
               <p className="text-muted-foreground text-lg">
-                Rejoignez notre communauté sur les réseaux sociaux pour découvrir les coulisses de Karria, et nos dernières mises à jour.
+                Rejoins notre communauté sur les réseaux sociaux pour découvrir les coulisses de Karria, et nos dernières mises à jour.
               </p>
               <div className="flex gap-8">
                 <Link href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Karria sur Instagram" className="text-muted-foreground hover:text-foreground transition-colors">

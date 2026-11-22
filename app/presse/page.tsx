@@ -75,9 +75,9 @@ export default function PressPage() {
                 <h2 className="mb-6 text-3xl font-bold">Contact presse</h2>
 
                 <p className="mb-8 text-lg text-background/70">
-                  Vous souhaitez parler de Karria, préparer un article, proposer
+                  Tu souhaites parler de Karria, préparer un article, proposer
                   un partenariat média ou demander plus d’informations sur le
-                  projet ? Vous pouvez nous écrire directement.
+                  projet ? Tu peux nous écrire directement.
                 </p>
 
                 <Link

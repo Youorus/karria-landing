@@ -38,9 +38,9 @@ const versus = [
     intro:
       "LinkedIn est un excellent réseau professionnel, mais il a été pensé pour le réseautage, pas pour candidater efficacement.",
     points: [
-      "Sur Karria, vous dites ce que vous cherchez et les offres les plus pertinentes arrivent en premier dans votre fil.",
-      "LinkedIn vous laisse rédiger votre CV et vos messages seul. Karria prépare un CV adapté à chaque offre et la lettre de motivation qui va avec.",
-      "Karria note votre CV comme le ferait un logiciel de recrutement (score ATS) et l'optimise en un geste.",
+      "Sur Karria, tu dis ce que tu cherches et les offres les plus pertinentes arrivent en premier dans ton fil.",
+      "LinkedIn te laisse rédiger ton CV et tes messages seul. Karria prépare un CV adapté à chaque offre et la lettre de motivation qui va avec.",
+      "Karria note ton CV comme le ferait un logiciel de recrutement (score ATS) et l'optimise en un geste.",
     ],
   },
   {
@@ -48,9 +48,9 @@ const versus = [
     intro:
       "Les job boards classiques (Indeed, Welcome to the Jungle, HelloWork) reposent sur la recherche par mots-clés et le tri manuel.",
     points: [
-      "Karria classe les offres par pertinence et vous alerte dès qu'une nouvelle offre correspond à une recherche enregistrée.",
-      "Sur un job board, vous envoyez le même CV partout. Karria adapte votre CV et votre lettre à chaque annonce.",
-      "Chaque candidature a son dossier : l'offre, votre CV, votre lettre, et où vous en êtes.",
+      "Karria classe les offres par pertinence et t'alerte dès qu'une nouvelle offre correspond à une recherche enregistrée.",
+      "Sur un job board, tu envoies le même CV partout. Karria adapte ton CV et ta lettre à chaque annonce.",
+      "Chaque candidature a son dossier : l'offre, ton CV, ta lettre, et où tu en es.",
     ],
   },
   {
@@ -72,15 +72,15 @@ const faqs = [
   },
   {
     q: "En quoi le matching IA de Karria est-il différent ?",
-    a: "Vous dites à Karria ce que vous cherchez, à l'écrit ou à la voix. Elle lance la recherche parmi plus de 500 000 offres actives en France et classe les plus pertinentes en premier.",
+    a: "Tu dis à Karria ce que tu cherches, à l'écrit ou à la voix. Elle lance la recherche parmi plus de 500 000 offres actives en France et classe les plus pertinentes en premier.",
   },
   {
     q: "Karria remplace-t-il LinkedIn ou Indeed ?",
-    a: "Karria est complémentaire : vous pouvez continuer à utiliser votre réseau, mais Karria automatise la partie la plus chronophage de la recherche d'emploi — trouver les bonnes offres et préparer des candidatures sur mesure.",
+    a: "Karria est complémentaire : tu peux continuer à utiliser ton réseau, mais Karria automatise la partie la plus chronophage de la recherche d'emploi — trouver les bonnes offres et préparer des candidatures sur mesure.",
   },
   {
     q: "Mes documents sont-ils optimisés pour les ATS ?",
-    a: "Oui. Karria note votre CV comme le ferait un logiciel de tri automatique (ATS), vous explique ce qui bloque et l'optimise pour vous.",
+    a: "Oui. Karria note ton CV comme le ferait un logiciel de tri automatique (ATS), t'explique ce qui bloque et l'optimise pour toi.",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function ComparatifsPage() {
             <span className="text-gradient-blue">réunit au même endroit</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comparez les fonctionnalités et découvrez ce qui distingue Karria
+            Compare les fonctionnalités et découvre ce qui distingue Karria
             des plateformes d&apos;emploi traditionnelles.
           </p>
         </div>
@@ -124,9 +124,9 @@ export default function ComparatifsPage() {
             Choisir le bon outil pour sa recherche d&apos;emploi n&apos;est pas
             simple : entre les réseaux professionnels, les job boards et les
             générateurs de CV, chaque solution ne couvre qu&apos;une partie du
-            parcours. Résultat, vous jonglez entre plusieurs outils, vous
-            envoyez le même CV partout et vous perdez un temps précieux à trier
-            des offres qui ne vous correspondent pas.
+            parcours. Résultat, tu jongles entre plusieurs outils, tu
+            envoies le même CV partout et tu perds un temps précieux à trier
+            des offres qui ne te correspondent pas.
           </p>
           <p>
             Karria a été conçu pour réunir toutes ces étapes au même endroit
@@ -142,8 +142,8 @@ export default function ComparatifsPage() {
             <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
               lettre de motivation
             </Link>{" "}
-            et le suivi de vos candidatures. Voici comment Karria se compare aux
-            solutions que vous connaissez déjà.
+            et le suivi de tes candidatures. Voici comment Karria se compare aux
+            solutions que tu connais déjà.
           </p>
         </section>
 

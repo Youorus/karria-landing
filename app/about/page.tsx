@@ -10,7 +10,7 @@ import Image from "next/image";
 export const metadata = buildMetadata({
   title: "Notre mission : simplifier la recherche d'emploi",
   description:
-      "Découvrez l'histoire de Karria, l'application IA pensée pour simplifier la recherche d'emploi et accompagner chaque parcours professionnel.",
+      "Découvre l'histoire de Karria, l'application IA pensée pour simplifier la recherche d'emploi et accompagner chaque parcours professionnel.",
   path: "/about",
 });
 
@@ -25,19 +25,19 @@ const VALUES = [
     icon: Zap,
     title: "Gain de temps",
     description:
-        "Réduire les tâches répétitives pour vous aider à vous concentrer sur les bonnes opportunités.",
+        "Réduire les tâches répétitives pour t’aider à te concentrer sur les bonnes opportunités.",
   },
   {
     icon: Target,
     title: "Précision",
     description:
-        "Ne plus chercher partout, mais trouver ce qui correspond vraiment à votre profil.",
+        "Ne plus chercher partout, mais trouver ce qui correspond vraiment à ton profil.",
   },
   {
     icon: Users,
     title: "Accompagnement",
     description:
-        "Karria n’est pas une étape. C’est un compagnon qui évolue avec votre carrière.",
+        "Karria n’est pas une étape. C’est un compagnon qui évolue avec ta carrière.",
   },
 ];
 
@@ -63,8 +63,8 @@ const ORIGIN_CONTENT = {
   intro:
     "Karria est né d’une expérience réelle, d’une frustration vécue, et d’une envie profonde : créer un outil utile, accessible et sincèrement pensé pour les candidats.",
   finalText:
-    "Ce projet a été construit avec beaucoup d’amour, d’énergie et de vision. Si vous utilisez Karria, si vous trouvez un emploi grâce à lui, ou si vous avez une idée pour l’améliorer, je serai toujours heureux de vous lire.",
-  finalStrong: "Karria a été pensé pour faire partie de votre parcours.",
+    "Ce projet a été construit avec beaucoup d’amour, d’énergie et de vision. Si tu utilises Karria, si tu trouves un emploi grâce à lui, ou si tu as une idée pour l’améliorer, je serai toujours heureux de te lire.",
+  finalStrong: "Karria a été pensé pour faire partie de ton parcours.",
 };
 
 const VALUES_TEXT = {
@@ -73,9 +73,9 @@ const VALUES_TEXT = {
 };
 
 const CTA_TEXT = {
-  title: "Votre carrière mérite un vrai compagnon.",
+  title: "Ta carrière mérite un vrai compagnon.",
   subtitle:
-    "Téléchargez Karria et avancez avec plus de clarté, de confiance et de temps pour ce qui compte vraiment.",
+    "Télécharge Karria et avance avec plus de clarté, de confiance et de temps pour ce qui compte vraiment.",
 };
 
 const STORY_BLOCKS = [
@@ -93,15 +93,15 @@ const STORY_BLOCKS = [
   },
   {
     eyebrow: "L’idée",
-    title: "Et si une IA faisait enfin ce travail avec vous ?",
+    title: "Et si une IA faisait enfin ce travail avec toi ?",
     text:
-      "Karria a été imaginé pour comprendre votre profil, repérer les bonnes opportunités et vous aider à préparer de meilleures candidatures, plus vite.",
+      "Karria a été imaginé pour comprendre ton profil, repérer les bonnes opportunités et t’aider à préparer de meilleures candidatures, plus vite.",
   },
   {
     eyebrow: "La vision",
     title: "Une carrière ne se construit pas en une seule étape.",
     text:
-      "Premier emploi, reconversion, nouvelle ambition, changement de vie : Karria est pensé pour vous accompagner dans le temps, pas seulement pour une recherche ponctuelle.",
+      "Premier emploi, reconversion, nouvelle ambition, changement de vie : Karria est pensé pour t’accompagner dans le temps, pas seulement pour une recherche ponctuelle.",
   },
 ];
 

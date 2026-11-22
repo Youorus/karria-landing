@@ -5,9 +5,9 @@ import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Recherche d'emploi IA : trouvez votre prochain poste",
+  title: "Recherche d'emploi IA : trouve ton prochain poste",
   description:
-    "Transformez votre recherche d'emploi avec l'intelligence artificielle. Karria centralise les offres, optimise vos candidatures et vous accompagne à chaque étape de votre parcours.",
+    "Transforme ta recherche d'emploi avec l'intelligence artificielle. Karria centralise les offres, optimise tes candidatures et t'accompagne à chaque étape de ton parcours.",
   path: "/recherche-emploi-ia",
   keywords: [
     "recherche emploi IA",
@@ -22,24 +22,24 @@ export const metadata = buildMetadata({
 const features = [
   "Fil d'offres personnalisé, mis à jour chaque jour",
   "CV adapté et lettre de motivation pour chaque offre",
-  "Un dossier par candidature pour suivre où vous en êtes",
+  "Un dossier par candidature pour suivre où tu en es",
   "Une équipe humaine joignable dans l'app",
-  "Alertes sur vos recherches enregistrées",
-  "Score ATS de votre CV et optimisation en un geste",
+  "Alertes sur tes recherches enregistrées",
+  "Score ATS de ton CV et optimisation en un geste",
 ];
 
 const faqs = [
   {
     q: "En quoi Karria change la recherche d'emploi ?",
-    a: "Au lieu de parcourir manuellement des dizaines de sites, Karria réunit plus de 500 000 offres actives en France, classe les plus pertinentes en premier et prépare avec vous le CV et la lettre de chaque candidature. Vous passez moins de temps à chercher.",
+    a: "Au lieu de parcourir manuellement des dizaines de sites, Karria réunit plus de 500 000 offres actives en France, classe les plus pertinentes en premier et prépare avec toi le CV et la lettre de chaque candidature. Tu passes moins de temps à chercher.",
   },
   {
     q: "Combien de temps faut-il pour trouver un emploi avec Karria ?",
-    a: "Cela dépend de votre secteur et de votre profil : Karria ne promet pas d'embauche. Elle vous fait gagner du temps sur le tri des offres et la préparation des candidatures.",
+    a: "Cela dépend de ton secteur et de ton profil : Karria ne promet pas d'embauche. Elle te fait gagner du temps sur le tri des offres et la préparation des candidatures.",
   },
   {
     q: "Karria convient-il à tous les niveaux d'expérience ?",
-    a: "Oui. Que vous soyez jeune diplômé, en reconversion ou cadre confirmé, Karria adapte ses recommandations et ses documents à votre situation et à vos objectifs de carrière.",
+    a: "Oui. Que tu sois jeune diplômé, en reconversion ou cadre confirmé, Karria adapte ses recommandations et ses documents à ta situation et à tes objectifs de carrière.",
   },
   {
     q: "Dois-je payer pour commencer ma recherche ?",
@@ -58,12 +58,12 @@ export default function RechercheEmploiIaPage() {
               <span>Recherche d&apos;emploi IA</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">
-              Toute votre recherche d&apos;emploi,
+              Toute ta recherche d&apos;emploi,
               <br />
               <span className="text-gradient-blue">centralisée en un seul endroit</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Karria centralise, filtre et personnalise toute votre recherche
+              Karria centralise, filtre et personnalise toute ta recherche
               d&apos;emploi. Moins de temps perdu, des candidatures mieux
               préparées.
             </p>
@@ -104,14 +104,14 @@ export default function RechercheEmploiIaPage() {
               <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
                 lettre de motivation
               </Link>
-              , suivi centralisé et alertes intelligentes. Vous gardez le
+              , suivi centralisé et alertes intelligentes. Tu gardes le
               contrôle, mais sans la charge mentale.
             </p>
           </section>
 
           <section className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Tout ce qu&apos;il vous faut pour trouver plus vite
+              Tout ce qu&apos;il te faut pour trouver plus vite
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((f, i) => (
