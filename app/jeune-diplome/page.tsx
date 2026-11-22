@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Star, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -31,7 +30,7 @@ const faqs = [
   },
   {
     q: "Faut-il une lettre de motivation quand on débute ?",
-    a: "Oui, c'est même un atout : elle vous permet d'expliquer votre motivation et de compenser un manque d'expérience. Karria génère une lettre ciblée pour chaque offre en quelques secondes.",
+    a: "Oui, c'est même un atout : elle vous permet d'expliquer votre motivation et de compenser un manque d'expérience. Karria rédige une lettre ciblée pour chaque offre.",
   },
   {
     q: "L'alternance est-elle une bonne alternative ?",
@@ -42,8 +41,7 @@ const faqs = [
 export default function JeuneDiplomePage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
@@ -101,15 +99,15 @@ export default function JeuneDiplomePage() {
           </section>
 
           <section className="mb-20">
-            <h2 className="text-2xl font-bold mb-8 text-center">Karria, le meilleur allié des jeunes diplômés</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center">Ce que Karria apporte aux jeunes diplômés</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 "Mise en valeur de vos projets académiques et stages",
                 "CV professionnel même sans expérience extensive",
                 "Offres juniors et premiers emplois filtrées pour vous",
                 "Lettres percutantes malgré un profil en construction",
-                "Score ATS pour maximiser les réponses des recruteurs",
-                "Conseils personnalisés pour chaque étape de votre recherche",
+                "Score ATS de votre CV et optimisation en un geste",
+                "Une alerte dès qu'une nouvelle offre correspond",
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -137,7 +135,7 @@ export default function JeuneDiplomePage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

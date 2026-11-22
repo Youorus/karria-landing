@@ -100,7 +100,7 @@ export function ContactForm() {
         <Send className="w-4 h-4" />
       </button>
 
-      <p className="text-xs text-muted-foreground/70">
+      <p className="text-xs text-muted-foreground">
         L&apos;envoi ouvre votre application mail habituelle, pré-remplie avec votre message.
       </p>
     </form>

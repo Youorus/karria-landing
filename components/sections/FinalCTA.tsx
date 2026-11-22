@@ -128,7 +128,7 @@ export function FinalCTA() {
               initial={{ opacity: 0 }}
               animate={inView ? { opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.5 }}
-              className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium text-muted-foreground/70"
+              className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium text-muted-foreground"
           >
             {TRUST_ITEMS.map(({ icon: Icon, label }) => (
                 <span key={label} className="flex items-center gap-2">

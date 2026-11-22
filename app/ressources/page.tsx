@@ -6,7 +6,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Ressources carrière — Guides et outils gratuits",
   description:
-    "Accédez aux meilleures ressources pour booster votre carrière en 2026 : guides de recherche d'emploi, modèles de CV, conseils d'entretien, optimisation ATS et outils IA gratuits.",
+    "Les guides Karria pour votre recherche d'emploi : CV, lettre de motivation, offres, alternance, premier emploi et reconversion.",
   path: "/ressources",
   keywords: [
     "ressources recherche emploi",
@@ -22,10 +22,10 @@ export const metadata = buildMetadata({
 const resources = [
   { title: "Créer un CV optimisé pour les ATS", desc: "Un CV professionnel, adapté à chaque offre et structuré pour passer les filtres de tri automatique.", href: "/cv-ia", tag: "Outil" },
   { title: "Écrire une lettre de motivation ciblée", desc: "Une lettre personnalisée et prête à envoyer, générée pour chaque candidature.", href: "/lettre-motivation-ia", tag: "Outil" },
-  { title: "Trouver les offres qui vous correspondent", desc: "Le matching IA identifie les opportunités compatibles avec votre profil, sans perdre de temps.", href: "/matching-emploi-ia", tag: "Outil" },
+  { title: "Trouver les offres qui vous correspondent", desc: "Dites à Karria ce que vous cherchez : les offres les plus pertinentes arrivent en premier.", href: "/matching-emploi-ia", tag: "Outil" },
   { title: "Organiser toute sa recherche d'emploi", desc: "Centralisez vos candidatures, vos alertes et votre suivi au même endroit.", href: "/recherche-emploi-ia", tag: "Outil" },
   { title: "Réussir sa reconversion professionnelle", desc: "Étapes et conseils pour valoriser vos compétences transférables.", href: "/reconversion", tag: "Guide" },
-  { title: "Décrocher son alternance", desc: "Offres ciblées, CV adapté et préparation aux entretiens.", href: "/alternance", tag: "Guide" },
+  { title: "Décrocher son alternance", desc: "Offres ciblées, CV adapté et lettre pour chaque entreprise.", href: "/alternance", tag: "Guide" },
 ];
 
 const categories = [
@@ -50,7 +50,7 @@ const categories = [
   {
     icon: Sparkles,
     title: "Convaincre en entretien et par écrit",
-    body: "De la lettre de motivation aux questions pièges en entretien, ces ressources vous aident à raconter votre parcours de façon claire et percutante, et à transformer un entretien en proposition d'embauche.",
+    body: "De la lettre de motivation aux questions pièges en entretien, ces ressources vous aident à raconter votre parcours de façon claire et percutante, et à préparer vos entretiens.",
     links: [
       { label: "Générer une lettre de motivation", href: "/lettre-motivation-ia" },
       { label: "Réussir sa reconversion", href: "/reconversion" },
@@ -61,7 +61,7 @@ const categories = [
 const faqs = [
   {
     q: "Les ressources Karria sont-elles gratuites ?",
-    a: "Oui. Toutes les pages et outils présentés dans cette section sont accessibles gratuitement, sans carte bancaire.",
+    a: "Oui. Ces pages sont en accès libre, et l'app Karria est gratuite, financée par des annonces discrètes.",
   },
   {
     q: "À qui s'adressent ces ressources ?",
@@ -85,7 +85,7 @@ const faqJsonLd = {
 
 export default function RessourcesPage() {
   return (
-    <main className="min-h-screen bg-background pt-32 pb-24">
+    <div className="min-h-screen bg-background pt-32 pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -102,16 +102,15 @@ export default function RessourcesPage() {
             <span className="text-gradient-blue">pour réussir votre carrière</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Guides pratiques, modèles, checklists et outils IA gratuits pour
-            transformer votre recherche d&apos;emploi.
+            Des guides pratiques et les outils de Karria pour avancer dans
+            votre recherche d&apos;emploi.
           </p>
         </div>
 
         {/* Intro rédactionnelle */}
         <section className="mb-16 space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            La recherche d&apos;emploi a profondément changé. En 2026, la
-            majorité des candidatures passent d&apos;abord entre les mains
+            La recherche d&apos;emploi a profondément changé. Beaucoup de candidatures passent d&apos;abord entre les mains
             d&apos;un logiciel avant d&apos;arriver à un recruteur, et les
             attentes en matière de personnalisation n&apos;ont jamais été aussi
             fortes. Pour vous donner toutes les chances, nous avons rassemblé
@@ -216,6 +215,6 @@ export default function RessourcesPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

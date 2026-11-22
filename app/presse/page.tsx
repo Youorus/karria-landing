@@ -61,7 +61,7 @@ export default function PressPage() {
                       {asset.description}
                     </p>
 
-                    <div className="mt-8 inline-flex items-center gap-2 font-bold text-muted-foreground/70">
+                    <div className="mt-8 inline-flex items-center gap-2 font-bold text-muted-foreground">
                       Disponible bientôt
                     </div>
                   </div>

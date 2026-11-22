@@ -155,7 +155,7 @@ export default function Pricing() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1.0, delay: 0.6, ease: EASE }}
-          className="text-center text-muted-foreground/80 text-sm mt-10"
+          className="text-center text-muted-foreground text-sm mt-10"
         >
           Sans engagement · L’abonnement se prend dans l’app
         </motion.p>

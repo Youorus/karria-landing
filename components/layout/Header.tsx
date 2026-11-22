@@ -233,7 +233,7 @@ export default function Header() {
                   <div key={link.label}>
                     {link.children ? (
                       <div className="space-y-1 mb-4">
-                        <div className="text-[11px] font-bold text-muted-foreground/60 uppercase tracking-widest px-4 py-2">
+                        <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest px-4 py-2">
                           {link.label}
                         </div>
                         {link.children.map((child) => (

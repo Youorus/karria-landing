@@ -6,8 +6,8 @@ import { NAV_ROUTES } from "@/lib/constants";
 import { SITE_URL } from "@/lib/utils";
 
 export const metadata = buildMetadata({
-  title: "Questions fréquentes sur Karria et l'IA carrière",
-  description: "Toutes les réponses à vos questions sur Karria : matching IA, génération de CV, abonnement Illimité et sécurité des données.",
+  title: "Questions fréquentes sur Karria",
+  description: "Les réponses à vos questions sur Karria : offres, CV, alertes, limites de la version gratuite, offre « Karria sans pub » et données.",
   path: "/faq",
 });
 
@@ -17,84 +17,53 @@ const FAQS = [
     questions: [
       {
         q: "Qu'est-ce que Karria ?",
-        a: "Karria est une application mobile d'intelligence artificielle qui vous aide à trouver les meilleures offres d'emploi, à optimiser votre CV et vos lettres de motivation, et à piloter votre carrière de manière intelligente."
+        a: "Karria est une application mobile française, sur iPhone et Android. Elle trouve les offres d'emploi qui vous correspondent parmi plus de 500 000 offres actives en France (CDI, CDD, alternance, stage, intérim), vous aide à faire votre CV et vous prévient dès qu'une nouvelle offre arrive.",
       },
       {
-        q: "Est-ce que Karria est gratuit ?",
-        a: "Oui. Le matching et les recommandations d'offres sont gratuits et illimités dès l'inscription, avec 3 CV et 3 lettres de motivation générés gratuitement par mois. Pour générer des CV et lettres en illimité, l'abonnement Illimité est à 4,99€/mois."
-      }
-    ]
+        q: "Est-ce que Karria est gratuite ?",
+        a: "Oui. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante existe : « Karria sans pub », à 4,99 € par mois ou 49,90 € par an, sans engagement. Elle retire les annonces et lève les limites mensuelles.",
+      },
+      {
+        q: "Quelles sont les limites de la version gratuite ?",
+        a: "Chaque mois : 3 CV exportés sans la mention Karria (ensuite le CV sort avec la mention, sans jamais être bloqué), 3 optimisations ATS, 3 portraits retravaillés par IA, 5 imports de CV, 20 CV adaptés à une offre et 30 lettres. L'assistante répond à 40 messages par jour.",
+      },
+    ],
   },
   {
-    category: "Technologie IA",
+    category: "Offres et CV",
     questions: [
       {
-        q: "Comment fonctionne le matching ?",
-        a: "Notre IA analyse en profondeur votre profil et compare vos compétences avec des milliers d'offres en temps réel. Elle ne se contente pas de mots-clés, elle comprend le sens de vos expériences pour vous proposer des postes où vous avez de réelles chances de réussir."
+        q: "Comment Karria trouve-t-elle des offres pour moi ?",
+        a: "Vous dites à Karria ce que vous cherchez, à l'écrit ou à la voix : un métier, un lieu, un contrat. Elle lance la recherche et classe les offres les plus pertinentes en premier. Vos recherches sont enregistrées, et vous recevez une alerte dès qu'une nouvelle offre correspond ; chaque alerte s'active ou se désactive séparément.",
       },
       {
-        q: "Les CV générés sont-ils compatibles ATS ?",
-        a: "Oui. Tous nos templates de CV sont conçus pour être optimisés pour les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains."
-      }
-    ]
+        q: "Les CV sont-ils compatibles ATS ?",
+        a: "Karria note votre CV comme le ferait un logiciel de recrutement (ATS), vous explique ce qui bloque et l'optimise en un geste. Vous choisissez parmi 9 modèles, puis exportez en PDF ou en Word.",
+      },
+    ],
   },
   {
-    category: "Sécurité",
+    category: "Compte et données",
     questions: [
       {
         q: "Mes données sont-elles en sécurité ?",
-        a: "La sécurité est notre priorité absolue. Vos données sont chiffrées et nous respectons scrupuleusement le RGPD. Vous restez maître de vos informations à tout moment."
-      }
-    ]
-  }
+        a: "Vous décidez si l'IA peut lire votre CV, vous pouvez supprimer vos documents à tout moment, et votre compte se supprime directement depuis l'app. Le détail figure dans notre politique de confidentialité.",
+      },
+    ],
+  },
 ];
 
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": `${SITE_URL}/faq#faqpage`,
-  mainEntity: [
-    {
+  mainEntity: FAQS.flatMap((category) =>
+    category.questions.map((faq) => ({
       "@type": "Question",
-      name: "Qu'est-ce que Karria ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Karria est une application mobile d'intelligence artificielle qui vous aide à trouver les meilleures offres d'emploi, à optimiser votre CV et vos lettres de motivation, et à piloter votre carrière de manière intelligente.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Est-ce que Karria est gratuit ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Oui. Le matching et les recommandations d'offres sont gratuits et illimités dès l'inscription, avec 3 CV et 3 lettres de motivation générés gratuitement par mois. Pour générer des CV et lettres en illimité, l'abonnement Illimité est à 4,99€/mois.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Comment fonctionne le matching IA de Karria ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Notre IA analyse en profondeur votre profil et compare vos compétences avec des milliers d'offres en temps réel. Elle ne se contente pas de mots-clés, elle comprend le sens de vos expériences pour vous proposer des postes où vous avez de réelles chances de réussir.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Les CV générés sont-ils compatibles ATS ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Oui. Tous nos templates de CV sont conçus pour être optimisés pour les logiciels de recrutement (ATS) tout en restant esthétiques pour les recruteurs humains.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Mes données sont-elles en sécurité avec Karria ?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "La sécurité est notre priorité absolue. Vos données sont chiffrées et nous respectons scrupuleusement le RGPD. Vous restez maître de vos informations à tout moment.",
-      },
-    },
-  ],
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    }))
+  ),
 };
 
 export default function FAQPage() {
@@ -145,13 +114,13 @@ export default function FAQPage() {
           <div className="mt-24 p-10 rounded-3xl bg-secondary/50 border border-border text-center">
             <h3 className="text-2xl font-bold mb-4">Vous n&apos;avez pas trouvé votre réponse ?</h3>
             <p className="text-muted-foreground mb-8">
-              Notre équipe est disponible 7j/7 pour vous aider.
+              Écrivez-nous : une vraie personne vous répond.
             </p>
             <Link 
               href={NAV_ROUTES.contact}
               className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all"
             >
-              Contactez le support
+              Nous contacter
             </Link>
           </div>
         </Reveal>

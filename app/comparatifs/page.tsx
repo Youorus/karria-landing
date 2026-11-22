@@ -6,13 +6,13 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Comparatif des plateformes d'emploi et de CV IA",
   description:
-    "Comparez Karria avec LinkedIn, Indeed et les générateurs de CV classiques. Matching IA, CV adaptatif, optimisation ATS : découvrez pourquoi Karria est la solution IA la plus complète pour votre carrière en 2026.",
+    "Ce que Karria réunit au même endroit : fil d'offres personnalisé, CV adapté à chaque offre, score ATS, lettre de motivation et suivi des candidatures.",
   path: "/comparatifs",
   keywords: [
     "comparatif plateforme emploi",
     "Karria vs LinkedIn",
     "Karria vs Indeed",
-    "meilleure plateforme CV IA",
+    "application recherche emploi et CV",
     "comparaison outils recherche emploi",
     "générateur CV IA comparatif",
     "alternative LinkedIn 2026",
@@ -20,16 +20,16 @@ export const metadata = buildMetadata({
 });
 
 const comparisons = [
-  { feature: "Matching IA personnalisé", karria: true, others: false },
+  { feature: "Recherche lancée à l'écrit ou à la voix", karria: true, others: false },
   { feature: "CV adaptatif par offre", karria: true, others: false },
   { feature: "Lettres de motivation IA", karria: true, others: false },
   { feature: "Optimisation ATS automatique", karria: true, others: false },
   { feature: "Application mobile native", karria: true, others: true },
   { feature: "Feed offres personnalisé", karria: true, others: true },
   { feature: "Suivi des candidatures", karria: true, others: true },
-  { feature: "Score de compatibilité", karria: true, others: false },
-  { feature: "Conseils carrière intelligents", karria: true, others: false },
-  { feature: "Gratuit pour commencer", karria: true, others: false },
+  { feature: "Score ATS du CV", karria: true, others: false },
+  { feature: "Équipe humaine joignable dans l'app", karria: true, others: false },
+  { feature: "Gratuit pour commencer", karria: true, others: true },
 ];
 
 const versus = [
@@ -38,9 +38,9 @@ const versus = [
     intro:
       "LinkedIn est un excellent réseau professionnel, mais il a été pensé pour le réseautage, pas pour candidater efficacement.",
     points: [
-      "Là où LinkedIn affiche des milliers d'offres génériques, Karria analyse votre profil et ne vous propose que les opportunités réellement compatibles, avec un score de compatibilité chiffré.",
-      "LinkedIn vous laisse rédiger votre CV et vos messages seul. Karria génère un CV adapté à chaque offre et une lettre de motivation ciblée en quelques secondes.",
-      "Karria optimise automatiquement vos documents pour les logiciels ATS utilisés par les recruteurs, un point que LinkedIn ne traite pas.",
+      "Sur Karria, vous dites ce que vous cherchez et les offres les plus pertinentes arrivent en premier dans votre fil.",
+      "LinkedIn vous laisse rédiger votre CV et vos messages seul. Karria prépare un CV adapté à chaque offre et la lettre de motivation qui va avec.",
+      "Karria note votre CV comme le ferait un logiciel de recrutement (score ATS) et l'optimise en un geste.",
     ],
   },
   {
@@ -48,9 +48,9 @@ const versus = [
     intro:
       "Les job boards classiques (Indeed, Welcome to the Jungle, HelloWork) reposent sur la recherche par mots-clés et le tri manuel.",
     points: [
-      "Vous passez des heures à filtrer des offres. Karria fait le tri à votre place grâce au matching IA et vous notifie uniquement des offres pertinentes.",
-      "Sur un job board, vous envoyez le même CV partout. Karria adapte votre candidature à chaque annonce pour maximiser vos chances de passer les filtres.",
-      "Karria centralise le suivi de toutes vos candidatures au même endroit, sans tableur ni copier-coller.",
+      "Karria classe les offres par pertinence et vous alerte dès qu'une nouvelle offre correspond à une recherche enregistrée.",
+      "Sur un job board, vous envoyez le même CV partout. Karria adapte votre CV et votre lettre à chaque annonce.",
+      "Chaque candidature a son dossier : l'offre, votre CV, votre lettre, et où vous en êtes.",
     ],
   },
   {
@@ -58,9 +58,9 @@ const versus = [
     intro:
       "Les générateurs de CV en ligne produisent un beau document, mais s'arrêtent là.",
     points: [
-      "Un générateur classique crée un CV statique. Karria crée un CV vivant, optimisé offre par offre et noté pour sa compatibilité ATS.",
-      "Au-delà du CV, Karria couvre tout le parcours : matching d'offres, lettre de motivation, suivi et conseils carrière.",
-      "La plupart des générateurs facturent le téléchargement. Karria est gratuit pour commencer.",
+      "Un générateur classique crée un CV statique. Karria adapte le CV offre par offre et le note pour sa compatibilité ATS.",
+      "Au-delà du CV, Karria couvre le reste du parcours : offres, lettre de motivation, alertes et suivi.",
+      "Karria est gratuite : au-delà de 3 exports par mois, le CV sort avec la mention Karria, sans jamais être bloqué.",
     ],
   },
 ];
@@ -68,11 +68,11 @@ const versus = [
 const faqs = [
   {
     q: "Karria est-il vraiment gratuit ?",
-    a: "Oui, vous pouvez créer votre profil, recevoir des offres compatibles et générer vos premiers documents gratuitement. La génération illimitée de CV et de lettres est disponible via l'abonnement Illimité à 4,99€/mois, mais aucune carte bancaire n'est requise pour commencer.",
+    a: "Oui. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante, « Karria sans pub » (4,99 € par mois ou 49,90 € par an, sans engagement), retire les annonces et lève les limites mensuelles.",
   },
   {
     q: "En quoi le matching IA de Karria est-il différent ?",
-    a: "Plutôt que de filtrer des offres par mots-clés, Karria analyse en profondeur vos compétences, votre expérience et vos objectifs pour calculer un score de compatibilité avec chaque offre, et ne vous présente que les opportunités les plus pertinentes.",
+    a: "Vous dites à Karria ce que vous cherchez, à l'écrit ou à la voix. Elle lance la recherche parmi plus de 500 000 offres actives en France et classe les plus pertinentes en premier.",
   },
   {
     q: "Karria remplace-t-il LinkedIn ou Indeed ?",
@@ -80,7 +80,7 @@ const faqs = [
   },
   {
     q: "Mes documents sont-ils optimisés pour les ATS ?",
-    a: "Oui. Karria structure et optimise automatiquement vos CV et lettres pour les logiciels de tri automatique (ATS) utilisés par la majorité des recruteurs, afin d'augmenter vos chances d'arriver entre les mains d'un humain.",
+    a: "Oui. Karria note votre CV comme le ferait un logiciel de tri automatique (ATS), vous explique ce qui bloque et l'optimise pour vous.",
   },
 ];
 
@@ -96,7 +96,7 @@ const faqJsonLd = {
 
 export default function ComparatifsPage() {
   return (
-    <main className="min-h-screen bg-background pt-32 pb-24">
+    <div className="min-h-screen bg-background pt-32 pb-24">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
@@ -108,9 +108,9 @@ export default function ComparatifsPage() {
             <span>Comparatifs</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
-            Pourquoi Karria est
+            Ce que Karria
             <br />
-            <span className="text-gradient-blue">la solution la plus complète</span>
+            <span className="text-gradient-blue">réunit au même endroit</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Comparez les fonctionnalités et découvrez ce qui distingue Karria
@@ -233,6 +233,6 @@ export default function ComparatifsPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

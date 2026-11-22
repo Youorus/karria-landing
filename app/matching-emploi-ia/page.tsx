@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Brain, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -8,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Matching emploi IA — Offres sur-mesure pour votre profil",
   description:
-    "Karria analyse votre profil en profondeur et vous recommande les offres d'emploi les plus pertinentes grâce à l'intelligence artificielle. Moins de bruit, plus d'opportunités réelles.",
+    "Dites à Karria ce que vous cherchez : elle classe les offres les plus pertinentes parmi plus de 500 000 offres actives en France et vous alerte dès qu'une nouvelle correspond.",
   path: "/matching-emploi-ia",
   keywords: [
     "matching emploi IA",
@@ -21,38 +20,37 @@ export const metadata = buildMetadata({
 });
 
 const features = [
-  "Analyse complète de votre profil et compétences",
-  "Score de compatibilité pour chaque offre",
-  "Mise à jour en temps réel du feed personnalisé",
-  "Alertes intelligentes sur les nouvelles opportunités",
-  "Filtres avancés par secteur, lieu, salaire",
-  "Apprentissage continu de vos préférences",
+  "CDI, CDD, alternance, stage et intérim",
+  "Les offres les plus pertinentes en premier",
+  "Plus de 500 000 offres actives, mises à jour chaque jour",
+  "Alertes sur vos recherches enregistrées",
+  "Filtres et tri : pertinence, date, proximité",
+  "Une recherche lancée à l'écrit ou à la voix",
 ];
 
 const faqs = [
   {
     q: "Comment fonctionne le matching IA de Karria ?",
-    a: "Karria analyse votre profil complet (compétences, expériences, préférences, objectifs) et le compare aux milliers d'offres disponibles pour vous présenter celles avec le meilleur niveau de compatibilité.",
+    a: "Vous dites à Karria ce que vous cherchez (métier, lieu, contrat), à l'écrit ou à la voix. Elle lance la recherche parmi plus de 500 000 offres actives en France et classe les plus pertinentes en premier dans votre fil.",
   },
   {
-    q: "Le matching s'améliore-t-il avec le temps ?",
-    a: "Oui. Karria apprend de vos interactions : les offres que vous consultez, celles que vous ignorez, vos candidatures. Plus vous utilisez la plateforme, plus les recommandations deviennent précises.",
+    q: "Comment affiner les offres proposées ?",
+    a: "En précisant votre recherche à Karria, ou avec les filtres et le tri du fil. Vos recherches sont enregistrées : vous les retrouvez et les modifiez quand vous voulez.",
   },
   {
     q: "Quels types d'offres sont disponibles dans Karria ?",
-    a: "Karria agrège des offres de multiples sources : CDI, CDD, alternance, stages, freelance, dans tous les secteurs. Le feed est mis à jour en permanence.",
+    a: "Plus de 500 000 offres actives en France : CDI, CDD, alternance, stage et intérim. Le fil est mis à jour chaque jour.",
   },
   {
     q: "Puis-je recevoir des alertes pour les nouvelles offres ?",
-    a: "Absolument. Configurez des alertes intelligentes et recevez une notification dès qu'une offre correspondant à votre profil est publiée, directement sur l'application mobile.",
+    a: "Oui. Dès qu'une nouvelle offre correspond à une recherche enregistrée, vous recevez une notification. Chaque alerte s'active ou se désactive séparément, dans les réglages de l'app.",
   },
 ];
 
 export default function MatchingEmploiIaPage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
@@ -66,8 +64,8 @@ export default function MatchingEmploiIaPage() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Arrêtez de chercher. Laissez l&apos;IA travailler pour vous.
-              Karria analyse votre profil en profondeur et trouve les
-              opportunités qui ont réellement du sens pour votre carrière.
+              Dites à Karria ce que vous cherchez : elle classe pour vous les
+              offres les plus pertinentes.
             </p>
             <Link
               href={NAV_ROUTES.download}
@@ -88,16 +86,13 @@ export default function MatchingEmploiIaPage() {
               La recherche d&apos;emploi traditionnelle repose sur des mots-clés :
               vous tapez un intitulé, vous filtrez par ville, puis vous parcourez
               des dizaines de pages d&apos;offres dont la plupart ne vous
-              correspondent pas. Le matching par IA inverse cette logique. Au
-              lieu de chercher, vous êtes trouvé : l&apos;algorithme analyse vos
-              compétences, votre expérience et vos aspirations, puis calcule un
-              score de compatibilité avec chaque offre disponible.
+              correspondent pas. Le matching par IA inverse cette logique. Vous décrivez ce que vous cherchez, et Karria classe les offres
+              par pertinence au lieu de vous laisser tout trier.
             </p>
             <p>
-              Résultat : vous ne voyez que les opportunités réellement
-              pertinentes, classées par adéquation avec votre profil. Karria
-              affine ses recommandations au fil de vos interactions et vous
-              alerte dès qu&apos;une offre à fort potentiel est publiée. Une fois
+              Résultat : les offres les plus pertinentes arrivent en premier
+              dans votre fil, et Karria vous alerte dès qu&apos;une nouvelle
+              offre correspond à une recherche enregistrée. Une fois
               l&apos;offre repérée, vous candidatez avec un{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
                 CV adapté
@@ -106,7 +101,7 @@ export default function MatchingEmploiIaPage() {
               <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
                 lettre ciblée
               </Link>
-              , générés en quelques secondes.
+              , préparés par Karria.
             </p>
           </section>
 
@@ -142,7 +137,7 @@ export default function MatchingEmploiIaPage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

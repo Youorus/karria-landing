@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, GraduationCap, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -8,7 +7,7 @@ import { NAV_ROUTES } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Trouver une alternance grâce à l'IA",
   description:
-    "Karria vous aide à trouver votre alternance idéale grâce à l'intelligence artificielle. CV optimisé, lettre de motivation personnalisée et matching précis pour décrocher votre contrat.",
+    "Karria vous aide à trouver une alternance : offres ciblées, CV adapté et lettre de motivation pour chaque entreprise, alertes dès qu'une nouvelle offre correspond.",
   path: "/alternance",
   keywords: [
     "trouver alternance IA",
@@ -23,7 +22,7 @@ export const metadata = buildMetadata({
 const faqs = [
   {
     q: "Comment Karria aide à trouver une alternance ?",
-    a: "Karria filtre les offres d'alternance par secteur, région et niveau d'études, puis génère un CV et des lettres adaptés aux attentes des entreprises qui recrutent en contrat d'apprentissage ou de professionnalisation.",
+    a: "Dites à Karria le métier, le lieu et le contrat : elle lance la recherche parmi les offres d'alternance et classe les plus pertinentes en premier. Pour chaque offre, elle prépare un CV adapté et une lettre de motivation.",
   },
   {
     q: "Faut-il déjà avoir une école pour postuler ?",
@@ -35,15 +34,14 @@ const faqs = [
   },
   {
     q: "L'alternance est-elle compatible avec mon niveau d'études ?",
-    a: "L'alternance existe du CAP au Bac+5 et au-delà. Karria filtre les offres correspondant à votre niveau et à votre domaine pour ne vous présenter que des opportunités réalistes.",
+    a: "L'alternance existe du CAP au Bac+5 et au-delà. Précisez votre domaine et votre niveau à Karria pour cibler les offres qui vous concernent.",
   },
 ];
 
 export default function AlternancePage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
@@ -100,12 +98,12 @@ export default function AlternancePage() {
             <h2 className="text-2xl font-bold mb-8 text-center">Pourquoi Karria pour votre alternance ?</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Offres d'alternance filtrées par secteur et région",
+                "Offres d'alternance par métier et par lieu",
                 "CV spécialement adapté aux recruteurs en alternance",
                 "Lettres de motivation percutantes pour les entreprises",
-                "Score de compatibilité pour chaque offre",
-                "Alertes en temps réel sur les nouvelles publications",
-                "Accompagnement pour préparer vos entretiens",
+                "Les offres les plus pertinentes en premier",
+                "Une alerte dès qu'une nouvelle offre correspond",
+                "Un dossier par candidature pour suivre où vous en êtes",
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -133,7 +131,7 @@ export default function AlternancePage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

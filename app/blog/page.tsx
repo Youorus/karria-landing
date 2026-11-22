@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { ArrowRight, BookOpen, FileText, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
@@ -46,9 +45,8 @@ const UPCOMING_TOPICS = [
 export default function BlogPage() {
   return (
       <>
-        <JsonLd />
 
-        <main className="min-h-screen bg-background pb-24 pt-32">
+        <div className="min-h-screen bg-background pb-24 pt-32">
           <div className="container mx-auto max-w-4xl px-4">
             <div className="mb-20 text-center">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -79,7 +77,7 @@ export default function BlogPage() {
 
               <p className="mx-auto max-w-2xl text-muted-foreground">
                 Cette page accueillera progressivement des ressources sur les CV,
-                les lettres de motivation, le matching emploi, l’IA carrière et
+                les lettres de motivation, la recherche d’offres, l’IA et
                 l’organisation d’une recherche d’emploi efficace.
               </p>
             </div>
@@ -158,7 +156,7 @@ export default function BlogPage() {
               </Link>
             </div>
           </div>
-        </main>
+        </div>
       </>
   );
 }

@@ -6,7 +6,7 @@ import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Conditions Générales de Vente",
-  description: "Consultez nos CGV pour tout savoir sur les abonnements Karria, les modalités de paiement et de remboursement.",
+  description: "Conditions de vente de l'abonnement « Karria sans pub » : prix, paiement, résiliation et remboursement.",
   path: "/cgv",
 });
 
@@ -19,7 +19,7 @@ export default function CGVPage() {
             eyebrow="Commercial"
             headingLevel={1}
             title="Conditions Générales de Vente"
-            subtitle="Transparence totale sur nos offres, nos abonnements et vos droits en tant que client."
+            subtitle="L'abonnement « Karria sans pub », ses prix et vos droits en tant que client."
             align="left"
             className="mb-20"
           />
@@ -32,7 +32,7 @@ export default function CGVPage() {
                 <section>
                   <h3 className="text-2xl font-bold text-foreground mb-4">1. Services et Tarifs</h3>
                   <p>
-                    Karria propose un plan Gratuit et un abonnement Illimité à 4,99€/mois. Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la durée de l&apos;engagement.
+                    Karria est gratuite, financée par des annonces. Une seule offre payante existe : l&apos;abonnement « Karria sans pub », à 4,99 € par mois ou 49,90 € par an, sans engagement. Il retire les annonces et lève les limites mensuelles de la version gratuite. Les tarifs sont indiqués en euros toutes taxes comprises. Nous nous réservons le droit de modifier nos prix à tout moment, tout en garantissant le tarif en vigueur au moment de la souscription pour la durée de l&apos;engagement.
                   </p>
                 </section>
 

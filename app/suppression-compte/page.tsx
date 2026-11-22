@@ -34,7 +34,7 @@ export default function AccountDeletionPage() {
                   <ol className="list-decimal list-inside space-y-3">
                     <li>Ouvrez l’application Karria.</li>
                     <li>Connectez-vous à votre compte.</li>
-                    <li>Accédez à <strong>Profil</strong> ou <strong>Paramètres</strong>.</li>
+                    <li>Ouvrez <strong>Profil</strong>, puis <strong>Paramètres</strong>.</li>
                     <li>Appuyez sur <strong>Supprimer mon compte</strong>.</li>
                     <li>Confirmez la suppression.</li>
                   </ol>

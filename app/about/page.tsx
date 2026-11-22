@@ -254,7 +254,7 @@ export default function AboutPage() {
                 {CTA_TEXT.subtitle}
               </p>
 
-              <AppDownloadCTA showWebCTA={false} />
+              <AppDownloadCTA />
             </Reveal>
           </div>
         </section>

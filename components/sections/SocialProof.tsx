@@ -94,7 +94,7 @@ export default function SocialProof() {
                   <AnimatedCounter to={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="font-semibold text-muted-foreground text-sm mb-1">{stat.label}</p>
-                <p className="text-muted-foreground/80 text-xs leading-tight">{stat.description}</p>
+                <p className="text-muted-foreground text-xs leading-tight">{stat.description}</p>
               </div>
             </motion.div>
           ))}

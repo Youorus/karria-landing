@@ -1,14 +1,13 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, PenLine, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Lettre de motivation IA personnalisée en quelques secondes",
+  title: "Lettre de motivation IA adaptée à chaque offre",
   description:
-    "Générez une lettre de motivation personnalisée et convaincante grâce à l'IA. Karria adapte chaque lettre à l'offre et à votre profil pour maximiser vos chances de décrocher un entretien.",
+    "Générez une lettre de motivation personnalisée et convaincante grâce à l'IA. Karria adapte chaque lettre à l'offre et à votre profil et vous laisse la relire et la modifier.",
   path: "/lettre-motivation-ia",
   keywords: [
     "lettre de motivation IA",
@@ -23,10 +22,10 @@ export const metadata = buildMetadata({
 const features = [
   "Lettre personnalisée selon l'offre et votre profil",
   "Ton professionnel et naturel",
-  "Prête à envoyer en quelques secondes",
+  "À relire et à modifier avant l'envoi",
   "Adaptée à tous les secteurs d'activité",
   "Mise en forme soignée et impactante",
-  "Rééditable et exportable en PDF",
+  "Export en PDF ou en Word, ou envoi par e-mail",
 ];
 
 const faqs = [
@@ -40,7 +39,7 @@ const faqs = [
   },
   {
     q: "Puis-je générer plusieurs lettres pour différentes offres ?",
-    a: "Absolument. Chaque candidature mérite une lettre unique. Karria vous permet de générer autant de lettres que nécessaire, chacune adaptée à son offre spécifique.",
+    a: "Oui. Chaque candidature a sa lettre. La version gratuite permet 30 lettres par mois ; l'offre « Karria sans pub » (4,99 € par mois ou 49,90 € par an) lève cette limite.",
   },
   {
     q: "La lettre est-elle compatible avec les exigences ATS ?",
@@ -51,8 +50,7 @@ const faqs = [
 export default function LettreMotivationIaPage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
@@ -65,8 +63,7 @@ export default function LettreMotivationIaPage() {
               <span className="text-gradient-blue">qui vous ressemble vraiment</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Fini les lettres génériques copiées-collées. Karria génère en
-              quelques secondes une lettre de motivation unique, adaptée à
+              Fini les lettres génériques copiées-collées. Karria rédige une lettre de motivation adaptée à
               chaque offre et à votre parcours.
             </p>
             <Link
@@ -98,7 +95,7 @@ export default function LettreMotivationIaPage() {
               l&apos;offre ciblée pour produire une lettre réellement
               personnalisée : elle reprend le vocabulaire de l&apos;annonce,
               relie vos expériences aux besoins de l&apos;entreprise et adopte
-              un ton naturel. Vous obtenez en quelques secondes une base solide
+              un ton naturel. Vous obtenez une base solide
               que vous pouvez ajuster, puis l&apos;associer à votre{" "}
               <Link href="/cv-ia" className="text-primary hover:underline">
                 CV optimisé
@@ -145,7 +142,7 @@ export default function LettreMotivationIaPage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

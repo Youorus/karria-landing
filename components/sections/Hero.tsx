@@ -65,7 +65,9 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.2, ease: EASE }}
               className="mb-6 max-w-5xl font-bold tracking-[-0.055em] text-foreground"
               style={{
-                fontSize: "clamp(3.4rem, 10vw, 6.6rem)",
+                // Identique à l'original au-dessus de 394 px ; en dessous, le titre
+                // rétrécit pour ne pas déborder des petits écrans.
+                fontSize: "clamp(min(3.4rem, 13.8vw), 10vw, 6.6rem)",
                 lineHeight: 0.94,
               }}
           >

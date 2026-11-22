@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, Search, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -21,22 +20,22 @@ export const metadata = buildMetadata({
 });
 
 const features = [
-  "Feed d'offres personnalisé mis à jour en temps réel",
-  "Candidature en un clic avec documents optimisés",
-  "Suivi centralisé de toutes vos candidatures",
-  "Conseils personnalisés pour chaque étape",
-  "Notifications intelligentes sur vos offres favorites",
-  "Analyse de vos chances de succès par offre",
+  "Fil d'offres personnalisé, mis à jour chaque jour",
+  "CV adapté et lettre de motivation pour chaque offre",
+  "Un dossier par candidature pour suivre où vous en êtes",
+  "Une équipe humaine joignable dans l'app",
+  "Alertes sur vos recherches enregistrées",
+  "Score ATS de votre CV et optimisation en un geste",
 ];
 
 const faqs = [
   {
     q: "En quoi Karria change la recherche d'emploi ?",
-    a: "Au lieu de parcourir manuellement des dizaines de sites, Karria centralise les offres pertinentes, les classe par compatibilité avec votre profil et prépare vos candidatures. Vous passez moins de temps à chercher et plus de temps à décrocher des entretiens.",
+    a: "Au lieu de parcourir manuellement des dizaines de sites, Karria réunit plus de 500 000 offres actives en France, classe les plus pertinentes en premier et prépare avec vous le CV et la lettre de chaque candidature. Vous passez moins de temps à chercher.",
   },
   {
     q: "Combien de temps faut-il pour trouver un emploi avec Karria ?",
-    a: "Cela dépend de votre secteur et de votre profil, mais en automatisant le tri des offres et la préparation des candidatures, Karria vous permet de postuler plus vite et de manière plus ciblée, ce qui augmente vos chances de réponse.",
+    a: "Cela dépend de votre secteur et de votre profil : Karria ne promet pas d'embauche. Elle vous fait gagner du temps sur le tri des offres et la préparation des candidatures.",
   },
   {
     q: "Karria convient-il à tous les niveaux d'expérience ?",
@@ -44,15 +43,14 @@ const faqs = [
   },
   {
     q: "Dois-je payer pour commencer ma recherche ?",
-    a: "Non, vous pouvez créer votre profil, consulter des offres compatibles et générer vos premiers documents gratuitement, sans carte bancaire.",
+    a: "Non. Karria est gratuite, financée par des annonces discrètes, et la recherche d'offres est illimitée. Une seule offre payante, « Karria sans pub » (4,99 € par mois ou 49,90 € par an, sans engagement), retire les annonces et lève les limites mensuelles.",
   },
 ];
 
 export default function RechercheEmploiIaPage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
@@ -66,8 +64,8 @@ export default function RechercheEmploiIaPage() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
               Karria centralise, filtre et personnalise toute votre recherche
-              d&apos;emploi. Moins de temps perdu, plus d&apos;entretiens
-              décrochés.
+              d&apos;emploi. Moins de temps perdu, des candidatures mieux
+              préparées.
             </p>
             <Link
               href={NAV_ROUTES.download}
@@ -145,7 +143,7 @@ export default function RechercheEmploiIaPage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

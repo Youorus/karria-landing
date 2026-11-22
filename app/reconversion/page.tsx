@@ -1,5 +1,4 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, RefreshCw, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
@@ -35,15 +34,14 @@ const faqs = [
   },
   {
     q: "Karria aide-t-il à choisir un nouveau métier ?",
-    a: "Karria analyse votre profil pour identifier les secteurs et postes adaptés à vos compétences et à vos aspirations, puis vous propose des offres correspondant à cette nouvelle orientation.",
+    a: "Karria ne remplace pas un bilan de compétences. Vous pouvez en revanche lui dire que vous voulez changer de métier : elle lance la recherche et vous montre les offres du domaine visé, que vous affinez avec elle.",
   },
 ];
 
 export default function ReconversionPage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">
@@ -100,12 +98,12 @@ export default function ReconversionPage() {
             <h2 className="text-2xl font-bold mb-8 text-center">Comment Karria accompagne votre reconversion</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
-                "Analyse de vos compétences transférables",
-                "Identification des secteurs adaptés à votre profil",
+                "Un CV qui met en avant vos compétences transférables",
+                "Une recherche lancée à l'écrit ou à la voix : « je veux changer de métier »",
                 "CV repositionné pour votre nouveau métier",
                 "Lettres de motivation axées sur votre valeur ajoutée",
                 "Matching avec des offres dans votre nouveau domaine",
-                "Conseils personnalisés pour réussir votre transition",
+                "Une équipe humaine joignable dans l'app",
               ].map((f, i) => (
                 <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-card border border-border">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -132,7 +130,7 @@ export default function ReconversionPage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

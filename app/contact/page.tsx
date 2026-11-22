@@ -38,7 +38,7 @@ const CONTACT_METHODS = [
   {
     icon: MessageSquare,
     title: "Presse & Media",
-    description: "Pour toute demande d'interview ou kit média.",
+    description: "Pour toute demande d'interview ou d'information.",
     email: CONTACT_EMAILS.press,
     label: "Demande presse"
   },
@@ -124,19 +124,19 @@ export default function ContactPage() {
             <div className="space-y-10">
               <h3 className="text-3xl font-bold">Suivez l&apos;aventure</h3>
               <p className="text-muted-foreground text-lg">
-                Rejoignez notre communauté sur les réseaux sociaux pour découvrir les coulisses de Karria, nos dernières mises à jour et des conseils carrière quotidiens.
+                Rejoignez notre communauté sur les réseaux sociaux pour découvrir les coulisses de Karria, et nos dernières mises à jour.
               </p>
               <div className="flex gap-8">
-                <Link href={SOCIAL_LINKS.instagram} className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Karria sur Instagram" className="text-muted-foreground hover:text-foreground transition-colors">
                   <Instagram className="w-8 h-8" />
                 </Link>
-                <Link href={SOCIAL_LINKS.linkedin} className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Karria sur LinkedIn" className="text-muted-foreground hover:text-foreground transition-colors">
                   <Linkedin className="w-8 h-8" />
                 </Link>
-                <Link href={SOCIAL_LINKS.x} className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={SOCIAL_LINKS.x} target="_blank" rel="noopener noreferrer" aria-label="Karria sur X" className="text-muted-foreground hover:text-foreground transition-colors">
                   <XIcon className="w-8 h-8" />
                 </Link>
-                <Link href={SOCIAL_LINKS.tiktok} className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link href={SOCIAL_LINKS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Karria sur TikTok" className="text-muted-foreground hover:text-foreground transition-colors">
                   <TikTokIcon className="w-8 h-8" />
                 </Link>
               </div>

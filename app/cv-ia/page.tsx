@@ -1,14 +1,13 @@
 import { buildMetadata } from "@/lib/metadata";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { FaqSection } from "@/components/seo/FaqSection";
 import { ArrowRight, FileText, Sparkles, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "CV IA professionnel et optimisé en quelques secondes",
+  title: "CV IA : atelier, modèles et score ATS",
   description:
-    "Générez un CV professionnel et optimisé grâce à l'intelligence artificielle. Karria adapte votre CV à chaque offre d'emploi pour maximiser vos chances d'être sélectionné.",
+    "Importez votre CV ou créez-le avec Karria : 9 modèles, score ATS, optimisation en un geste et CV adapté à chaque offre d'emploi.",
   path: "/cv-ia",
   keywords: [
     "CV IA",
@@ -23,11 +22,11 @@ export const metadata = buildMetadata({
 
 const features = [
   "CV adapté automatiquement à chaque offre",
-  "Optimisation ATS pour passer les filtres automatiques",
-  "Dizaines de templates professionnels",
-  "Export PDF prêt à envoyer",
-  "Suggestions de compétences intelligentes",
-  "Mise en page moderne et lisible",
+  "Score ATS et optimisation en un geste",
+  "9 modèles de CV, avec le choix de la couleur",
+  "Export en PDF ou en Word, ou envoi par e-mail",
+  "Import d'un CV existant : PDF, Word ou photo",
+  "Retouche ligne à ligne dans l'atelier",
 ];
 
 const faqs = [
@@ -41,19 +40,18 @@ const faqs = [
   },
   {
     q: "Puis-je personnaliser mon CV après génération ?",
-    a: "Absolument. Karria vous donne un point de départ optimal que vous pouvez modifier, enrichir et exporter dans le format de votre choix.",
+    a: "Oui. Dans l'atelier, vous changez de modèle et de couleur, retouchez chaque ligne, puis exportez en PDF ou en Word, ou envoyez le CV par e-mail.",
   },
   {
     q: "Combien de CV puis-je créer avec Karria ?",
-    a: "Avec le plan Gratuit, vous pouvez générer 3 CV par mois. L'abonnement Illimité à 4,99€/mois vous donne un nombre illimité de CV adaptés par offre.",
+    a: "La version gratuite permet chaque mois 5 imports de CV, 20 CV adaptés à une offre, 3 optimisations ATS et 3 exports sans la mention Karria ; au-delà, le CV s'exporte avec la mention, sans jamais être bloqué. L'offre « Karria sans pub » (4,99 € par mois ou 49,90 € par an, sans engagement) retire les annonces et lève ces limites mensuelles.",
   },
 ];
 
 export default function CvIaPage() {
   return (
     <>
-      <JsonLd />
-      <main className="min-h-screen bg-background pt-32 pb-24">
+      <div className="min-h-screen bg-background pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Hero */}
           <div className="text-center mb-20">
@@ -67,9 +65,8 @@ export default function CvIaPage() {
               <span className="text-gradient-blue">généré par l&apos;IA</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Karria analyse votre profil et chaque offre ciblée pour créer
-              automatiquement un CV optimisé, moderne et prêt à envoyer en
-              quelques secondes.
+              Importez votre CV ou créez-le avec Karria, choisissez un modèle,
+              vérifiez votre score ATS, puis adaptez-le à chaque offre.
             </p>
             <Link
               href={NAV_ROUTES.download}
@@ -87,9 +84,9 @@ export default function CvIaPage() {
               Pourquoi créer son CV avec l&apos;intelligence artificielle ?
             </h2>
             <p>
-              En 2026, plus de 80 % des CV sont d&apos;abord lus par un logiciel
-              de tri automatique (ATS) avant d&apos;arriver entre les mains
-              d&apos;un recruteur. Un CV mal structuré, trop graphique ou
+              Beaucoup de CV sont d&apos;abord lus par un logiciel de tri
+              automatique (ATS) avant d&apos;arriver entre les mains d&apos;un
+              recruteur. Un CV mal structuré, trop graphique ou
               dépourvu des bons mots-clés est écarté avant même d&apos;être vu.
               C&apos;est précisément là que l&apos;IA de Karria fait la
               différence : elle structure votre parcours de façon lisible par
@@ -100,8 +97,7 @@ export default function CvIaPage() {
               candidature, Karria part de votre profil et de l&apos;offre visée
               pour générer un CV ciblé, met en avant les expériences les plus
               pertinentes et reformule vos réalisations avec des verbes
-              d&apos;action mesurables. Vous gagnez un temps considérable tout
-              en augmentant votre taux de réponse. Une fois votre CV prêt,
+              d&apos;action mesurables. Vous gagnez du temps sur chaque candidature. Une fois votre CV prêt,
               générez une{" "}
               <Link href="/lettre-motivation-ia" className="text-primary hover:underline">
                 lettre de motivation
@@ -158,7 +154,7 @@ export default function CvIaPage() {
             </div>
           </section>
         </div>
-      </main>
+      </div>
     </>
   );
 }

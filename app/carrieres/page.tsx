@@ -8,7 +8,7 @@ import { CONTACT_EMAILS } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Rejoindre Karria",
   description:
-      "Découvrez la vision de Karria et les futures opportunités pour rejoindre l’aventure autour de l’IA carrière.",
+      "Karria est une petite équipe. Aucun poste n’est ouvert aujourd’hui ; les candidatures spontanées sont lues à hello@karria.fr.",
   path: "/carrieres",
 });
 
@@ -35,7 +35,7 @@ const VALUES = [
     icon: Users,
     title: "Ambition collective",
     description:
-        "Bâtir une équipe forte autour d’une mission claire : réinventer l’accompagnement carrière.",
+        "Avancer ensemble autour d’une mission claire : rendre la recherche d’emploi plus simple.",
   },
 ];
 
@@ -47,8 +47,8 @@ export default function CareersPage() {
             <SectionHeader
                 eyebrow="Carrières"
                 headingLevel={1}
-                title="Construire Karria, c’est aider des millions de parcours."
-                subtitle="Nous ne recrutons pas encore officiellement, mais l’aventure se prépare. Cette page accueillera bientôt les futures opportunités pour rejoindre Karria."
+                title="Construire Karria, c’est aider chacun à trouver sa place."
+                subtitle="Karria est une petite équipe. Aucun poste n’est ouvert aujourd’hui, mais nous lisons chaque candidature spontanée."
                 className="mb-20"
             />
           </Reveal>
@@ -67,8 +67,8 @@ export default function CareersPage() {
                 </p>
 
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Demain, l’équipe Karria réunira des personnes passionnées par le
-                  produit, le design, l’IA, la technologie et l’impact humain.
+                  L’équipe est petite : chacun y touche au produit, au design et à
+                  la technologie, au plus près des personnes qui utilisent l’app.
                 </p>
 
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -107,9 +107,8 @@ export default function CareersPage() {
                   Postes ouverts
                 </h3>
                 <p className="max-w-2xl text-muted-foreground">
-                  Aucun poste n’est officiellement ouvert pour le moment. Les
-                  premières opportunités seront publiées ici lorsque Karria entrera
-                  dans une nouvelle phase de développement.
+                  Aucun poste n’est ouvert pour le moment. Si cela change, les
+                  offres seront publiées sur cette page.
                 </p>
               </div>
             </Reveal>
@@ -117,11 +116,11 @@ export default function CareersPage() {
             <Reveal delay={0.1}>
               <div className="rounded-3xl border border-border bg-background p-8 text-center">
                 <p className="text-lg font-semibold text-foreground">
-                  Les recrutements arrivent bientôt.
+                  Candidature spontanée
                 </p>
                 <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-                  En attendant, vous pouvez envoyer une candidature spontanée si
-                  vous vous reconnaissez dans la mission de Karria.
+                  Vous vous reconnaissez dans la mission de Karria ? Écrivez-nous
+                  à hello@karria.fr.
                 </p>
               </div>
             </Reveal>
