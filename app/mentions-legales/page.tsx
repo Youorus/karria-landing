@@ -7,7 +7,7 @@ import { CONTACT_EMAILS } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Mentions légales",
   description:
-      "Informations légales relatives au site Karria. Cette page sera complétée lors de la création officielle de la structure juridique.",
+      "Qui édite et qui héberge le site et l'application Karria. Cette page sera complétée lors de la création officielle de la structure juridique.",
   path: "/mentions-legales",
 });
 
@@ -20,7 +20,7 @@ export default function LegalPage() {
                 eyebrow="Transparence"
                 headingLevel={1}
                 title="Mentions légales"
-                subtitle="Cette page sera complétée avec les informations officielles de Karria avant le lancement complet du service."
+                subtitle="Qui édite et qui héberge Karria. Cette page sera complétée dès la création de la structure juridique."
                 align="left"
                 className="mb-20"
             />
@@ -36,7 +36,7 @@ export default function LegalPage() {
                     </h3>
                     <p>
                       Le site Karria est actuellement édité par Marc Takoumba,
-                      fondateur du projet Karria.
+                      fondateur du projet Karria, en son nom.
                     </p>
 
                     <p className="mt-4">
@@ -60,9 +60,17 @@ export default function LegalPage() {
                       Hébergement
                     </h3>
                     <p>
-                      Le site est hébergé par un prestataire technique externe.
-                      Les informations détaillées relatives à l’hébergement seront
-                      précisées avant le lancement officiel du service.
+                      Le site karria.fr est hébergé par Vercel Inc., 440 N
+                      Barranca Avenue #4133, Covina, CA 91723, États-Unis
+                      (vercel.com).
+                    </p>
+
+                    <p className="mt-4">
+                      L’application Karria et ses données (comptes, CV,
+                      documents, messages) sont hébergées par Hetzner Online
+                      GmbH, Industriestr. 25, 91710 Gunzenhausen, Allemagne,
+                      dans son centre de données de Falkenstein, en Allemagne
+                      (Union européenne).
                     </p>
                   </section>
 
