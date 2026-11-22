@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
       },
       // /recrutement-ia retiré — l'offre n'est pas réellement pensée pour les recruteurs,
       // le trafic est redirigé vers la vraie page produit candidat.
+      // L'app mobile ouvre /conditions-generales pour ses conditions générales :
+      // la page vit à /cgu.
+      {
+        source: "/conditions-generales",
+        destination: "/cgu",
+        permanent: false,
+      },
       {
         source: "/recrutement-ia",
         destination: "/matching-emploi-ia",
