@@ -13,28 +13,28 @@ const STORY_STEPS = [
     screen: "/screens/karria-assistante.webp",
     title: "Dis à Karria ce que tu cherches",
     description:
-        "À l’écrit ou à la voix. Elle comprend le métier, le lieu et le contrat, puis lance la recherche.",
+        "À l’écrit ou à la voix : elle lance la recherche.",
   },
   {
     id: "offres",
     screen: "/screens/karria-fil-offres.webp",
     title: "Des offres faites pour toi",
     description:
-        "Plus de 500 000 offres en France, mises à jour chaque jour. Les plus pertinentes en premier.",
+        "Plus de 500 000 offres en France, les plus pertinentes d’abord.",
   },
   {
     id: "cv",
     screen: "/screens/karria-atelier-cv.webp",
     title: "Un CV qui te ressemble",
     description:
-        "Importe ton CV, choisis un modèle et ta couleur, retouche chaque ligne.",
+        "Importe ton CV, choisis un modèle et ta couleur.",
   },
   {
     id: "candidature",
     screen: "/screens/karria-dossier-candidature.webp",
     title: "Un CV adapté à chaque offre",
     description:
-        "Avec la lettre de motivation qui va avec. Tu exportes en PDF ou en Word, ou tu envoies par e-mail.",
+        "Et la lettre qui va avec, en PDF, en Word ou par e-mail.",
   },
 ] as const;
 

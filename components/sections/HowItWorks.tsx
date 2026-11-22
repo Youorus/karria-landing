@@ -12,30 +12,30 @@ const STEPS = [
     number: "01",
     icon: MessageCircle,
     title: "Dis ce que tu cherches",
-    description: "Écris ou parle à Karria : un métier, un lieu, un contrat.",
-    detail: "À l’écrit ou à la voix",
+    description: "Un métier, un lieu, un contrat.",
+    detail: "Écrit ou voix",
   },
   {
     number: "02",
     icon: Target,
     title: "Parcours ton fil",
     description:
-      "CDI, CDD, alternance, stage, intérim : les offres qui collent le mieux en premier.",
+      "Les offres qui collent le mieux en premier.",
     detail: "500 000+ offres",
   },
   {
     number: "03",
     icon: FileText,
     title: "Soigne ton CV",
-    description: "Importe-le, choisis un modèle, vérifie ton score ATS.",
+    description: "Un modèle, ta couleur, ton score ATS.",
     detail: "9 modèles",
   },
   {
     number: "04",
     icon: Rocket,
-    title: "Postule et suis tes candidatures",
+    title: "Postule",
     description:
-      "CV adapté, lettre, export ou e-mail. Chaque candidature a son dossier.",
+      "CV adapté, lettre, et un dossier pour suivre.",
     detail: "PDF, Word ou e-mail",
   },
 ];
@@ -71,7 +71,7 @@ export default function HowItWorks() {
                 <span className="text-gradient-blue">Efficace.</span>
               </>
             }
-            subtitle="Quatre étapes, de la première recherche à la candidature envoyée."
+            subtitle="De la recherche à la candidature, en quatre étapes."
           />
         </motion.div>
 
@@ -130,7 +130,7 @@ export default function HowItWorks() {
             href={NAV_ROUTES.download}
             className="btn-primary px-8 py-4 text-base gap-2.5 shadow-glow"
           >
-            Télécharger Karria, c&apos;est gratuit
+            Télécharger Karria
           </Link>
         </motion.div>
       </div>

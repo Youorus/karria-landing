@@ -24,11 +24,11 @@ const CTA_PARTICLES = [
 const TRUST_ITEMS = [
   {
     icon: ShieldCheck,
-    label: "Tu décides si l’IA peut lire ton CV",
+    label: "Tes données t’appartiennent",
   },
   {
     icon: Trash2,
-    label: "Ton compte s’efface depuis l’app",
+    label: "Compte supprimable dans l’app",
   },
   {
     icon: UserCheck,
@@ -111,8 +111,7 @@ export function FinalCTA() {
               transition={{ duration: 1, delay: 0.2, ease: EASE }}
               className="mx-auto mb-14 max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-2xl"
           >
-            Premier emploi, alternance, stage ou reconversion : Karria cherche
-            avec toi, sur iPhone et Android.
+            Gratuite, sur iPhone et Android.
           </motion.p>
 
           <motion.div
@@ -121,7 +120,7 @@ export function FinalCTA() {
               transition={{ duration: 1, delay: 0.3, ease: EASE }}
               className="mb-16"
           >
-            <AppDownloadCTA />
+            <AppDownloadCTA showNote={false} />
           </motion.div>
 
           <motion.div

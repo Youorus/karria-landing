@@ -11,9 +11,9 @@ const PAIN_POINTS = [
   {
     icon: Clock,
     stat: "Des heures perdues",
-    title: "Chercher est épuisant",
+    title: "Chercher épuise",
     description:
-        "Des dizaines de sites, des offres sans fin, et peu qui te correspondent.",
+        "Trop de sites, trop d’offres hors sujet.",
     iconBg: "bg-orange-500/10",
     iconColor: "text-orange-500",
     statColor: "text-orange-500",
@@ -21,9 +21,9 @@ const PAIN_POINTS = [
   {
     icon: FileCheck2,
     stat: "CV après CV",
-    title: "Tout refaire à chaque candidature",
+    title: "Tout refaire",
     description:
-        "Adapter le CV, réécrire la lettre, encore et encore.",
+        "Un CV et une lettre par candidature.",
     iconBg: "bg-amber-500/10",
     iconColor: "text-amber-500",
     statColor: "text-amber-500",
@@ -31,9 +31,9 @@ const PAIN_POINTS = [
   {
     icon: X,
     stat: "Très peu de réponses",
-    title: "Des candidatures sans retour",
+    title: "Silence radio",
     description:
-        "Tu envoies, tu attends, et souvent rien ne revient.",
+        "Tu envoies, rien ne revient.",
     iconBg: "bg-red-500/10",
     iconColor: "text-red-500",
     statColor: "text-red-500",
@@ -41,9 +41,9 @@ const PAIN_POINTS = [
   {
     icon: Users,
     stat: "Une forte concurrence",
-    title: "Tout le monde vise les mêmes offres",
+    title: "Trop tard",
     description:
-        "Arriver tard, c’est passer après les autres.",
+        "Les autres ont déjà postulé.",
     iconBg: "bg-pink-500/10",
     iconColor: "text-pink-500",
     statColor: "text-pink-500",
@@ -51,9 +51,9 @@ const PAIN_POINTS = [
   {
     icon: Bot,
     stat: "Peu d’aide",
-    title: "Des sites qui listent, sans aider",
+    title: "Seul face aux offres",
     description:
-        "Ils affichent des offres. Le reste, c’est pour toi.",
+        "Les sites listent, sans aider.",
     iconBg: "bg-violet-500/10",
     iconColor: "text-violet-500",
     statColor: "text-violet-500",
@@ -84,7 +84,7 @@ export default function Problem() {
                     <span className="text-red-500">est cassée.</span>
                   </>
                 }
-                subtitle="Trop de sites à surveiller, trop de candidatures à refaire, trop peu de réponses."
+                subtitle="Trop de sites, trop de candidatures à refaire, trop peu de réponses."
             />
           </Reveal>
 

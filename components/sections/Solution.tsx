@@ -12,29 +12,29 @@ export const SOLUTIONS = [
     icon: Search,
     title: "Karria cherche pour toi",
     description:
-        "Dis-lui ce que tu veux : elle lance la recherche parmi plus de 500 000 offres.",
-    highlight: "Moins de recherche",
+        "Tu dis ce que tu veux, elle lance la recherche.",
+    highlight: "Recherche",
   },
   {
     icon: ListFilter,
-    title: "Un fil trié pour toi",
+    title: "Un fil trié",
     description:
-        "Les offres les plus pertinentes d’abord, avec des filtres et un tri.",
-    highlight: "Offres pertinentes",
+        "Les offres les plus pertinentes d’abord.",
+    highlight: "Pertinence",
   },
   {
     icon: Sparkles,
-    title: "Des candidatures prêtes plus vite",
+    title: "Des candidatures prêtes",
     description:
-        "Un CV adapté et une lettre pour chaque offre qui te plaît.",
-    highlight: "Moins de travail répété",
+        "Un CV adapté et une lettre par offre.",
+    highlight: "Gain de temps",
   },
   {
     icon: Bell,
     title: "Une alerte au bon moment",
     description:
-        "Dès qu’une offre correspond à une recherche enregistrée, tu es prévenu.",
-    highlight: "Alertes à la carte",
+        "Dès qu’une nouvelle offre correspond.",
+    highlight: "Alertes",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Solution() {
                     <span className="text-gradient-blue">pour ta recherche</span>
                   </>
                 }
-                subtitle="Karria cherche, trie et prépare avec toi. Tu gardes la main."
+                subtitle="Elle cherche, trie et prépare avec toi."
             />
           </Reveal>
 

@@ -179,7 +179,7 @@ export default function Features() {
                   <span className="text-gradient-blue">candidater mieux.</span>
                 </>
               }
-              subtitle="Offres, assistante, CV, lettres, alertes et suivi : tout est au même endroit."
+              subtitle="Offres, CV, lettres, alertes et suivi au même endroit."
           />
         </motion.div>
 

@@ -21,10 +21,9 @@ const PLANS = [
     features: [
       "Recherche d’offres illimitée",
       `${L.assistantMessagesPerDay} messages par jour à l’assistante`,
-      `${L.tailoredCvsPerMonth} CV adaptés à une offre et ${L.lettersPerMonth} lettres par mois`,
-      `${L.cvImportsPerMonth} imports de CV et ${L.atsOptimizationsPerMonth} optimisations ATS par mois`,
-      `${L.cvExportsWithoutMentionPerMonth} CV exportés sans la mention Karria par mois ; ensuite avec la mention, jamais bloqué`,
-      `${L.aiPortraitsPerMonth} portraits retravaillés par IA par mois`,
+      `${L.tailoredCvsPerMonth} CV adaptés et ${L.lettersPerMonth} lettres par mois`,
+      `${L.cvImportsPerMonth} imports de CV, ${L.atsOptimizationsPerMonth} optimisations ATS, ${L.aiPortraitsPerMonth} portraits IA par mois`,
+      `${L.cvExportsWithoutMentionPerMonth} exports par mois sans la mention Karria, puis avec : jamais bloqué`,
     ],
     cta: "Télécharger Karria",
   },
@@ -32,13 +31,12 @@ const PLANS = [
     id: "sans-pub",
     name: PRICING.planName,
     price: PRICING.monthly,
-    description: `Ou ${PRICING.yearlyLabel} par an. Sans engagement.`,
+    description: `Ou ${PRICING.yearlyLabel} par an.`,
     highlighted: true,
     features: [
-      "Tout ce que contient la version gratuite",
       "Plus aucune annonce",
       "Plus de limites mensuelles",
-      "Tu soutiens le développement de Karria",
+      "Sans engagement",
     ],
     cta: "Passer à Karria sans pub",
   },
@@ -76,7 +74,7 @@ export default function Pricing() {
                 <span className="text-gradient-blue">gratuite.</span>
               </>
             }
-            subtitle="Une seule option payante : retirer les annonces et lever les limites mensuelles."
+            subtitle="Une seule option payante, pour retirer les annonces."
           />
         </motion.div>
 
@@ -157,7 +155,7 @@ export default function Pricing() {
           transition={{ duration: 1.0, delay: 0.6, ease: EASE }}
           className="text-center text-muted-foreground text-sm mt-10"
         >
-          Sans engagement · L’abonnement se prend dans l’app
+          L’abonnement se prend dans l’app.
         </motion.p>
       </div>
     </section>

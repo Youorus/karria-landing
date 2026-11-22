@@ -82,8 +82,8 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.3, ease: EASE }}
               className="mb-10 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg md:text-xl"
           >
-            Karria trouve les offres qui te correspondent, t&apos;aide à faire
-            un CV qui passe et te prévient dès qu&apos;une nouvelle offre arrive.
+            Des offres faites pour toi, un CV qui passe, une alerte à chaque
+            nouvelle offre.
           </motion.p>
 
           <motion.div

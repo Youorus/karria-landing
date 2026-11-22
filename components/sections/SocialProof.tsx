@@ -12,34 +12,34 @@ const STATS = [
     value: FACTS.activeOffers,
     suffix: "+",
     label: "Offres actives en France",
-    description: "Mises à jour chaque jour : CDI, CDD, alternance, stage, intérim.",
+    description: "Mises à jour chaque jour.",
   },
   {
     value: FACTS.cvTemplates,
     suffix: "",
     label: "Modèles de CV",
-    description: "Avec ta couleur, et chaque ligne retouchable.",
+    description: "Avec ta couleur.",
   },
 ];
 
 const COMMITMENTS = [
   {
     icon: Gift,
-    title: "La recherche d’offres est gratuite",
+    title: "La recherche est gratuite",
     description:
-        "Et illimitée. Karria est financée par des annonces discrètes.",
+        "Illimitée, financée par des annonces discrètes.",
   },
   {
     icon: Zap,
     title: `Sans pub pour ${PRICING.monthlyLabel} par mois`,
     description:
-        `« ${PRICING.planName} » retire les annonces et lève les limites mensuelles. Sans engagement.`,
+        "Plus d’annonces, plus de limites mensuelles.",
   },
   {
     icon: ShieldCheck,
     title: "Tes données t’appartiennent",
     description:
-        "Tu décides si l’IA peut lire ton CV, et ton compte s’efface depuis l’app.",
+        "Ton compte s’efface depuis l’app.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function SocialProof() {
                 <span className="text-gradient-blue">pas des promesses.</span>
               </>
             }
-            subtitle="Ce que tu trouves dans l’app aujourd’hui."
+            subtitle="Ce qu’il y a dans l’app."
           />
         </motion.div>
 
