@@ -9,7 +9,7 @@ import { CONTACT_EMAILS, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
   title: "Contacte l'équipe Karria",
-  description: "Une question ? Un partenariat ? Ou juste envie de dire bonjour ? Contacte l'équipe Karria et notre fondateur Marc Takoumba.",
+  description: "Une question ? Un partenariat ? Ou juste envie de dire bonjour ? Écris à l'équipe Karria : une vraie personne te répond.",
   path: "/contact",
 });
 
@@ -102,19 +102,17 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <Reveal>
             <div className="p-10 md:p-16 rounded-[2.5rem] bg-foreground text-background">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Contacte Marc</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Écris à l&apos;équipe</h2>
               <p className="text-background/70 text-lg mb-10 leading-relaxed">
-                Le fondateur de Karria, Marc Takoumba, est très attaché aux retours des utilisateurs. Tu peux le contacter directement sur Instagram pour partager ton expérience ou tes idées.
+                L&apos;équipe Karria lit tous les retours. Écris-nous à {CONTACT_EMAILS.general} pour partager ton expérience ou tes idées, ou directement depuis l&apos;app, dans « Parler à l&apos;équipe ».
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link 
-                  href={SOCIAL_LINKS.founderInstagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${CONTACT_EMAILS.general}`}
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-background text-foreground hover:bg-background/90 transition-all font-bold"
                 >
-                  <Instagram className="w-5 h-5" />
-                  Instagram
+                  <Mail className="w-5 h-5" />
+                  {CONTACT_EMAILS.general}
                 </Link>
               </div>
             </div>
