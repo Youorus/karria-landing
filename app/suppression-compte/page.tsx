@@ -5,7 +5,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Suppression de compte Karria",
+  title: "Suppression de compte",
   description: "Découvrez comment supprimer définitivement votre compte Karria et les données associées directement depuis l’application.",
   path: "/suppression-compte",
 });

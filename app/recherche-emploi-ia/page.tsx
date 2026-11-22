@@ -5,7 +5,7 @@ import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Recherche d'emploi IA — Trouvez votre prochain poste",
+  title: "Recherche d'emploi IA : trouvez votre prochain poste",
   description:
     "Transformez votre recherche d'emploi avec l'intelligence artificielle. Karria centralise les offres, optimise vos candidatures et vous accompagne à chaque étape de votre parcours.",
   path: "/recherche-emploi-ia",

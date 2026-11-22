@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Blog — Conseils carrière, IA et emploi",
+  title: "Blog : conseils carrière, IA et emploi",
   description:
       "Retrouvez bientôt les guides Karria sur la recherche d’emploi, les CV, les lettres de motivation et l’IA appliquée à la carrière.",
   path: "/blog",

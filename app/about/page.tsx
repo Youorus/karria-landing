@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export const metadata = buildMetadata({
-  title: "Notre mission — L'IA au service de votre carrière",
+  title: "Notre mission : simplifier la recherche d'emploi",
   description:
       "Découvrez l'histoire de Karria, l'application IA pensée pour simplifier la recherche d'emploi et accompagner chaque parcours professionnel.",
   path: "/about",

@@ -5,9 +5,9 @@ import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Matching emploi IA — Offres sur-mesure pour votre profil",
+  title: "Matching emploi IA : des offres pour votre profil",
   description:
-    "Dites à Karria ce que vous cherchez : elle classe les offres les plus pertinentes parmi plus de 500 000 offres actives en France et vous alerte dès qu'une nouvelle correspond.",
+    "Dites à Karria ce que vous cherchez : elle classe les plus pertinentes parmi plus de 500 000 offres en France et vous alerte dès qu'une nouvelle correspond.",
   path: "/matching-emploi-ia",
   keywords: [
     "matching emploi IA",

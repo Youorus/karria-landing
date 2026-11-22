@@ -6,7 +6,7 @@ import { ArrowRight, Heart, Sparkles, Target, Users } from "lucide-react";
 import { CONTACT_EMAILS } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Rejoindre Karria",
+  title: "Carrières",
   description:
       "Karria est une petite équipe. Aucun poste n’est ouvert aujourd’hui ; les candidatures spontanées sont lues à hello@karria.fr.",
   path: "/carrieres",

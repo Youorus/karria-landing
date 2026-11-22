@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NAV_ROUTES } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Ressources carrière — Guides et outils gratuits",
+  title: "Ressources carrière : guides et outils",
   description:
     "Les guides Karria pour votre recherche d'emploi : CV, lettre de motivation, offres, alternance, premier emploi et reconversion.",
   path: "/ressources",
