@@ -31,6 +31,13 @@ const nextConfig: NextConfig = {
       // /app est l adresse écrite en pied des CV exportés par Karria. En
       // attendant la page de lien intelligent (branche « partage »), elle mène
       // à la fiche de l app sur l App Store.
+      // Un téléphone Android va sur Google Play, tout le reste sur l App Store.
+      {
+        source: "/app",
+        has: [{ type: "header", key: "user-agent", value: "(?i).*android.*" }],
+        destination: "https://play.google.com/store/apps/details?id=com.karria.app",
+        permanent: false,
+      },
       {
         source: "/app",
         destination: "https://apps.apple.com/fr/app/id6776608930",
